@@ -14,4 +14,8 @@ router.get('/about', function(req, res) {
     res.render('about', { title: 'Hello, World!' });
 });
 
+router.get('/studies', function(req, res) {
+    res.render('studies', { title: 'Hello, World!' });
+});
+
 module.exports = router; //return value of whole file
