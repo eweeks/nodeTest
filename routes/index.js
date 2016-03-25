@@ -10,4 +10,8 @@ router.get('/', function(req, res, next) {
    });
 });
 
+router.get('/about', function(req, res) {
+    res.render('about', { title: 'Hello, World!' });
+});
+
 module.exports = router; //return value of whole file
