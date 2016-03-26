@@ -18,4 +18,9 @@ router.get('/studies', function(req, res) {
     res.render('studies', { title: 'Hello, World!' });
 });
 
+router.get('/grte', function(req, res) {
+    res.render('grte', { title: 'Hello, World!' });
+});
+
+
 module.exports = router; //return value of whole file
