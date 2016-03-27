@@ -1,3 +1,9 @@
+{{test}}
+
+{{#test}}
+<h2>{{Site_Name}}</h2>
+<p>{{Unit_Code}}</p>
+{{/test}}
 
 <div class="container">
   <h1>What is a Soundscape?</h1>
@@ -7,3 +13,11 @@
   <h1>Why Study Soundscapes?</h1>
   <p>Text here..</p>
 </div>
+
+
+{{#extend "scripts"}}
+<script>
+  document.write('foo bar!');
+</script>
+{{/extend}}
+{{{block "scripts"}}}

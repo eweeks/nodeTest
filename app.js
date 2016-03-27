@@ -53,8 +53,28 @@ app.use(function(req, res, next) {
   next();
 });
 
+var blocks = {};
+
 hbs.registerHelper('test', function() {
   return 'test';
+});
+
+//helper extend and block, allow to add script to bottom of one page only
+hbs.registerHelper('extend', function(name, context) {
+    var block = blocks[name];
+    if (!block) {
+        block = blocks[name] = [];
+    }
+
+    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
+});
+
+hbs.registerHelper('block', function(name) {
+    var val = (blocks[name] || []).join('\n');
+
+    // clear the block
+    blocks[name] = [];
+    return val;
 });
 
 // catch 404 and forward to error handler
