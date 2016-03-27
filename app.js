@@ -16,25 +16,7 @@ var connection = mysql.createConnection({
    password : 'root',
    database : 'testing',
  });
- //connection.connect();
 
-/* connection.connect(function(err){
-  if(err){
-    console.log('Error connecting to Db');
-    throw err;
-  }
-  console.log('Connection established');
-});*/
-
-
-/*connection.query('SELECT * from sites', function(err, rows, fields) {
-  if (!err)
-    console.log('The solution is: ', rows);
-  else
-    console.log('Error while performing Query.');
-});
-
-connection.end();*/
 
 var routes = require('./routes/index');
 //var users = require('./routes/users');
@@ -55,30 +37,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*app.use(function(req,res,next){
-    req.db = connection;
-    next();
-});*/
-
-/*app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.set('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Origin', '*');
-
-    // Request methods you wish to allow
-    res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, HEAD');
-
-    // Request headers you wish to allow
-    res.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    //res.set('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});*/
 
 app.use('/', routes);
 //app.use('/users', users);
