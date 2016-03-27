@@ -6,12 +6,12 @@ var db = require('./db');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    db.query('SELECT * from sites', function(err, rows, fields) {
+  /*  db.query('SELECT * from sites', function(err, rows, fields) {
       if (!err)
         console.log('The solution is: ', rows);
       else
         console.log('Error while performing Query.');
-    });
+    });*/
 
   res.render('index', {
     title: 'Express Testing',
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', function(req, res) {
-    res.render('about', { title: 'Hello, World!' });
+  res.render('about', { title: 'About' });
 });
 
 router.get('/studies', function(req, res) {
@@ -33,5 +33,13 @@ router.get('/grte', function(req, res) {
     res.render('grte', { title: 'Hello, World!' });
 });
 
+router.get('/list', function(req, res) {
+  db.query('SELECT * from sites', function(err, rows, fields) {
+    if(err) throw err;
+      res.render('list', { title: 'List', entries:rows });
+      console.log('The solution is: ', rows);
+  });
+
+});
 
 module.exports = router; //return value of whole file
