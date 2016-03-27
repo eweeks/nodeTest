@@ -29,8 +29,11 @@ router.get('/studies', function(req, res) {
 });
 
 router.get('/grte', function(req, res) {
-
     res.render('grte', { title: 'grte'});
+});
+
+router.get('/yell', function(req, res) {
+    res.render('yell', { title: 'yell'});
 });
 
 router.get('/list', function(req, res) {

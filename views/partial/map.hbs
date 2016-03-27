@@ -1,13 +1,19 @@
 <h1>Map</h1>
-<div id="mapGrte"></div>
 <!--<div id="map-1" class="col-sm-5 col-md-4"><div id="grteMap"></div></div>-->
-<!--Calls helper function to add custom script to one page only -->
 {{#if_eq title 'grte'}}
-    <h1>GRTE!</h1>
+    <div id="mapGrte"></div>
 {{else}}
-    <h1>YELL</h1>
+      <div id="mapYell"></div>
 {{/if_eq}}
 
-{{#extend "scripts"}}
-<script src="/javascripts/map.js"></script>
-{{/extend}}
+{{#if_eq title 'grte'}}
+    <!--Calls helper function to add custom script to one page only -->
+    {{#extend "scripts"}}
+    <script src="/javascripts/grtemap.js"></script>
+    {{/extend}}
+{{else}}
+      <!--Calls helper function to add custom script to one page only -->
+      {{#extend "scripts"}}
+      <script src="/javascripts/yellmap.js"></script>
+      {{/extend}}
+{{/if_eq}}
