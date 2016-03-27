@@ -1,26 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var db = require('./db');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  //var db = req.db;
-  var connection = mysql.createConnection({
-     host     : 'localhost',
-     user     : 'root',
-     password : 'root',
-     database : 'testing',
-   });
-  //connection.connect();
-   connection.connect(function(err){
-    if(err){
-      console.log('Error connecting to Db');
-      throw err;
-    }
-    console.log('Connection established');
-    });
 
-    connection.query('SELECT * from sites', function(err, rows, fields) {
+    db.query('SELECT * from sites', function(err, rows, fields) {
       if (!err)
         console.log('The solution is: ', rows);
       else
