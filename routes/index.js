@@ -1,8 +1,32 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  //var db = req.db;
+  var connection = mysql.createConnection({
+     host     : 'localhost',
+     user     : 'root',
+     password : 'root',
+     database : 'testing',
+   });
+  //connection.connect();
+   connection.connect(function(err){
+    if(err){
+      console.log('Error connecting to Db');
+      throw err;
+    }
+    console.log('Connection established');
+    });
+
+    connection.query('SELECT * from sites', function(err, rows, fields) {
+      if (!err)
+        console.log('The solution is: ', rows);
+      else
+        console.log('Error while performing Query.');
+    });
+
   res.render('index', {
     title: 'Express Testing',
     age: '33',
@@ -19,6 +43,7 @@ router.get('/studies', function(req, res) {
 });
 
 router.get('/grte', function(req, res) {
+
     res.render('grte', { title: 'Hello, World!' });
 });
 
