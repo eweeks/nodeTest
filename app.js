@@ -59,6 +59,15 @@ hbs.registerHelper('test', function() {
   return 'test';
 });
 
+hbs.registerHelper('if_eq', function(a, b, opts) {
+  console.log(a);
+   console.log(b);
+    if(a == b) // Or === depending on your needs
+        return opts.fn(this);
+    else
+        return opts.inverse(this);
+});
+
 //helper extend and block, allow to add script to bottom of one page only
 hbs.registerHelper('extend', function(name, context) {
     var block = blocks[name];

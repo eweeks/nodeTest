@@ -30,7 +30,7 @@ router.get('/studies', function(req, res) {
 
 router.get('/grte', function(req, res) {
 
-    res.render('grte', { title: 'Hello, World!' });
+    res.render('grte', { title: 'grte'});
 });
 
 router.get('/list', function(req, res) {

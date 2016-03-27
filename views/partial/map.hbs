@@ -2,6 +2,12 @@
 <div id="mapGrte"></div>
 <!--<div id="map-1" class="col-sm-5 col-md-4"><div id="grteMap"></div></div>-->
 <!--Calls helper function to add custom script to one page only -->
+{{#if_eq title 'grte'}}
+    <h1>GRTE!</h1>
+{{else}}
+    <h1>YELL</h1>
+{{/if_eq}}
+
 {{#extend "scripts"}}
 <script src="/javascripts/map.js"></script>
 {{/extend}}
