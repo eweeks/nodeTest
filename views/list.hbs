@@ -1,5 +1,19 @@
-{{test}}
-{{#each entries}}
-<h2>{{Site_Name}}</h2>
-<p>{{Unit_Code}}</p>
-{{/each}}
+{{#if_eq park ':grte'}}
+  <h1>GRTE Sites</h1>
+    {{#each entries}}
+            {{#if_eq Unit_Code 'GRTE'}}
+              <h2>{{Site_Name}}</h2>
+              <p>{{Unit_Code}}</p>
+            {{/if_eq}}
+    {{/each}}
+
+{{else}}
+    <h1>YEll Sites</h1>
+    {{#each entries}}
+            {{#if_eq Unit_Code 'YELL'}}
+              <h2>{{Site_Name}}</h2>
+              <p>{{Unit_Code}}</p>
+            {{/if_eq}}
+    {{/each}}
+
+{{/if_eq}}

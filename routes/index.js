@@ -36,10 +36,10 @@ router.get('/yell', function(req, res) {
     res.render('yell', { title: 'yell'});
 });
 
-router.get('/list', function(req, res) {
+router.get('/list/:park', function(req, res) {
   db.query('SELECT * from sites', function(err, rows, fields) {
     if(err) throw err;
-      res.render('list', { title: 'List', entries:rows });
+      res.render('list', { title: 'List', entries:rows, park: req.params.park });
       console.log('The solution is: ', rows);
   });
 

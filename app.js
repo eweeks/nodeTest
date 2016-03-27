@@ -59,6 +59,7 @@ hbs.registerHelper('test', function() {
   return 'test';
 });
 
+//Helper for If Equals function
 hbs.registerHelper('if_eq', function(a, b, opts) {
   console.log(a);
    console.log(b);
