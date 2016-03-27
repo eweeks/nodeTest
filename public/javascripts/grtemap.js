@@ -5,11 +5,13 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
   markers.forEach(function(d) {
     marker = new L.marker([d.lat, d.lng])
 				.bindPopup(d.Site_Name)
+        .on("click",function(){
+          console.log("Clicked!");
+        })
 				.addTo(grteMap);
   });
 
 });
-
 
 
 var grteMap = L.map('mapGrte', {
