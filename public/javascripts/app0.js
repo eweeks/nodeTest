@@ -42,17 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 //app.use('/users', users);
 
-app.post('/test', function (req, res) {
-    var site_name = req.body.site;
-    //$("#update").text("Hello world!");
-  //  document.getElementById("update").innerHTML = "Hello World";
-   console.log("Site name = "+site_name);
-    console.log('Button pressed!');
-    res.end("yes");
-});
-
-
-
 //partials
 hbs.registerPartial('partial_name', 'partial value');
 hbs.registerPartials(__dirname + '/views/partial');

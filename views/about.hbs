@@ -1,23 +1,21 @@
-{{test}}
-
-{{#test}}
-<h2>{{Site_Name}}</h2>
-<p>{{Unit_Code}}</p>
-{{/test}}
+<div id="button">Get this List</div>
+<div id="response"></div>
 
 <div class="container">
   <h1>What is a Soundscape?</h1>
-  <p>Text here..</p>
+  <p id="update">Text here..</p>
 </div>
 <div class="container">
   <h1>Why Study Soundscapes?</h1>
   <p>Text here..</p>
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#button').click(function() {
+          //$.post('/test')
+          console.log("Click");
+          $("#update").text("Hello world!")
 
-
-{{#extend "scripts"}}
-<script>
-  document.write('foo bar!');
-</script>
-{{/extend}}
-{{{block "scripts"}}}
+        });
+    });
+    </script>

@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var db = require('./db');
+var sites = require('./site');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,6 +32,12 @@ router.get('/studies', function(req, res) {
 
 router.get('/grte', function(req, res) {
     res.render('grte', { title: 'grte'});
+});
+
+router.get('/site', function(req, res) {
+    //res.send(d.Site_Name.getSite());
+    //res.send(list.getList());
+    console.log("Site info");
 });
 
 router.get('/yell', function(req, res) {
