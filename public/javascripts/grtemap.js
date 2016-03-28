@@ -20,6 +20,7 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 function upDateSite(data){
     $(".sitename").text(data.Site_Name)
+    $(".sitecode").text(data.Site_Code)
     console.log("Response is "+data.Site_Name);
 };
 

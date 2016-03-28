@@ -7,12 +7,21 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 				.bindPopup(d.Site_Name)
         .on("click",function(){
           console.log("Clicked!");
+          $.post('/getSite', {site: d.Site_Name}, function(data){
+                upDateSite(data);
+                console.log(data);
+          });
         })
 				.addTo(yellMap);
   });
 
 });
 
+function upDateSite(data){
+    $(".sitename").text(data.Site_Name)
+    $(".sitecode").text(data.Site_Code)
+    console.log("Response is "+data.Site_Name);
+};
 
 
 var yellMap = L.map('mapYell', {
