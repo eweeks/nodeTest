@@ -53,4 +53,19 @@ router.get('/list/:park', function(req, res) {
 
 });
 
+router.get('/search', function(req, res) {
+    console.log('you are searching..');
+    var string = req.query.search;
+    console.log(string);
+    var text = '%'+string+'%';
+    var sql = "SELECT * FROM sites WHERE Site_Name LIKE "+db.escape(text)+"";
+    //bit of duplicate code here..
+
+      db.query(sql, function(err, rows, fields) {
+        if(err) throw err;
+          res.render('search', { title: 'Search', entries:rows});
+        });
+
+});
+
 module.exports = router; //return value of whole file

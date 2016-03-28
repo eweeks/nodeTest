@@ -65,6 +65,17 @@ app.post('/getSite', function (req, res) {
 
 });
 
+//technically have a post and a get for search... more than need?
+/*app.post('/search', function(req, res){
+  var text = req.body.search
+  console.log("rendering search");
+  console.log(text);
+
+ res.redirect('/search/:'+text);
+
+
+});*/
+
 
 
 //partials
