@@ -6,7 +6,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('./routes/db');
-var sites = require('./routes/site');
 //var cors = require('cors');
 
 var hbs = require('hbs'); //mine
@@ -43,34 +42,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 //app.use('/users', users);
 
-app.post('/test', function (req, res) {
+app.post('/getSite', function (req, res) {
     var site_name = req.body.site;
     console.log("First Name"+site_name);
     //var response =sites(site_name);
     var q = "SELECT * FROM sites WHERE Site_Name = '"+site_name+"'";
-    var que = function(err, data){
-       console.log(data);
+    var returnSite = function(err, data){
        res.send(data);
      }
 
      var getSite = function(callback){
        db.query(q, function(err, rows, fields) {
+         //console.log(rows);
+         var site = rows[0];
          if(err) throw err;
-           console.log('The solution is: ', rows);
-           callback(null, rows);
+           callback(null, site);
          });
 
      }
 
-    getSite(que);
+    getSite(returnSite);
 
-    /*var mess=sites.sayHelloInEnglish();
-    var response = sites.getSite(site_name);
-    console.log("Site query "+ mess);
-    console.log("Site name = "+site_name);
-    console.log('Button pressed!');*/
-    //res.end("yes");
-    //res.send(response);
 });
 
 
@@ -94,8 +86,7 @@ hbs.registerHelper('test', function() {
 
 //Helper for If Equals function
 hbs.registerHelper('if_eq', function(a, b, opts) {
-  console.log(a);
-   console.log(b);
+
     if(a == b) // Or === depending on your needs
         return opts.fn(this);
     else

@@ -7,8 +7,8 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 				.bindPopup(d.Site_Name)
         .on("click",function(){
           console.log("Clicked! " + d.Site_Name);
-          $.post('/test', {site: d.Site_Name}, function(data){
-                doSomething(data);
+          $.post('/getSite', {site: d.Site_Name}, function(data){
+                upDateSite(data);
                 console.log(data);
           });
 
@@ -18,8 +18,9 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 });
 
-function doSomething(data){
-    console.log("Response is "+data);
+function upDateSite(data){
+    $(".sitename").text(data.Site_Name)
+    console.log("Response is "+data.Site_Name);
 };
 
 var grteMap = L.map('mapGrte', {
