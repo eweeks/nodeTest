@@ -6,13 +6,11 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
     marker = new L.marker([d.lat, d.lng])
 				.bindPopup(d.Site_Name)
         .on("click",function(){
-          //changeText();
-          /*var host = "http://"+window.location.hostname;
-          $.get('/site', function(d) {
-                $('#sitename').html(d.Site_Name); // show the list
-            })*/
           console.log("Clicked! " + d.Site_Name);
-          $.post('/test', {site: d.Site_Name});
+          $.post('/test', {site: d.Site_Name}, function(data){
+                doSomething(data);
+                console.log(data);
+          });
 
         })
 				.addTo(grteMap);
@@ -20,6 +18,9 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 });
 
+function doSomething(data){
+    console.log("Response is "+data);
+};
 
 var grteMap = L.map('mapGrte', {
     center: [43.79, -110.68],

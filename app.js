@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var db = require('./routes/db');
+var sites = require('./routes/site');
 //var cors = require('cors');
 
 var hbs = require('hbs'); //mine
@@ -44,11 +45,32 @@ app.use('/', routes);
 
 app.post('/test', function (req, res) {
     var site_name = req.body.site;
-    //$("#update").text("Hello world!");
-  //  document.getElementById("update").innerHTML = "Hello World";
-   console.log("Site name = "+site_name);
-    console.log('Button pressed!');
-    res.end("yes");
+    console.log("First Name"+site_name);
+    //var response =sites(site_name);
+    var q = "SELECT * FROM sites WHERE Site_Name = '"+site_name+"'";
+    var que = function(err, data){
+       console.log(data);
+       res.send(data);
+     }
+
+     var getSite = function(callback){
+       db.query(q, function(err, rows, fields) {
+         if(err) throw err;
+           console.log('The solution is: ', rows);
+           callback(null, rows);
+         });
+
+     }
+
+    getSite(que);
+
+    /*var mess=sites.sayHelloInEnglish();
+    var response = sites.getSite(site_name);
+    console.log("Site query "+ mess);
+    console.log("Site name = "+site_name);
+    console.log('Button pressed!');*/
+    //res.end("yes");
+    //res.send(response);
 });
 
 
