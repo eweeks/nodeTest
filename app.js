@@ -43,10 +43,10 @@ app.use('/', routes);
 //app.use('/users', users);
 
 app.post('/getSite', function (req, res) {
-    var site_name = req.body.site;
-    console.log("First Name"+site_name);
+    var site_code = req.body.site;
+    console.log("First Name"+site_code);
     //var response =sites(site_name);
-    var q = "SELECT * FROM sites WHERE Site_Name = '"+site_name+"'";
+    var q = "SELECT * FROM sites INNER JOIN photos ON sites.Site_Code = photos.Site_Code WHERE sites.Site_Code ='"+site_code+"'";
     var returnSite = function(err, data){
        res.send(data);
      }
@@ -54,7 +54,7 @@ app.post('/getSite', function (req, res) {
      var getSite = function(callback){
        db.query(q, function(err, rows, fields) {
          //console.log(rows);
-         var site = rows[0];
+         var site = rows;
          if(err) throw err;
            callback(null, site);
          });
@@ -97,7 +97,6 @@ hbs.registerHelper('test', function() {
 
 //Helper for If Equals function
 hbs.registerHelper('if_eq', function(a, b, opts) {
-
     if(a == b) // Or === depending on your needs
         return opts.fn(this);
     else
