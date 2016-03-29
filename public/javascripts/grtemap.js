@@ -23,17 +23,21 @@ function upDateSite(data){
     $(".sitecode").text(data[0].Site_Code)
     //empty photo slider
     $("#photos-holder").empty();
+    $(".carousel-indicators").empty();
+    //console.log(data[0].Site_Description);
+    $(".site-descript").text(data[0].Site_Description);
     //loops through data, adds photos to slider
     $.each(data, function( key, value ) {
-      //  console.log(value.Site_Name);
-      //  console.log(value.Photo_File);
+         console.log(value.Photo_Caption);
+      //  console.log(value.Photo_File); .site-descript
         var images = "images/"+value.Photo_File;
         if(value.Photo_File.length>4){
           console.log("Add");
-          $('<div class="item"><img src="'+images+'"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+          $('<div class="item"><img src="'+images+'"><div class="carousel-caption">'+value.Photo_Caption+'</div></div>').appendTo('.carousel-inner');
           $('<li data-target="#carousel-example-generic"></li>').appendTo('.carousel-indicators')
         }
       });
+      $('.item').first().addClass('active');
 
     console.log("Response is "+data[0].Site_Name);
 };
