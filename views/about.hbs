@@ -1,5 +1,4 @@
 <div class="container">
-  <div id="map"></div>
   <h1>What is a Soundscape?</h1>
   <p>Text here..</p>
 </div>
@@ -7,33 +6,3 @@
   <h1>Why Study Soundscapes?</h1>
   <p>Text here..</p>
 </div>
-<script type="text/javascript">
-var NPMap = {
- center: {
-   lat: 44.47,
-   lng: -110.58
- },
- div: 'map',
- overlays: [{
-   styles: {
-      point: {
-        'marker-color': '#5e9fd5',
-        'marker-size': 'medium',
-      }
-    },
-   popup: {
-     description: 'Site: {{Site_Name}}',
-     title: '{{Site_Code}}'
-   },
-   type: 'csv',
-   url: '/data/Soundscapes.csv'
- }],
- zoom: 9
-};
-
-(function () {
- var s = document.createElement('script');
- s.src = 'http://www.nps.gov/lib/npmap.js/2.0.0/npmap-bootstrap.js';
- document.body.appendChild(s);
-})();
-</script>

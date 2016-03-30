@@ -1,4 +1,4 @@
-<div id="map-2" class="col-sm-5 col-md-8">Spectrogram
+<div id="" class="col-sm-5 col-md-8">Spectrogram
   <div id="vis" class="spectrogram" width="600" height="300"></div>
   <div><svg id="svg" height="260" width="425"></svg></div>
   <div id="audioplayer">
@@ -14,3 +14,8 @@ data-content="Spectrograms are visual representations of sounds. Color on a
 spectrogram reflects the volume while the vertical position shows the frequency or pitch.">What is a Spectrogram?
 <span class="glyphicon glyphicon-question-sign"></span></a>
 </div>
+
+{{#extend "scripts"}}
+<script type="text/javascript" src="/javascripts/LoadSounds.js"></script>
+<script>var sample = new Spectrogram('/sounds/LowerBerry_5min.mp3', "#vis");</script>
+{{/extend}}

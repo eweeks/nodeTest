@@ -1,0 +1,92 @@
+canvas, svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.spectrogram {
+  position: absolute;
+}
+.axis {
+  font: 14px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+}
+.axis line {
+  shape-rendering: crispEdges;
+  stroke: #444;
+  stroke-width: 1.0px;
+  stroke-dasharray: 2,4;
+}
+
+#holder {
+  min-height: 200px;
+
+}
+
+audio{
+width: 500px;
+
+}
+
+#volume{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 100px;
+    padding: 0 5px;
+}
+
+#bar {
+   border:1px solid #aaa;
+   color:#fff;
+   width:295px;
+   height:20px;
+   position:relative;
+}
+
+#progress {
+   background-color:#ff0000; // red
+   position:relative;
+   height:100%;
+   width:0px;
+   display:inline-block;
+}
+
+#timeline{
+	width: 400px;
+	height: 20px;
+	background: rgba(0,0,0,.3);
+	margin-top: 20px;
+	float: right;
+	border-radius: 15px;
+}
+
+#playhead{
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	margin-top: 1px;
+	background: rgba(0, 0, 0,1);
+}
+
+#audioplayer{
+  width: 480px;
+  height: 60px;
+  border: solid gray 1px;
+  padding: .2em;
+  float:left;
+
+}
+
+button#playpause {
+    display: inline-block;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+svg{
+      position: relative;
+      z-index: 3;
+}
