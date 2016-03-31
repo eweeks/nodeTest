@@ -55,7 +55,7 @@ width: 500px;
 }
 
 #timeline{
-	width: 400px;
+	width: 500px;
 	height: 20px;
 	background: rgba(0,0,0,.3);
 	margin-top: 20px;
@@ -72,7 +72,7 @@ width: 500px;
 }
 
 #audioplayer{
-  width: 480px;
+  width: 600px;
   height: 60px;
   padding: .2em;
   float:left;
@@ -82,5 +82,36 @@ width: 500px;
 
 svg{
       position: relative;
-      z-index: 3;
+      z-index: 1;
+}
+
+#vis{
+      overflow: scroll;
+      width:800px;
+      position: inherit;
+      top: 0;
+      left: 0;
+
+}
+
+img#imageGrey{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+img#imageColor{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+div#progressWrapper {
+    overflow: hidden;
+    width: 0px;
+    height: 260px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-right: solid 1px red;
 }

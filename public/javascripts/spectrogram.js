@@ -101,13 +101,13 @@ currentTime = audio.currentTime;
   this.analyser.connect(this.context.destination);
   console.log(this);
   //load data file, and connect to object
-//  loadStats(this, this.draw.bind(this));
+ //loadStats(this, this.draw.bind(this));
 
 
 
 };//end Spectrogram
 
-Spectrogram.prototype.draw = function(obj){
+/*Spectrogram.prototype.draw = function(obj){
 console.log("draw!");
 //console.log("this data "+ this.data);
 
@@ -148,6 +148,7 @@ this.svg = d3.select(this.selector).append("svg")
 
 this.canvas = d3.select(this.selector).append("canvas")
   .attr("class", "vis_canvas")
+  .attr("id", "spectrogram")
   .attr("width", this.width)
   .attr("height", this.height)
 
@@ -254,13 +255,13 @@ this.canvas = d3.select(this.selector).append("canvas")
               //}
               //}
             //}
-              column ++;
+              //column ++;
             //});
 
 
-};//end draw
+//};//end draw
 
-
+*/
 
 Spectrogram.prototype.getBinFrequency = function(index) {
   var nyquist = this.sampleRate/2;
