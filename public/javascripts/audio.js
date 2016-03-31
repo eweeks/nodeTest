@@ -19,6 +19,7 @@ var progessScale;
 var fftSize = 2048;
 var height;
 var width;
+var y =0;
 
 function Spectrogram(filename, selector){
 
@@ -74,7 +75,7 @@ function Spectrogram(filename, selector){
 //Called when audio updates, this resets the progress bars
 audio.ontimeupdate = function(){
     currentTime = audio.currentTime;
-    console.log("current time "+currentTime);
+    //console.log("current time "+currentTime);
     //calls function progress which updates bars
     progress(currentTime, height, width);
 };
@@ -112,28 +113,27 @@ var progessScale = d3.scale.linear()
   .range([0, width]);
 
 var timeRange =[0, duration];
-console.log("Duration is "+duration);
-console.log("current is "+current);
-console.log("width is "+width);
+//console.log("Duration is "+duration);
+//console.log("current is "+current);
+//console.log("width is "+width);
 
 var value = progessScale(current);
-console.log("value is "+value);
+//console.log("value is "+value);
 var scale = d3.scale.linear()
   .domain(timeRange)
   .range([0, width]);
 
-  /*  d3.select("#line")
-      //.transition()
-      .attr("stroke",'orange')
-      .attr("x1", value)
-      .attr("x2", value);*/
-
-    //  d3.select("#progressWrapper").style("width", value);
-
-      //document.getElementById('#progressWrapper').setAttribute("style","width:"+value);
-
-
     $("#progressWrapper").css({'width':value});
+    var proWidth = $("#progressWrapper").width();
+    console.log("width "+proWidth);
+    var s = $('#vis').scrollLeft();
+    console.log("scroll value is"+s);
+
+  if((proWidth+100)/800 >=y){
+      console.log("Fired");
+      $('#vis').scrollLeft(value);
+      y++;
+  }
 
       //$('#vis').scrollLeft(value);
 
@@ -186,7 +186,7 @@ timeline.addEventListener("click", function (event) {
   console.log("time click");
 	moveplayhead(event);
   var audio = document.getElementById("audio");
-  console.log("click percent "+clickPercent(event));
+  //console.log("click percent "+clickPercent(event));
 	audio.currentTime = audio.duration * clickPercent(event);
 }, false);
 
@@ -209,7 +209,7 @@ function clickPercent(e) {
 function moveplayhead(e) {
   var timeline = document.getElementById('timeline');
   var playhead = document.getElementById('playhead');
-    var offset = e.pageX - $("#timeline").offset().left;
+  var offset = e.pageX - $("#timeline").offset().left;
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
 	var newMargLeft = offset;
@@ -225,6 +225,18 @@ function moveplayhead(e) {
     console.log("moved2");
 		playhead.style.marginLeft = timelineWidth + "px";
 	}
+
+//  var proWidth = $("#progressWrapper").width();
+//  if((proWidth+100)/800 >=y){
+      console.log("Fired");
+    //  $('#vis').scrollLeft(newMargLeft);
+    //  y++;
+//  }
+  //if(proWidth < 1){
+//    y=0;
+  //}
+
+
 }
 
 // timeUpdate
@@ -239,9 +251,7 @@ function timeUpdate() {
 		var playpause = document.getElementById("playpause");
     $("#playbutton").attr('class', 'glyphicon glyphicon-play')
     $("#progressWrapper").css({'width':0});
-  /*  d3.select("#line")
-    .attr("x1", 0)
-    .attr("x2", 0)*/
+
 
     //d3.select("#wrapper").style("width", 0);
 	}
