@@ -383,19 +383,19 @@ function moveplayhead(e) {
     var offset = e.pageX - $("#timeline").offset().left;
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
-	var newMargLeft = offset - timeline.offsetLeft;
+	var newMargLeft = offset;
   console.log(newMargLeft);
-	/*if (newMargLeft = 0 && newMargLeft <= timelineWidth) {
+	if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
     console.log("moved");
 		playhead.style.marginLeft = newMargLeft + "px";
 	}
 	if (newMargLeft < 0) {
 		playhead.style.marginLeft = "0px";
 	}
-	if (newMargLeft < timelineWidth) {
+	if (newMargLeft > timelineWidth) {
     console.log("moved2");
 		playhead.style.marginLeft = timelineWidth + "px";
-	}*/
+	}
 }
 
 // timeUpdate
@@ -410,7 +410,7 @@ function timeUpdate() {
 	playhead.style.marginLeft = playPercent + "px";
 	if (audio.currentTime == audio.duration) {
 		var playpause = document.getElementById("playpause");
-    playpause.innerHTML = "Play";
+    $("#playbutton").attr('class', 'glyphicon glyphicon-play')
     d3.select("#line")
     .attr("x1", 0)
     .attr("x2", 0)
