@@ -122,11 +122,11 @@ var scale = d3.scale.linear()
   .domain(timeRange)
   .range([0, width]);
 
-    d3.select("#line")
+  /*  d3.select("#line")
       //.transition()
       .attr("stroke",'orange')
       .attr("x1", value)
-      .attr("x2", value);
+      .attr("x2", value);*/
 
       d3.select("#progressWrapper").style("width", value);
 
@@ -238,9 +238,9 @@ function timeUpdate() {
 	if (audio.currentTime == audio.duration) {
 		var playpause = document.getElementById("playpause");
     $("#playbutton").attr('class', 'glyphicon glyphicon-play')
-    d3.select("#line")
+  /*  d3.select("#line")
     .attr("x1", 0)
-    .attr("x2", 0)
+    .attr("x2", 0)*/
 
     d3.select("#wrapper").style("width", 0);
 	}
