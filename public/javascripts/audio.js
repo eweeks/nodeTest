@@ -126,14 +126,19 @@ var scale = d3.scale.linear()
     $("#progressWrapper").css({'width':value});
     var proWidth = $("#progressWrapper").width();
     console.log("width "+proWidth);
-    var s = $('#vis').scrollLeft();
-    console.log("scroll value is"+s);
+    var scroll = $('#vis').scrollLeft();
+    console.log("scroll value is"+scroll);
 
-  if((proWidth+100)/800 >=y){
+    if(Math.abs(proWidth - scroll)>700){
+      console.log("Fired");
+      $('#vis').scrollLeft(value-10);
+    }
+
+  /*if((proWidth+100)/800 >=y){
       console.log("Fired");
       $('#vis').scrollLeft(value);
       y++;
-  }
+  }*/
 
       //$('#vis').scrollLeft(value);
 
