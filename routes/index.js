@@ -48,7 +48,7 @@ router.get('/list/:park', function(req, res) {
   db.query('SELECT * from sites', function(err, rows, fields) {
     if(err) throw err;
       res.render('list', { title: 'List', entries:rows, park: req.params.park });
-      console.log('The solution is: ', rows);
+      //console.log('The solution is: ', rows);
   });
 
 });
@@ -64,6 +64,25 @@ router.get('/search', function(req, res) {
           res.render('search', { title: 'Search', entries:rows});
         });
 
+});
+
+//testing for typeahead..
+router.get('/searchlist', function(req, res) {
+    console.log('typeahead');
+    var string = req.query.key;
+    var text = '%'+string+'%';
+    var sql = "SELECT * FROM sites WHERE Site_Name LIKE "+db.escape(text)+"";
+
+      db.query(sql, function(err, rows, fields) {
+        if(err) throw err;
+            var data=[];
+            for(i=0;i<rows.length;i++)
+            {
+            data.push(rows[i].Site_Name);
+            }
+            res.end(JSON.stringify(data));
+
+        });
 });
 
 module.exports = router; //return value of whole file

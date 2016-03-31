@@ -11,3 +11,20 @@ a {
 
 #mapYell { height: 20em; }
 #map{height: 30em;}
+
+//Spectrogram
+.question{
+  float: right;
+  margin: 2em;
+}
+
+button#playpause {
+    display: inline-block;
+    margin: 0;
+    border: none;
+}
+
+#playbutton{
+  font-size: 1.6em;
+
+}

@@ -101,7 +101,7 @@ currentTime = audio.currentTime;
   this.analyser.connect(this.context.destination);
   console.log(this);
   //load data file, and connect to object
-  loadStats(this, this.draw.bind(this));
+//  loadStats(this, this.draw.bind(this));
 
 
 
@@ -313,12 +313,14 @@ function togglePlayPause() {
   var audio = document.getElementById("audio");
      if (audio.paused) {
         playpause.title = "pause";
-        playpause.innerHTML = "Pause";
+        $("#playbutton").attr('class', 'glyphicon glyphicon-pause');
+        //playpause.innerHTML = "Pause";
         audio.play();
      }
      else {
         playpause.title = "play";
-        playpause.innerHTML = "Play";
+        $("#playbutton").attr('class', 'glyphicon glyphicon-play');
+      //  playpause.innerHTML = "Play";
         audio.pause();
      }
 }
@@ -352,8 +354,10 @@ function updateProgress() {
 //Makes timeline clickable
 var timeline = document.getElementById('timeline');
 timeline.addEventListener("click", function (event) {
+  console.log("time click");
 	moveplayhead(event);
   var audio = document.getElementById("audio");
+  console.log("click percent "+clickPercent(event));
 	audio.currentTime = audio.duration * clickPercent(event);
 }, false);
 
@@ -362,24 +366,36 @@ function clickPercent(e) {
   var playhead = document.getElementById('playhead');
   var timeline = document.getElementById('timeline');
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-	return (e.pageX - timeline.offsetLeft) / timelineWidth;
+  console.log("time offset width "+timeline.offsetWidth);
+  console.log("timeline width "+timelineWidth);
+  console.log("play offsetwidth "+playhead.offsetWidth);
+
+  var offset = e.pageX - $("#timeline").offset().left;
+  //var newOffset = offset.left
+  console.log("Offset "+ offset);
+  console.log("returned "+(offset - timeline.offsetLeft) / timelineWidth);
+	return (offset) / timelineWidth;
 }
 
 function moveplayhead(e) {
   var timeline = document.getElementById('timeline');
   var playhead = document.getElementById('playhead');
+    var offset = e.pageX - $("#timeline").offset().left;
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-	var newMargLeft = e.pageX - timeline.offsetLeft;
 
-	if (newMargLeft = 0 && newMargLeft <= timelineWidth) {
+	var newMargLeft = offset - timeline.offsetLeft;
+  console.log(newMargLeft);
+	/*if (newMargLeft = 0 && newMargLeft <= timelineWidth) {
+    console.log("moved");
 		playhead.style.marginLeft = newMargLeft + "px";
 	}
 	if (newMargLeft < 0) {
 		playhead.style.marginLeft = "0px";
 	}
 	if (newMargLeft < timelineWidth) {
+    console.log("moved2");
 		playhead.style.marginLeft = timelineWidth + "px";
-	}
+	}*/
 }
 
 // timeUpdate

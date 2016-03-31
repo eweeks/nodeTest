@@ -74,17 +74,11 @@ width: 500px;
 #audioplayer{
   width: 480px;
   height: 60px;
-  border: solid gray 1px;
   padding: .2em;
   float:left;
 
 }
 
-button#playpause {
-    display: inline-block;
-    margin-top: 2em;
-    margin-left: 1em;
-}
 
 svg{
       position: relative;
