@@ -27,7 +27,7 @@ function Spectrogram(filename, selector){
   var sampleSize = 1024;
 
 
-  this.width = 2000;
+  this.width = 3900;
   this.height = 260;
   height = this.height;
   width = this.width;
@@ -128,7 +128,7 @@ var scale = d3.scale.linear()
       .attr("x1", value)
       .attr("x2", value);*/
 
-      d3.select("#progressWrapper").style("width", value);
+    //  d3.select("#progressWrapper").style("width", value);
 
       //document.getElementById('#progressWrapper').setAttribute("style","width:"+value);
 
@@ -238,10 +238,11 @@ function timeUpdate() {
 	if (audio.currentTime == audio.duration) {
 		var playpause = document.getElementById("playpause");
     $("#playbutton").attr('class', 'glyphicon glyphicon-play')
+    $("#progressWrapper").css({'width':0});
   /*  d3.select("#line")
     .attr("x1", 0)
     .attr("x2", 0)*/
 
-    d3.select("#wrapper").style("width", 0);
+    //d3.select("#wrapper").style("width", 0);
 	}
 }
