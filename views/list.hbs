@@ -14,7 +14,10 @@
           <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
     </div>
     <div class="checkbox">
-          <label><input class="filter tags" type="checkbox" id="filter-park" data-value="summer">Summer</label>
+          <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
+    </div>
+    <div class="checkbox">
+          <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
     </div>
 
       <ul class="list">
@@ -30,6 +33,28 @@
         {{/each}}
       </ul>
   </div>
+
+  {{#extend "scripts"}}
+  <script>
+    $('#filter-park').prop('checked', true);
+
+    var value = $('#filter-park').data("value");
+    activeFilters.push(value);
+
+    soundsList.filter(function (item) {
+    console.log(item);
+      var t = false;
+      var item = item.values().tags
+      item = item.toLowerCase()
+      console.log(item);
+      //pass t and item..
+      return updateFilters(t, item);
+
+    });//end sounds filter
+
+  </script>
+  {{/extend}}
+
 {{else}}
     <h1>YEll Sites</h1>
     <div id="soundsList">
@@ -39,44 +64,30 @@
       <button class="filter" id="filter-none">Show all</button>
       <input class="search" placeholder="Search" />
 
-      <div class="checkbox filter">
-            <label><input class="filter" type="checkbox" id="filter-bird" value="">Birds</label>
+      <div class="checkbox">
+            <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
       </div>
-      <div class="checkbox filter">
-            <label><input  class="filter" type="checkbox" id="filter-wildlife" value="">Wildlife</label>
+      <div class="checkbox">
+            <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
       </div>
+      <div class="checkbox">
+            <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
+      </div>
+      <div class="checkbox">
+            <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
+      </div>
+
         <ul class="list">
     {{#each entries}}
             {{#if_eq Unit_Code 'YELL'}}
             <li>
                 <h2 class="soundName">{{Sound_Name}}</h2>
                 <p class="siteCode">{{Site_Code}}</p>
+                <p class="unitCode">{{Unit_Code}}</p>
                 <p class="tags">{{Tags}}</p>
-           </li>
+            </li>
             {{/if_eq}}
     {{/each}}
       </ul>
     </div>
 {{/if_eq}}
-
-
-{{#extend "scripts"}}
-<script>
-  $('#filter-park').prop('checked', true);
-
-  var value = $('#filter-park').data("value");
-  activeFilters.push(value);
-
-  soundsList.filter(function (item) {
-  console.log(item);
-    var t = false;
-    var item = item.values().tags
-    item = item.toLowerCase()
-    console.log(item);
-    //pass t and item..
-    return updateFilters(t, item);
-
-  });//end sounds filter
-
-</script>
-{{/extend}}
