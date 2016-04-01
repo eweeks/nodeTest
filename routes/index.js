@@ -58,7 +58,8 @@ router.get('/search', function(req, res) {
     console.log('you are searching..');
     var string = req.query.search;
     var text = '%'+string+'%';
-    var sql = "SELECT * FROM sites WHERE Site_Name LIKE "+db.escape(text)+" OR Unit_Code LIKE "+db.escape(text)+"";
+    var select='SELECT * FROM sounds JOIN sites ON sites.Site_Code = sounds.Site_Code '
+    var sql = select+"WHERE Sound_Name LIKE "+db.escape(text)+" OR Unit_Code LIKE "+db.escape(text)+" OR Tags LIKE "+db.escape(text)+"OR Site_Name LIKE "+db.escape(text)+"";
 
       db.query(sql, function(err, rows, fields) {
         if(err) throw err;

@@ -68,6 +68,7 @@ var activeFilters = [];
 $('#filter-none').click(function() {
   soundsList.filter();
   $('.checkbox').find('input[type=checkbox]:checked').removeAttr('checked');
+  activeFilters = [];
   return false;
 });
 
