@@ -2,8 +2,9 @@
   <h1>GRTE Sites</h1>
     {{#each entries}}
             {{#if_eq Unit_Code 'GRTE'}}
-              <h2>{{Site_Name}}</h2>
-              <p>{{Unit_Code}}</p>
+              <h2>{{Sound_Name}}</h2>
+              <p>{{Site_Code}}</p>
+              <p>{{Tags}}</p>
             {{/if_eq}}
     {{/each}}
 
@@ -11,8 +12,9 @@
     <h1>YEll Sites</h1>
     {{#each entries}}
             {{#if_eq Unit_Code 'YELL'}}
-              <h2>{{Site_Name}}</h2>
-              <p>{{Unit_Code}}</p>
+              <h2>{{Sound_Name}}</h2>
+              <p>{{Site_Code}}</p>
+              <p>{{Tags}}</p>
             {{/if_eq}}
     {{/each}}
 
