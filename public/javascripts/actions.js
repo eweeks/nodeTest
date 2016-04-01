@@ -11,14 +11,95 @@ var options = {
 var soundsList = new List('soundsList', options);
 var activeFilters = [];
 
-$('#filter-none').click(function() {
-  soundsList.filter();
-  return false;
+//filters for tags
+    $('.tags').change(function() {
+        var isChecked = this.checked;
+        var value = $(this).data("value");
+
+		if(isChecked){
+			//  add to list of active filters
+			activeFilters.push(value);
+		}
+		else
+		{
+			// remove from active filters
+			activeFilters.splice(activeFilters.indexOf(value), 1);
+		}
+
+		soundsList.filter(function (item) {
+    //  console.log(activeFilters);
+      var t = false;
+      var item = item.values().tags
+      item = item.toLowerCase()
+      console.log(item);
+			if(activeFilters.length > 0){
+
+        var f;
+        activeFilters.forEach(function(i) {
+            //console.log("array has "+i);
+              if (item.indexOf(i) != -1){
+               console.log("array has "+i);
+              console.log("has! "+item.indexOf(i));
+                t = true;
+                //console.log("t is "+t)
+                //return true;
+              }
+              //  console.log("t is 2 "+t);
+                //return false;
+
+          });
+          if(t == true){
+            console.log("true");
+            return true;
+          }else{
+              console.log("false");
+              return false;
+
+          }
+
+			}else{
+          soundsList.filter();
+      }
+
+		});
 });
 
+
+$('#filter-none').click(function() {
+  soundsList.filter();
+  $('.checkbox').find('input[type=checkbox]:checked').removeAttr('checked');
+  return false;
+});
+/*
+//this works... but one filter at a time..
+$('.tags').change(function() {
+  var isChecked = this.checked;
+  var value = $(this).data("value")
+  console.log(value);
+    if(isChecked){
+      soundsList.filter(function(item) {
+        var item = item.values().tags
+        item = item.toLowerCase()
+        activeFilters.push(value);
+        if (item.indexOf(value) !== -1 ) {
+            console.log("True "+ activeFilters.indexOf(value));
+            console.log(activeFilters);
+          return true;
+        } else {
+          return false;
+        }
+      });
+      return false;
+  }else{
+    soundsList.filter();
+  }
+});
+
+*/
+/*
 //check box switch
 //filter
-$('.filter').change(function() {
+$('.tags').change(function() {
     //console.log("checked");
     var isChecked = this.checked;
     console.log("checked "+isChecked);
@@ -26,20 +107,35 @@ $('.filter').change(function() {
 
 if(isChecked){
   //  add to list of active filters
-  console.log("value is "+value);
-  activeFilters.push(value);
-}
-else
-{
-  console.log("not checked");
-  console.log("checked value "+isChecked);
-  // remove from active filters, only works on tags
-  activeFilters.splice(activeFilters.indexOf(value), 1);
+    console.log("value is "+value);
+    activeFilters.push(value);
 }
 
-soundsList.filter(function (item) {
+soundsList.filter(function(item) {
+  var item = item.values().tags
+  item = item.toLowerCase()
+  if (activeFilters.indexOf(value) > -1 ) {
+    console.log("value is "+value);
+    console.log("active filters are  "+activeFilters);
+    console.log("index is  "+activeFilters.indexOf(value));
+    return true;
+  } else {
+    return false;
+  }
+});
+  return false;
+
+});*/
+/*soundsList.filter(function (item) {
   console.log("Filters are "+activeFilters);
-  if(activeFilters.length > 0)
+  if (activeFilters.indexOf(value) !== -1 ) {
+    console.log("value is "+value);
+    console.log("active filters are  "+activeFilters);
+    return true;
+  } else {
+    return false;
+  }
+/*  if(activeFilters.length > 0)
   {
     var item = item.values().tags
     item = item.toLowerCase()
@@ -51,10 +147,10 @@ soundsList.filter(function (item) {
     }
 
     return(activeFilters.indexOf(f)) > -1;
-  }
-  return true;
+  }*/
+/*  return true;
 });
- });
+ });*/
 
 
 
@@ -76,8 +172,8 @@ $('#filter-bird').change(function() {
   }else{
     soundsList.filter();
   }
-});//end bird
-
+});//end bird*/
+/*
 $('#filter-wildlife').change(function() {
   var isChecked = this.checked;
     if(isChecked){
