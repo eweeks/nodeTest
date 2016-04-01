@@ -1,21 +1,47 @@
 {{#if_eq park ':grte'}}
   <h1>GRTE Sites</h1>
-    {{#each entries}}
-            {{#if_eq Unit_Code 'GRTE'}}
-              <h2>{{Sound_Name}}</h2>
-              <p>{{Site_Code}}</p>
-              <p>{{Tags}}</p>
-            {{/if_eq}}
-    {{/each}}
+  <div id="soundsList">
+    <button class="sort" data-sort="soundName">Sort by sound name</button>
+    <button class="sort" data-sort="siteCode">Sort by site</button>
+    <button class="sort" data-sort="tags">Sort by tags</button>
+    <button class="filter" id="filter-none">Show all</button>
 
+    <div class="checkbox filter">
+          <label><input type="checkbox" id="filter-bird" value="">Birds</label>
+    </div>
+    <div class="checkbox filter">
+          <label><input type="checkbox" id="filter-wildlife" value="">Wildlife</label>
+    </div>
+
+      <ul class="list">
+        {{#each entries}}
+                {{#if_eq Unit_Code 'GRTE'}}
+                  <li>
+                      <h2 class="soundName">{{Sound_Name}}</h2>
+                      <p class="siteCode">{{Site_Code}}</p>
+                      <p class="siteCode">{{Unit_Code}}</p>
+                      <p class="tags">{{Tags}}</p>
+                 </li>
+                {{/if_eq}}
+        {{/each}}
+      </ul>
+  </div>
 {{else}}
     <h1>YEll Sites</h1>
+    <div id="soundsList">
+      <button class="sort" data-sort="soundName">Sort by sound name</button>
+      <button class="sort" data-sort="siteCode">Sort by site</button>
+      <button class="sort" data-sort="tags">Sort by tags</button>
+        <ul class="list">
     {{#each entries}}
             {{#if_eq Unit_Code 'YELL'}}
-              <h2>{{Sound_Name}}</h2>
-              <p>{{Site_Code}}</p>
-              <p>{{Tags}}</p>
+            <li>
+                <h2 class="soundName">{{Sound_Name}}</h2>
+                <p class="siteCode">{{Site_Code}}</p>
+                <p class="tags">{{Tags}}</p>
+           </li>
             {{/if_eq}}
     {{/each}}
-
+      </ul>
+    </div>
 {{/if_eq}}

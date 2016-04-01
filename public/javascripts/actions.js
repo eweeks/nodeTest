@@ -3,6 +3,55 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+//list sort
+var options = {
+    valueNames: [ 'soundName', 'siteCode', 'tags' ]
+};
+
+var soundsList = new List('soundsList', options);
+
+$('#filter-none').click(function() {
+  soundsList.filter();
+  return false;
+});
+
+$('#filter-bird').change(function() {
+  var isChecked = this.checked;
+    if(isChecked){
+      soundsList.filter(function(item) {
+        var item = item.values().tags
+        item = item.toLowerCase()
+        if (item.indexOf("bird") !== -1 ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      return false;
+  }else{
+    soundsList.filter();
+  }
+});
+
+$('#filter-wildlife').change(function() {
+  var isChecked = this.checked;
+    if(isChecked){
+      soundsList.filter(function(item) {
+        var item = item.values().tags
+        item = item.toLowerCase()
+        if (item.indexOf("wildlife") !== -1 ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      return false;
+  }else{
+    soundsList.filter();
+  }
+});
+
+
 //testing typeahead feature.. just issues with caching..
 /*$('#search').typeahead({
     name: 'typeahead',
