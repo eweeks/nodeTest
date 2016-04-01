@@ -5,16 +5,61 @@ $(function () {
 
 //list sort
 var options = {
-    valueNames: [ 'soundName', 'siteCode', 'tags' ]
+    valueNames: [ 'soundName', 'siteCode', 'tags', 'unitCode', 'siteName' ]
 };
 
 var soundsList = new List('soundsList', options);
+var activeFilters = [];
 
 $('#filter-none').click(function() {
   soundsList.filter();
   return false;
 });
 
+//check box switch
+//filter
+$('.filter').change(function() {
+    //console.log("checked");
+    var isChecked = this.checked;
+    console.log("checked "+isChecked);
+    var value = $(this).data("value");
+
+if(isChecked){
+  //  add to list of active filters
+  console.log("value is "+value);
+  activeFilters.push(value);
+}
+else
+{
+  console.log("not checked");
+  console.log("checked value "+isChecked);
+  // remove from active filters, only works on tags
+  activeFilters.splice(activeFilters.indexOf(value), 1);
+}
+
+soundsList.filter(function (item) {
+  console.log("Filters are "+activeFilters);
+  if(activeFilters.length > 0)
+  {
+    var item = item.values().tags
+    item = item.toLowerCase()
+    console.log(activeFilters.indexOf('bird'));
+
+    if (item.indexOf(activeFilters) !== -1 ) {
+        var f = activeFilters;
+        console.log("search for "+f);
+    }
+
+    return(activeFilters.indexOf(f)) > -1;
+  }
+  return true;
+});
+ });
+
+
+
+
+/*
 $('#filter-bird').change(function() {
   var isChecked = this.checked;
     if(isChecked){
@@ -31,7 +76,7 @@ $('#filter-bird').change(function() {
   }else{
     soundsList.filter();
   }
-});
+});//end bird
 
 $('#filter-wildlife').change(function() {
   var isChecked = this.checked;
@@ -49,7 +94,7 @@ $('#filter-wildlife').change(function() {
   }else{
     soundsList.filter();
   }
-});
+});//end wildlife*/
 
 
 //testing typeahead feature.. just issues with caching..

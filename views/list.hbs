@@ -5,12 +5,13 @@
     <button class="sort" data-sort="siteCode">Sort by site</button>
     <button class="sort" data-sort="tags">Sort by tags</button>
     <button class="filter" id="filter-none">Show all</button>
+    <input class="search" placeholder="Search" />
 
     <div class="checkbox filter">
-          <label><input type="checkbox" id="filter-bird" value="">Birds</label>
+          <label><input class="filter" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
     </div>
     <div class="checkbox filter">
-          <label><input type="checkbox" id="filter-wildlife" value="">Wildlife</label>
+          <label><input class="filter" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
     </div>
 
       <ul class="list">
@@ -19,7 +20,7 @@
                   <li>
                       <h2 class="soundName">{{Sound_Name}}</h2>
                       <p class="siteCode">{{Site_Code}}</p>
-                      <p class="siteCode">{{Unit_Code}}</p>
+                      <p class="unitCode">{{Unit_Code}}</p>
                       <p class="tags">{{Tags}}</p>
                  </li>
                 {{/if_eq}}
@@ -32,6 +33,15 @@
       <button class="sort" data-sort="soundName">Sort by sound name</button>
       <button class="sort" data-sort="siteCode">Sort by site</button>
       <button class="sort" data-sort="tags">Sort by tags</button>
+      <button class="filter" id="filter-none">Show all</button>
+      <input class="search" placeholder="Search" />
+
+      <div class="checkbox filter">
+            <label><input class="filter" type="checkbox" id="filter-bird" value="">Birds</label>
+      </div>
+      <div class="checkbox filter">
+            <label><input  class="filter" type="checkbox" id="filter-wildlife" value="">Wildlife</label>
+      </div>
         <ul class="list">
     {{#each entries}}
             {{#if_eq Unit_Code 'YELL'}}

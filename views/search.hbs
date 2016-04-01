@@ -1,9 +1,16 @@
 <h1>Searching...</h1>
+<div id="soundsList">
+<button class="sort" data-sort="siteName">Sort by site</button>
+<button class="sort" data-sort="unitCode">Sort by park</button>
+<ul class="list">
+    {{#each entries}}
+            <li>
+              <h2 class="siteName">{{Site_Name}}</h2>
+              <p class="unitCode"> {{Unit_Code}}</p>
+            </li>
+    {{else}}
+        <h1>Sorry, no results found.</h2>
 
-{{#each entries}}
-          <h2>{{Site_Name}}</h2>
-          <p>{{Unit_Code}}</p>
-{{else}}
-    <h1>Sorry, no results found.</h2>
-
-{{/each}}
+    {{/each}}
+</ul>
+</div>
