@@ -13,6 +13,9 @@
     <div class="checkbox">
           <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
     </div>
+    <div class="checkbox">
+          <label><input class="filter tags" type="checkbox" id="filter-park" data-value="summer">Summer</label>
+    </div>
 
       <ul class="list">
         {{#each entries}}
@@ -55,3 +58,25 @@
       </ul>
     </div>
 {{/if_eq}}
+
+
+{{#extend "scripts"}}
+<script>
+  $('#filter-park').prop('checked', true);
+
+  var value = $('#filter-park').data("value");
+  activeFilters.push(value);
+
+  soundsList.filter(function (item) {
+  console.log(item);
+    var t = false;
+    var item = item.values().tags
+    item = item.toLowerCase()
+    console.log(item);
+    //pass t and item..
+    return updateFilters(t, item);
+
+  });//end sounds filter
+
+</script>
+{{/extend}}

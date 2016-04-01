@@ -3,6 +3,7 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+
 //list sort
 var options = {
     valueNames: [ 'soundName', 'siteCode', 'tags', 'unitCode', 'siteName' ]
@@ -32,37 +33,43 @@ var activeFilters = [];
       var item = item.values().tags
       item = item.toLowerCase()
       console.log(item);
-			if(activeFilters.length > 0){
+      //pass t and item..
+      return updateFilters(t, item);
 
-        var f;
-        activeFilters.forEach(function(i) {
-            //console.log("array has "+i);
-              if (item.indexOf(i) != -1){
-               console.log("array has "+i);
-              console.log("has! "+item.indexOf(i));
-                t = true;
-                //console.log("t is "+t)
-                //return true;
-              }
-              //  console.log("t is 2 "+t);
-                //return false;
+		});//end sounds filter
+});//end tags change
 
-          });
-          if(t == true){
-            console.log("true");
-            return true;
-          }else{
-              console.log("false");
-              return false;
+  function updateFilters(t, item){
+    console.log("UpdateFilters");
+    if(activeFilters.length > 0){
+      var f;
+      activeFilters.forEach(function(i) {
+          //console.log("array has "+i);
+            if (item.indexOf(i) != -1){
+             console.log("array has "+i);
+            console.log("has! "+item.indexOf(i));
+              t = true;
+              //console.log("t is "+t)
+              //return true;
+            }
+            //  console.log("t is 2 "+t);
+              //return false;
 
-          }
+        });
+        if(t == true){
+          console.log("true");
+          return true;
+        }else{
+            console.log("false");
+            return false;
 
-			}else{
-          soundsList.filter();
-      }
+        }
 
-		});
-});
+    }else{
+        soundsList.filter();
+    }
+
+};//end updateFilters
 
 
 $('#filter-none').click(function() {
