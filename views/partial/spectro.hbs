@@ -18,6 +18,10 @@
         <div id="playhead"></div>
     </div>
   </div>
+  <button id="setVolume" title="play" class="btn btn-default btn-lg" onclick="showVolume()">
+    <span id="volumebutton" class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+  </button>
+  <input id="volume" type="range" min="0" max="100" value="75" step="1"  onchange="setVolume()" orient="vertical">
   <div style="clear: both;"></div>
     <div id="player"></div>
 </div>

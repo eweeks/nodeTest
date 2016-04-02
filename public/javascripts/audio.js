@@ -162,11 +162,17 @@ function togglePlayPause() {
      }
 }
 
+function showVolume(){
+    //$("#volume").css("display","inline");
+    $("#volume").toggle();
+}
+
 //sets volume.. not hooked up yet
 function setVolume() {
-   var volume = document.getElementById("volume");
+   var value = document.getElementById('volume').value;
+   console.log("slider is "+value);
    var audio = document.getElementById("audio");
-   audio.volume = volume.value;
+   audio.volume = (value / 100);
 }
 
 //updates progress of progress bar for audio

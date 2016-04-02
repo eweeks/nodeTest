@@ -37,3 +37,24 @@ ul
 {
     list-style-type: none;
 }
+
+#volume{
+  position: absolute;
+  top: 19em;
+  display: none;
+  right: 10em;
+}
+
+#setVolume{
+  display: inline-block;
+  margin: 0;
+  border: none;
+
+}
+
+#volumebutton{
+  font-size: 1.4em;
+  margin-top: 6px;
+
+
+}
