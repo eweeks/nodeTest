@@ -1,24 +1,34 @@
 {{#if_eq park ':grte'}}
   <h1>GRTE Sites</h1>
-  <div id="soundsList">
-    <button class="sort" data-sort="soundName">Sort by sound name</button>
-    <button class="sort" data-sort="siteCode">Sort by site</button>
-    <button class="sort" data-sort="tags">Sort by tags</button>
-    <button class="filter" id="filter-none">Show all</button>
-    <input class="search" placeholder="Search" />
-
-    <div class="checkbox">
-          <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
-    </div>
-    <div class="checkbox">
-          <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
-    </div>
-    <div class="checkbox">
-          <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
-    </div>
-    <div class="checkbox">
-          <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
-    </div>
+  <div id="soundsList" class="row">
+    <div class="col-md-2"><!--sort options-->
+      <div class="form-group">
+        <button class="sort" data-sort="soundName">Sort by sound name</button>
+        <button class="sort" data-sort="siteCode">Sort by site</button>
+        <button class="sort" data-sort="tags">Sort by tags</button>
+        <button class="filter" id="filter-none">Show all</button>
+        <input class="search" placeholder="Search" />
+      </div>
+      <div class="form-group">
+        <h5>Type of sound</h5>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <h5>Park</h5>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
+        </div>
+      </div>
+  </div><!--end sorting-->
+  <div class="col-md-10"><!--search results-->
       <div class="accordion" id="accordion2">
       <ul class="list">
         {{#each entries}}
@@ -27,7 +37,9 @@
                     <div class="accordion-group">
                       <div class="accordion-heading">
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
-                      <h2 class="soundName">{{Sound_Name}}</h2> </a>
+                          <h2 class="soundName">{{Sound_Name}}</h2>
+                        </a>
+                          <p class="siteCode">{{Site_Code}}</p>
                        </div>
                        <div id="{{Sound_Id}}" class="accordion-body collapse">
                          <div class="accordion-inner">
@@ -42,6 +54,7 @@
         {{/each}}
       </ul>
     </div><!--end accordion-->
+  </div><!--end search results-->
   </div>
 
   {{#extend "scripts"}}
