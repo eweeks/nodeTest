@@ -105,7 +105,7 @@ function drawLine(){
 //updates progress of progress line, and sets div scroll position
 function progress(current, height, width){
 
-  console.log("progress fired");
+  //console.log("progress fired");
   duration = audio.duration;
 
 var progessScale = d3.scale.linear()
@@ -125,12 +125,12 @@ var scale = d3.scale.linear()
 
     $("#progressWrapper").css({'width':value});
     var proWidth = $("#progressWrapper").width();
-    console.log("width "+proWidth);
+    //console.log("width "+proWidth);
     var scroll = $('#vis').scrollLeft();
-    console.log("scroll value is"+scroll);
+    //console.log("scroll value is"+scroll);
 
     if(Math.abs(proWidth - scroll)>700){
-      console.log("Fired");
+      //console.log("Fired");
       $('#vis').scrollLeft(value-10);
     }
 
@@ -170,7 +170,7 @@ function showVolume(){
 //sets volume.. not hooked up yet
 function setVolume() {
    var value = document.getElementById('volume').value;
-   console.log("slider is "+value);
+   //console.log("slider is "+value);
    var audio = document.getElementById("audio");
    audio.volume = (value / 100);
 }
@@ -206,13 +206,13 @@ function clickPercent(e) {
   var playhead = document.getElementById('playhead');
   var timeline = document.getElementById('timeline');
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-  console.log("time offset width "+timeline.offsetWidth);
-  console.log("timeline width "+timelineWidth);
-  console.log("play offsetwidth "+playhead.offsetWidth);
+  //console.log("time offset width "+timeline.offsetWidth);
+  //console.log("timeline width "+timelineWidth);
+  //console.log("play offsetwidth "+playhead.offsetWidth);
 
   var offset = e.pageX - $("#timeline").offset().left;
-  console.log("Offset "+ offset);
-  console.log("returned "+(offset - timeline.offsetLeft) / timelineWidth);
+  //console.log("Offset "+ offset);
+  //console.log("returned "+(offset - timeline.offsetLeft) / timelineWidth);
 	return (offset) / timelineWidth;
 }
 
@@ -224,22 +224,22 @@ function moveplayhead(e) {
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
 	var newMargLeft = offset;
-  console.log(newMargLeft);
+  //console.log(newMargLeft);
 	if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
-    console.log("moved");
+    //console.log("moved");
 		playhead.style.marginLeft = newMargLeft + "px";
 	}
 	if (newMargLeft < 0) {
 		playhead.style.marginLeft = "0px";
 	}
 	if (newMargLeft > timelineWidth) {
-    console.log("moved2");
+    //console.log("moved2");
 		playhead.style.marginLeft = timelineWidth + "px";
 	}
 
 //  var proWidth = $("#progressWrapper").width();
 //  if((proWidth+100)/800 >=y){
-      console.log("Fired");
+      //console.log("Fired");
     //  $('#vis').scrollLeft(newMargLeft);
     //  y++;
 //  }

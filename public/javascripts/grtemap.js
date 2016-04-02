@@ -52,7 +52,7 @@ function upDateSite(data){
 }; //end update site
 
 function upDateSpectro(data){
-  console.log("Up date Spectro!");
+  //console.log("Up date Spectro!");
   console.log("Data passed is "+data);
   console.log(data);
   //$("#vis").empty();
