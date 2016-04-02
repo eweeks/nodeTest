@@ -47,11 +47,11 @@ function Spectrogram(filename, selector){
   document.getElementById("player").appendChild(audio);
 
   //draws progress line
-  drawLine();
+//  drawLine();
 
   //do I even need all this anymore??
   //creates new audio Context and Analyser
-  this.context = context = new AudioContext();
+/*  this.context = context = new AudioContext();
   this.analyser = context.createAnalyser();
   this.source = this.context.createMediaElementSource(audio);
 
@@ -60,7 +60,7 @@ function Spectrogram(filename, selector){
   // Connect graph
   this.source.connect(this.analyser);
   this.analyser.connect(this.context.destination);
-  console.log(this);
+  console.log(this);*/
 
 
 

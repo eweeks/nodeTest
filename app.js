@@ -46,14 +46,17 @@ app.post('/getSite', function (req, res) {
     var site_code = req.body.site;
     console.log("First Name"+site_code);
     //var response =sites(site_name);
-    var q = "SELECT * FROM sites INNER JOIN photos ON sites.Site_Code = photos.Site_Code WHERE sites.Site_Code ='"+site_code+"'";
+    var select = 'SELECT * FROM sites INNER JOIN photos ON sites.Site_Code = photos.Site_Code INNER JOIN sounds ON sounds.Site_Code = sites.Site_Code '
+    var q = select+ "WHERE sites.Site_Code ='"+site_code+"'";
     var returnSite = function(err, data){
+      //console.log(data);
        res.send(data);
      }
 
      var getSite = function(callback){
        db.query(q, function(err, rows, fields) {
-         //console.log(rows);
+         console.log(rows);
+         console.log(q);
          var site = rows;
          if(err) throw err;
            callback(null, site);

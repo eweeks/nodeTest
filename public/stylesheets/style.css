@@ -32,3 +32,8 @@ button#playpause {
 #spectroHolder{
   margin-bottom: 5em;
 }
+
+ul
+{
+    list-style-type: none;
+}

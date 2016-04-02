@@ -1,7 +1,7 @@
 <div id="spectroHolder" class="col-sm-5 col-md-8"><h3>Spectrogram</h3>
  <div id="vis" class="spectrogram" width="800" height="300">
-   <img id="imageGrey" src="images/spectroGrey.png" height="260" />
-   <div id="progressWrapper"><img  id="imageColor" src="images/spectoColor.png" height="260" /></div>
+   <img id="imageGrey" src="" height="260" />
+   <div id="progressWrapper"><img  id="imageColor" src="" height="260" /></div>
 
  </div>
   <div height="260" width="425">
@@ -24,5 +24,5 @@
 
 {{#extend "scripts"}}
 <script src="/javascripts/audio.js"></script>
-<script>var sample = new Spectrogram('/sounds/LowerBerry_5min.mp3', "#vis");</script>
+<script>  var sample = new Spectrogram('/sounds/LowerBerry_5min.mp3', "#vis");</script>
 {{/extend}}
