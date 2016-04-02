@@ -49,7 +49,7 @@ router.get('/list/:park', function(req, res) {
   db.query('SELECT * FROM sounds JOIN sites ON sites.Site_Code = sounds.Site_Code', function(err, rows, fields) {
     if(err) throw err;
       res.render('list', { title: 'List', entries:rows, park: req.params.park });
-      //console.log('The solution is: ', rows);
+      console.log('The solution is: ', rows);
   });
 
 });

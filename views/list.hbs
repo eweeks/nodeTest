@@ -19,19 +19,29 @@
     <div class="checkbox">
           <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
     </div>
-
+      <div class="accordion" id="accordion2">
       <ul class="list">
         {{#each entries}}
                 {{#if_eq Unit_Code 'GRTE'}}
                   <li>
-                      <h2 class="soundName">{{Sound_Name}}</h2>
-                      <p class="siteCode">{{Site_Code}}</p>
-                      <p class="unitCode">{{Unit_Code}}</p>
-                      <p class="tags">{{Tags}}</p>
+                    <div class="accordion-group">
+                      <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
+                      <h2 class="soundName">{{Sound_Name}}</h2> </a>
+                       </div>
+                       <div id="{{Sound_Id}}" class="accordion-body collapse">
+                         <div class="accordion-inner">
+                              <p class="siteCode">{{Site_Code}}</p>
+                              <p class="unitCode">{{Unit_Code}}</p>
+                              <p class="tags">{{Tags}}</p>
+                        </div>
+                      </div>
+                      </div>
                  </li>
                 {{/if_eq}}
         {{/each}}
       </ul>
+    </div><!--end accordion-->
   </div>
 
   {{#extend "scripts"}}
