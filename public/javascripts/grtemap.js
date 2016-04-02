@@ -59,6 +59,10 @@ function upDateSpectro(data){
   console.log(sample);
   $("#imageColor").attr("src","images/spectoColor.png");
   $("#imageGrey").attr("src","images/spectroGrey.png");
+  $("#progressWrapper").css({'width':0});
+  var playhead = document.getElementById('playhead');
+  playhead.style.marginLeft = "0px";
+  $('#vis').scrollLeft(2);
 
   //get audio
   var source = $('#audio').attr("src");
