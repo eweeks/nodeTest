@@ -57,8 +57,7 @@ function upDateSpectro(data){
   console.log(data);
   //$("#vis").empty();
   console.log(sample);
-  $("#imageColor").attr("src","images/spectoColor.png");
-  $("#imageGrey").attr("src","images/spectroGrey.png");
+
   $("#progressWrapper").css({'width':0});
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
@@ -74,6 +73,8 @@ function upDateSpectro(data){
     console.log("I have data");
     console.log(data[0].Sound_File);
     $('#audio').attr("src", "/sounds/"+data[0].Sound_File);
+    $("#imageColor").attr("src","images/"+data[0].Spectro_File);
+    $("#imageGrey").attr("src","images/"+data[0].Grey_File);
   }
 
 
