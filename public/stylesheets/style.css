@@ -58,3 +58,11 @@ ul
 
 
 }
+
+#infoButton{
+  display: inline;
+}
+
+.soundButton{
+    display: none;
+}

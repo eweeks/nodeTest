@@ -9,8 +9,13 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
           console.log("Clicked! " + d.Site_Code);
           $.post('/getSite', {site: d.Site_Code}, function(data){
                 upDateSite(data);
-                upDateSpectro(data);
-                console.log(data);
+                //upDateSpectro(data);
+                //console.log(data);
+                $.post('/getSounds', {site: d.Site_Code}, function(data){
+                     console.log("hit post");
+                     upDateSpectro(data);
+                     console.log(data);
+                });
           });
 
         })
@@ -52,13 +57,11 @@ function upDateSite(data){
 }; //end update site
 
 function upDateSpectro(data){
-  //console.log("Up date Spectro!");
   console.log("Data passed is "+data);
   console.log(data);
-  //$("#vis").empty();
-  console.log(sample);
 
   $("#progressWrapper").css({'width':0});
+  $("#buttonGroup").empty();
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
   $('#vis').scrollLeft(2);
@@ -75,8 +78,27 @@ function upDateSpectro(data){
     $('#audio').attr("src", "/sounds/"+data[0].Sound_File);
     $("#imageColor").attr("src","images/"+data[0].Spectro_File);
     $("#imageGrey").attr("src","images/"+data[0].Grey_File);
-  }
+    var count=1;
+    $.each(data, function( key, value ) {
+      var info = value
+      console.log(info);
+      var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
+       class:"soundButton", autocomplete:"off"})
+      $("#buttonGroup").append($('<label />', { text: value.Sound_Name, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
+        console.log("clicked button");
+        console.log(info.Sound_File);
+        $("#progressWrapper").css({'width':0});
+        $('#audio').attr("src", "/sounds/"+info.Sound_File);
+        $("#imageColor").attr("src","images/"+info.Spectro_File);
+        $("#imageGrey").attr("src","images/"+info.Grey_File);
 
+      }).append(b));
+      if(count ==1){
+        $("#sound1").addClass("active");
+        count++;
+      }
+    });
+  }
 
 };//end upDateSpectro
 

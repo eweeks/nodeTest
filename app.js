@@ -46,7 +46,7 @@ app.post('/getSite', function (req, res) {
     var site_code = req.body.site;
     console.log("First Name"+site_code);
     //var response =sites(site_name);
-    var select = 'SELECT * FROM sites INNER JOIN photos ON sites.Site_Code = photos.Site_Code INNER JOIN sounds ON sounds.Site_Code = sites.Site_Code '
+    var select = 'SELECT * FROM sites INNER JOIN photos ON sites.Site_Code = photos.Site_Code '
     var q = select+ "WHERE sites.Site_Code ='"+site_code+"'";
     var returnSite = function(err, data){
       //console.log(data);
@@ -66,6 +66,32 @@ app.post('/getSite', function (req, res) {
 
     getSite(returnSite);
 
+});
+
+app.post('/getSounds', function (req, res) {
+  console.log("getting sounds");
+  var site_code = req.body.site;
+  console.log("Site Name"+site_code);
+  //var response =sites(site_name);
+  var select = 'SELECT * FROM sounds INNER JOIN sites ON sites.Site_Code = sounds.Site_Code '
+  var q = select+ "WHERE sites.Site_Code ='"+site_code+"'";
+  var returnSound = function(err, data){
+    //console.log(data);
+     res.send(data);
+   }
+
+   var getSound = function(callback){
+     db.query(q, function(err, rows, fields) {
+       console.log(rows);
+       console.log(q);
+       var site = rows;
+       if(err) throw err;
+         callback(null, site);
+       });
+
+   }
+
+  getSound(returnSound);
 });
 
 //technically have a post and a get for search... more than need?
