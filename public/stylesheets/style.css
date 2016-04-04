@@ -66,3 +66,7 @@ ul
 .soundButton{
     display: none;
 }
+
+div#carousel-example-generic {
+    display: none;
+}

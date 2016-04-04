@@ -80,11 +80,13 @@ audio.ontimeupdate = function(){
     progress(currentTime, height, width);
 };
 
+//border-right: solid 1px red;
+
 
 };//end Spectrogram
 
 //draws progress line
-function drawLine(){
+/*function drawLine(){
   var progessScale = d3.scale.linear()
     .domain([0, duration])
     .range([0, width])
@@ -100,7 +102,7 @@ function drawLine(){
     .attr("stroke-width", 2.0);
 
 
-}
+}*/
 
 //updates progress of progress line, and sets div scroll position
 function progress(current, height, width){

@@ -31,6 +31,7 @@ function upDateSite(data){
    if (data.length > 1) {
         $(".sitename").text(data[0].Site_Name)
         $(".sitecode").text(data[0].Site_Code)
+        $("div#carousel-example-generic").css('display', 'block');
         //empty photo slider
 
         //console.log(data[0].Site_Description);
@@ -61,6 +62,7 @@ function upDateSpectro(data){
   console.log(data);
 
   $("#progressWrapper").css({'width':0});
+  $('div#progressWrapper').css('border-right', 'solid 1px red');
   $("#buttonGroup").empty();
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
@@ -72,7 +74,7 @@ function upDateSpectro(data){
   //var source = audio.src;
   console.log(audio);
   console.log(source);
-  if(data.length > 1){
+  if(data.length != 0){
     console.log("I have data");
     console.log(data[0].Sound_File);
     $('#audio').attr("src", "/sounds/"+data[0].Sound_File);
