@@ -70,3 +70,11 @@ ul
 div#carousel-example-generic {
     display: none;
 }
+
+.listScroll{
+  width: 55%;
+  position: inherit;
+  overflow: scroll;
+  margin-bottom: 1em;
+
+}
