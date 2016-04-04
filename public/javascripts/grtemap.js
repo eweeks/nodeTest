@@ -58,7 +58,7 @@ function upDateSpectro(data){
   $("#buttonGroup").empty();
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
-  $('#vis').scrollLeft(2);
+  $('#vis').scrollLeft(0);
 
   //get audio
   var source = $('#audio').attr("src");
@@ -80,6 +80,9 @@ function upDateSpectro(data){
         $('#audio').attr("src", "/sounds/"+info.Sound_File);
         $("#imageColor").attr("src","images/"+info.Spectro_File);
         $("#imageGrey").attr("src","images/"+info.Grey_File);
+        var playhead = document.getElementById('playhead');
+        playhead.style.marginLeft = "0px";
+        $('#vis').scrollLeft(0);
 
       }).append(b));
       if(count ==1){
