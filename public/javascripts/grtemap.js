@@ -10,9 +10,7 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
           $.post('/getSite', {site: d.Site_Code}, function(data){
                 upDateSite(data);
                 $.post('/getSounds', {site: d.Site_Code}, function(data){
-                     console.log("hit post");
                      upDateSpectro(data);
-                     console.log(data);
                 });
           });
 

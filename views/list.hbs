@@ -4,7 +4,7 @@
     <div class="col-md-2"><!--sort options-->
       <div class="form-group">
         <button class="sort" data-sort="soundName">Sort by sound name</button>
-        <button class="sort" data-sort="siteCode">Sort by site</button>
+        <button class="sort" data-sort="siteName">Sort by site</button>
         <button class="sort" data-sort="tags">Sort by tags</button>
         <button class="filter" id="filter-none">Show all</button>
         <input class="search" placeholder="Search" />
@@ -39,12 +39,12 @@
                         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
                           <h2 class="soundName">{{Sound_Name}}</h2>
                         </a>
-                          <p class="siteCode">{{Site_Code}}</p>
+                          <p class="tags">{{Tags}}</p>
                        </div>
                        <div id="{{Sound_Id}}" class="accordion-body collapse">
                          <div class="accordion-inner">
                               <p class="unitCode">{{Unit_Code}}</p>
-                              <p class="tags">{{Tags}}</p>
+                              <p class="siteName">{{Site_Name}}</p>
                               <audio preload="auto" src="/sounds/{{Sound_File}}" controls></audio>
                         </div>
                       </div>
@@ -92,7 +92,7 @@
         <div class="form-group">
           <h5>Type of sound</h5>
           <div class="checkbox">
-                <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
+                <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="birds">Birds</label>
           </div>
           <div class="checkbox">
                 <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
