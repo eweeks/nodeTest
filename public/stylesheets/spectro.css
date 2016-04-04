@@ -91,6 +91,7 @@ svg{
       position: inherit;
       top: 0;
       left: 0;
+      
 
 }
 
@@ -113,5 +114,5 @@ div#progressWrapper {
     position: absolute;
     top: 0px;
     left: 0px;
-    
+
 }
