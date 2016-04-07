@@ -190,6 +190,10 @@ var imageClick = $('#vis').click(function(e){
     console.log("clicked vis");
     console.log(e);
     moveImage(e);
+    var audio = document.getElementById("audio");
+    console.log(clickPercentImage(e));
+    audio.currentTime = audio.duration * clickPercentImage(e);
+
 });
 
 function moveImage(e){
@@ -200,21 +204,23 @@ function moveImage(e){
 
   var newMargLeft = offset;
   console.log(newMargLeft);
-//  if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
-    //console.log("moved");
+
     $("#progressWrapper").css({'width':newMargLeft+"px"});
-    //playhead.style.marginLeft = newMargLeft + "px";
-//  }
+
   if (newMargLeft < 0) {
-    //playhead.style.marginLeft = "0px";
     $("#progressWrapper").css({'width':0});
 
   }
-  //if (newMargLeft > timelineWidth) {
-    //console.log("moved2");
-    //playhead.style.marginLeft = timelineWidth + "px";
-  //}
 
+}
+
+function clickPercentImage(e){
+  //var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
+  var p =  $("#progressWrapper").width();
+  var width = $("#imageColor").width();
+  var percent = progress/width;
+  console.log("progress"+p);
+  return p / width;
 }
 
 
