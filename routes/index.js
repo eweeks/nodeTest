@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
     });*/
 
   res.render('index', {
-    title: 'Express Testing',
+    title: 'Visualizing Soundscapes',
     age: '33',
     pet: "dog"
    });

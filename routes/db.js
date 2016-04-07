@@ -6,6 +6,7 @@ var settings = {
    user     : 'root',
    password : 'root',
    database : 'testing',
+   debug: 'true',
  };
 
 function connectDatabase() {
