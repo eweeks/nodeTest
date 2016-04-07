@@ -85,24 +85,6 @@ audio.ontimeupdate = function(){
 
 };//end Spectrogram
 
-//draws progress line
-/*function drawLine(){
-  var progessScale = d3.scale.linear()
-    .domain([0, duration])
-    .range([0, width])
-
-  var progressLine = d3.select('#svg').append("line")
-    .attr("class", "line")
-    .attr("id", "line")
-    .attr("x1", function() {return progessScale(currentTime);})
-    .attr("x2", function() {return progessScale(currentTime);})
-    .attr("y1", 0)
-    .attr("y2", height)
-    .attr("stroke",'red')
-    .attr("stroke-width", 2.0);
-
-
-}*/
 
 //updates progress of progress line, and sets div scroll position
 function progress(current, height, width){
@@ -197,11 +179,44 @@ function updateProgress() {
 var timeline = document.getElementById('timeline');
 timeline.addEventListener("click", function (event) {
   console.log("time click");
+  console.log(event);
 	moveplayhead(event);
   var audio = document.getElementById("audio");
   //console.log("click percent "+clickPercent(event));
 	audio.currentTime = audio.duration * clickPercent(event);
 }, false);
+
+var imageClick = $('#vis').click(function(e){
+    console.log("clicked vis");
+    console.log(e);
+    moveImage(e);
+});
+
+function moveImage(e){
+  //var progress = $('#progressWrapper');
+  var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
+  console.log($("#vis").offset().left);
+  console.log(e.pageX);
+
+  var newMargLeft = offset;
+  console.log(newMargLeft);
+//  if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+    //console.log("moved");
+    $("#progressWrapper").css({'width':newMargLeft+"px"});
+    //playhead.style.marginLeft = newMargLeft + "px";
+//  }
+  if (newMargLeft < 0) {
+    //playhead.style.marginLeft = "0px";
+    $("#progressWrapper").css({'width':0});
+
+  }
+  //if (newMargLeft > timelineWidth) {
+    //console.log("moved2");
+    //playhead.style.marginLeft = timelineWidth + "px";
+  //}
+
+}
+
 
 // returns click as decimal (.77) of the total timelineWidth
 function clickPercent(e) {
@@ -226,7 +241,7 @@ function moveplayhead(e) {
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
 	var newMargLeft = offset;
-  //console.log(newMargLeft);
+  console.log($("#timeline").offset().left);
 	if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
     //console.log("moved");
 		playhead.style.marginLeft = newMargLeft + "px";

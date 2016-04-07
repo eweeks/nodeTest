@@ -58,6 +58,7 @@ app.post('/getSite', function (req, res) {
          console.log(rows);
          console.log(q);
          var site = rows;
+         
          if(err) throw err;
            callback(null, site);
          });

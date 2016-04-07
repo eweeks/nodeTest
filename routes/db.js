@@ -9,8 +9,17 @@ var settings = {
    debug: 'true',
  };
 
+ var settings2 = {
+     connectionLimit : 10, //important
+     host     : 'localhost',
+     user     : 'root',
+     password : 'root',
+     database : 'testing',
+     debug    :  false
+ };
+
 function connectDatabase() {
-    if (!db) {
+  /*  if (!db) {
         db = mysql.createConnection(settings);
 
 
@@ -21,7 +30,18 @@ function connectDatabase() {
                 console.log('Error connecting database!');
             }
         });
-    }
+    }*/
+    db= mysql.createPool(settings2);
+    db.getConnection(function(err, connection) {
+        // connected! (unless `err` is set)
+        if(!err) {
+            connection.release(); 
+            console.log('Database is connected!');
+        } else {
+            console.log('Error connecting database!');
+        }
+    });
+
     return db;
 }
 
