@@ -94,7 +94,7 @@ div#carousel-example-generic {
 }
 
 /*Some CSS*/
-.magnify {width: 500px; margin: 50px auto;     margin: 0;
+.magnify {margin: 50px auto;     margin: 0;
     padding: 0; position: relative;}
 
 /*Lets create the magnifying glass*/

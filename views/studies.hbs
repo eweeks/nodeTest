@@ -32,10 +32,18 @@ are drastically different that areas where snowvehicle use is not allowed.</p>
   	<div class="large"></div>
     <img class="small" height="260" src="images/MOPO_Elk-Grey.png">
 </div>
+<button type="button" id="mag" class="btn btn-primary btn-lg btn-block">Magnifier</button>
 {{#extend "scripts"}}
 <script>
-var native_width = 0;
+  var native_width = 0;
 	var native_height = 0;
+
+  $( "#mag" ).click(function() {
+    $( this ).toggleClass( "zoom" );
+    if (!$(this).hasClass("zoom")) {
+        $(".large").fadeOut(100);
+    }
+});
 
 	//Now the mousemove function
 	$(".magnify").mousemove(function(e){
@@ -65,13 +73,18 @@ var native_width = 0;
 			//We will deduct the positions of .magnify from the mouse positions with
 			//respect to the document to get the mouse positions with respect to the
 			//container(.magnify)
-			var mx = e.pageX - magnify_offset.left;
-			var my = e.pageY - magnify_offset.top;
-
+      //e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
+			var mx = e.pageX - magnify_offset.left+$('#vis').scrollLeft();
+			var my = e.pageY - magnify_offset.top+$('#vis').scrollTop();
+      console.log("this width "+$(this).width());
+      console.log("this height "+$(this).height());
 			//Finally the code to fade out the glass if the mouse is outside the container
-			if(mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0)
+			if(mx < $(".small").width() && my < $(this).height() && mx > 0 && my > 0)
 			{
-				$(".large").fadeIn(100);
+        if ($("#mag").hasClass("zoom")) {
+            $(".large").fadeIn(100);
+        }
+			//	$(".large").fadeIn(100);
 			}
 			else
 			{
