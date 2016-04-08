@@ -186,43 +186,6 @@ timeline.addEventListener("click", function (event) {
 	audio.currentTime = audio.duration * clickPercent(event);
 }, false);
 
-var imageClick = $('#vis').click(function(e){
-    console.log("clicked vis");
-    console.log(e);
-    moveImage(e);
-    var audio = document.getElementById("audio");
-    console.log(clickPercentImage(e));
-    audio.currentTime = audio.duration * clickPercentImage(e);
-
-});
-
-function moveImage(e){
-  //var progress = $('#progressWrapper');
-  var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
-  console.log($("#vis").offset().left);
-  console.log(e.pageX);
-
-  var newMargLeft = offset;
-  console.log(newMargLeft);
-
-    $("#progressWrapper").css({'width':newMargLeft+"px"});
-
-  if (newMargLeft < 0) {
-    $("#progressWrapper").css({'width':0});
-
-  }
-
-}
-
-function clickPercentImage(e){
-  //var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
-  var p =  $("#progressWrapper").width();
-  var width = $("#imageColor").width();
-  var percent = progress/width;
-  console.log("progress"+p);
-  return p / width;
-}
-
 
 // returns click as decimal (.77) of the total timelineWidth
 function clickPercent(e) {
@@ -272,6 +235,45 @@ function moveplayhead(e) {
 
 
 }
+
+var imageClick = $('#vis').click(function(e){
+    console.log("clicked vis");
+    console.log(e);
+    moveImage(e);
+    var audio = document.getElementById("audio");
+    console.log(clickPercentImage(e));
+    audio.currentTime = audio.duration * clickPercentImage(e);
+
+});
+
+function moveImage(e){
+  //var progress = $('#progressWrapper');
+  var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
+  console.log($("#vis").offset().left);
+  console.log(e.pageX);
+
+  var newMargLeft = offset;
+  console.log(newMargLeft);
+
+    $("#progressWrapper").css({'width':newMargLeft+"px"});
+
+  if (newMargLeft < 0) {
+    $("#progressWrapper").css({'width':0});
+
+  }
+
+}
+
+
+function clickPercentImage(e){
+  //var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
+  var p =  $("#progressWrapper").width();
+  var width = $("#imageColor").width();
+  var percent = progress/width;
+  console.log("progress"+p);
+  return p / width;
+}
+
 
 // timeUpdate
 // Synchronizes playhead position with current point in audio

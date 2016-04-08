@@ -48,6 +48,8 @@ function upDateSite(data){
 
 }; //end update site
 
+
+
 function upDateSpectro(data){
   //console.log("Data passed is "+data);
   //console.log(data);
@@ -83,16 +85,43 @@ function upDateSpectro(data){
         var playhead = document.getElementById('playhead');
         playhead.style.marginLeft = "0px";
         $('#vis').scrollLeft(0);
+        updateMarkers();
 
       }).append(b));
       if(count ==1){
         $("#sound1").addClass("active");
+        updateMarkers();
         count++;
       }
     });
   }
 
+
 };//end upDateSpectro
+
+//marker function
+function updateMarkers(){
+  //width/time = px per sec
+  var width =  $("#timeline").width();
+  var audio = document.getElementById("audio");
+
+  audio.oncanplaythrough = function() {
+  $( "#marker" ).remove();
+  var d = audio.duration;
+  var ratio = width/d;
+  var bookmark = 2;
+  console.log(d);
+  console.log(audio);
+  console.log("Ratio is"+ratio);
+  var moveto = 120*ratio;
+  //duration is in seconds, so if do markers in minutes, need to multiply
+  $("#timeline").append('<div id="marker"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></div>');
+  var marker= document.getElementById('marker');
+  marker.style.marginLeft = moveto+"px";
+}
+
+}
+
 
 //sets up grte map
 var grteMap = L.map('mapGrte', {
