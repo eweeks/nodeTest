@@ -71,6 +71,7 @@ function upDateSpectro(data){
     $('#audio').attr("src", "/sounds/"+data[0].Sound_File);
     $("#imageColor").attr("src","images/"+data[0].Spectro_File);
     $("#imageGrey").attr("src","images/"+data[0].Grey_File);
+    $('.large').css('backgroundImage','url(images/'+data[0].Spectro_File+')');
     var count=1;
     $.each(data, function( key, value ) {
       var info = value
@@ -82,6 +83,7 @@ function upDateSpectro(data){
         $('#audio').attr("src", "/sounds/"+info.Sound_File);
         $("#imageColor").attr("src","images/"+info.Spectro_File);
         $("#imageGrey").attr("src","images/"+info.Grey_File);
+        $('.large').css('backgroundImage','url(images/'+info.Spectro_File+')');
         var playhead = document.getElementById('playhead');
         playhead.style.marginLeft = "0px";
         $('#vis').scrollLeft(0);
