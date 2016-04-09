@@ -81,6 +81,38 @@ $('#filter-none').click(function() {
 
 
 //testing typeahead feature.. just issues with caching..
+var numbers = new Bloodhound({
+    datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.num); },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+local: [
+{ num: 'one' },
+{ num: 'two' },
+{ num: 'three' },
+{ num: 'four' },
+{ num: 'five' },
+{ num: 'six' },
+{ num: 'seven' },
+{ num: 'eight' },
+{ num: 'nine' },
+{ num: 'ten' }
+]
+});
+
+// initialize the bloodhound suggestion engine
+numbers.initialize();
+
+// instantiate the typeahead UI
+$('#type').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},
+{
+displayKey: 'num',
+source: numbers.ttAdapter()
+});
+
+
 /*$('#search').typeahead({
     name: 'typeahead',
     remote: '/searchlist?key=%QUERY',
