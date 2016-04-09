@@ -58,7 +58,7 @@ app.post('/getSite', function (req, res) {
          console.log(rows);
          console.log(q);
          var site = rows;
-         
+
          if(err) throw err;
            callback(null, site);
          });
@@ -96,12 +96,24 @@ app.post('/getSounds', function (req, res) {
 });
 
 //technically have a post and a get for search... more than need?
-/*app.post('/search', function(req, res){
-  var text = req.body.search
-  console.log("rendering search");
-  console.log(text);
-
- res.redirect('/search/:'+text);
+/*app.get('/tsearch', function(req, res){
+  console.log("tsearch");
+  var string = req.query.key;
+  var text = '%'+string+'%';
+  var select="SELECT `Tags` FROM sounds WHERE `Tags` LIKE "+db.escape(text)+" ";
+  //var sql = select+"WHERE Sound_Name LIKE "+db.escape(text)+" OR Tags LIKE "+db.escape(text)+"";
+  db.query(select, function(err, rows, fields) {
+    console.log(rows);
+    if(err) throw err;
+    var data=[];
+          for(i=0;i<rows.length;i++)
+        {
+        data.push(rows[i].Tags);
+        }
+        console.log("Data is");
+        console.log(data);
+        res.end(JSON.stringify(data));
+    });
 
 
 });*/

@@ -80,26 +80,182 @@ $('#filter-none').click(function() {
 });
 
 
-//testing typeahead feature.. just issues with caching..
-var numbers = new Bloodhound({
-    datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.num); },
+//testing typeahead feature..
+/*$('input.typeahead').typeahead({
+name: 'typeahead',
+remote: 'http://localhost:3000/tsearch?key=%QUERY',
+limit: 10
+});*/
+
+/*var tsearch = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+   url: 'http://localhost:3000/tsearch?key=%QUERY',
+   wildcard: '%QUERY'
+ }
+
+});
+*/
+/*
+var substringMatcher = function(strs) {
+  return function findMatches(q, cb) {
+    var matches, substringRegex;
+
+    // an array that will be populated with substring matches
+    matches = [];
+
+    // regex used to determine if a string contains the substring `q`
+    substrRegex = new RegExp(q, 'i');
+
+    // iterate through the pool of strings and for any string that
+    // contains the substring `q`, add it to the `matches` array
+    $.each(strs, function(i, str) {
+      if (substrRegex.test(str)) {
+        matches.push(str);
+      }
+    });
+
+    cb(matches);
+  };
+};
+
+
+var tags = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+];
+
+$('#type').typeahead({
+  hint: true,
+  highlight: true,
+  minLength: 1
+},{
+  name: 'tags',
+  display: 'value',
+  source: substringMatcher(tags)
+});
+*/
+
+var tsearch = new Bloodhound({
+    datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.Tag); },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
 local: [
-{ num: 'one' },
-{ num: 'two' },
-{ num: 'three' },
-{ num: 'four' },
-{ num: 'five' },
-{ num: 'six' },
-{ num: 'seven' },
-{ num: 'eight' },
-{ num: 'nine' },
-{ num: 'ten' }
-]
+  {
+     Tag:"Jackson Lake Dollar Island"
+  },
+  {
+     Tag:"Lower Berry Cabin"
+  },
+  {
+     Tag:"Moose Wilson Road"
+  },
+  {
+     Tag:"Gros Ventre Campground East"
+  },
+  {
+     Tag:"Jackson Hole Airport Lek"
+  },
+  {
+     Tag:"Grand Teton Summit"
+  },
+  {
+     Tag:"Moose Pond"
+  },
+  {
+     Tag:"Potholes West"
+  },
+  {
+     Tag:"Phelps Lake Jump Rock"
+  },
+  {
+     Tag:"Bechler"
+  },
+  {
+     Tag:"Fountain Paint Pots"
+  },
+  {
+     Tag:"Grant Village Lewis Lake"
+  },
+  {
+     Tag:"Middle Barronette Meadow"
+  },
+  {
+     Tag:"Madison Junction"
+  },
+  {
+     Tag:"Old Faithful Weather Station"
+  },
+  {
+     Tag:"Grand Teton"
+  },
+  {
+     Tag:"Yellowstone"
+  },
+  {
+     Tag:"birds"
+  },
+  {
+     Tag:"wildlife"
+  },
+  {
+     Tag:"storm"
+  },
+  {
+     Tag:"elks"
+  },
+  {
+     Tag:"thunder"
+  },
+  {
+     Tag:"Jackson"
+  },
+  {
+     Tag:"moose"
+  },
+  {
+     Tag:"wolves"
+  },
+  {
+     Tag:"rain"
+  },
+  {
+     Tag:"planes"
+  },
+  {
+     Tag:"summer"
+  },
+  {
+     Tag:"winter"
+  },
+  {
+     Tag:"fall"
+  },
+  {
+     Tag:"spring"
+  },
+  {
+     Tag:"water"
+  },
+  {
+     Tag:"Geyser"
+  },
+  {
+     Tag:"wind"
+  },
+  {
+     Tag:"elk"
+  }]
 });
 
 // initialize the bloodhound suggestion engine
-numbers.initialize();
+tsearch.initialize();
 
 // instantiate the typeahead UI
 $('#type').typeahead({
@@ -108,8 +264,8 @@ $('#type').typeahead({
   minLength: 1
 },
 {
-displayKey: 'num',
-source: numbers.ttAdapter()
+displayKey: 'Tag',
+source: tsearch.ttAdapter()
 });
 
 
