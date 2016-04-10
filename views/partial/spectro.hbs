@@ -1,6 +1,9 @@
 <div id="spectroHolder" class="col-sm-5 col-md-8">
  <div id="vis" class="spectrogram magnify" width="800" height="300">
-   <h1 id="intro">Select a site on the map to get started.</h1>
+   <div id="intro"><h3>Sounds in the park are recorded at numerous locations.</h3><h3> Select one
+   of the location markers on the map to get started.</h3>
+   <button type="button" id="tour" class="btn btn-primary">Take a tour!</button>
+   </div>
    <div class="large"></div>
    <img id="imageGrey" class="small" src="" height="260" />
    <div id="progressWrapper"><img  id="imageColor" src="" height="260" /></div>
@@ -117,6 +120,68 @@
 			}
 		}
 	})
+
+// Tour scripts
+  // Instance the tour
+  var tour = new Tour({
+    name: "tour",
+    storage : false,
+    orphan: true,
+    steps: [
+    {
+      element: "#map-1",
+      title: "Explore Soundscapes!",
+      content: "Select a location from the map to explore its sounds",
+      backdrop: true,
+      placement: "right"
+    },
+    {
+      element: "#vis",
+      title: "Spectrogram",
+      content: "Once you have selected a site, its spectrogram will appear here. This is a visual \
+      representation of the sound. The spectrogram scrolls horizontally. Be sure your mouse is over the spectrogram \
+      then use your mouse to scroll. ",
+      placement: "top",
+      backdrop: true
+    },
+    {
+      element: "#mag",
+      title: "Take a closer look",
+      content: "The magnifier button allows you to look closer at the spectrogram. Turn it on or off with this \
+      button, then move your mouse over the spectrogram to magnify. ",
+      placement: "top",
+      backdrop: true
+    },
+    {
+      element: "#audioplayer",
+      title: "Listen to the sounds",
+      content: "You can play the audio from here. Stars at the buttom of the bar mark featured sounds, \
+      don't miss those! ",
+      placement: "top",
+      backdrop: true
+    },
+    {
+      element: "#siteinfo",
+      title: "Learn more about the location",
+      content: "Photos and facts about the record location will display here.  ",
+      placement: "top",
+      backdrop: true
+    }
+
+  ]
+
+  });
+
+  // Initialize the tour
+  tour.init(true);
+
+  // Start the tour
+  //tour.start(true);
+
+  $( "#tour" ).click(function() {
+      tour.start(true);
+});
+
 
 </script>
 {{/extend}}
