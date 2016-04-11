@@ -18,7 +18,7 @@
         <span class="glyphicon glyphicon-question-sign"></span>
       </a>
     </p>
-    <button type="button" id="mag" class="btn btn-primary">Magnifier<span class="glyphicon glyphicon-zoom-in"></span></button>
+    <div id="magdiv"><button type="button" id="mag" class="btn btn-primary">Magnifier<span class="glyphicon glyphicon-zoom-in"></span></button></div>
     <div class="btn-group" id="buttonGroup"data-toggle="buttons">
 
 </div>
@@ -133,7 +133,10 @@
       title: "Explore Soundscapes!",
       content: "Select a location from the map to explore its sounds",
       backdrop: true,
-      placement: "right"
+      placement: "right",
+      onNext: function(tour){
+          $("#markGRTEMOPO").trigger('click');
+      }
     },
     {
       element: "#vis",
@@ -141,11 +144,11 @@
       content: "Once you have selected a site, its spectrogram will appear here. This is a visual \
       representation of the sound. The spectrogram scrolls horizontally. Be sure your mouse is over the spectrogram \
       then use your mouse to scroll. ",
-      placement: "top",
+      placement: "left",
       backdrop: true
     },
     {
-      element: "#mag",
+      element: "#magdiv",
       title: "Take a closer look",
       content: "The magnifier button allows you to look closer at the spectrogram. Turn it on or off with this \
       button, then move your mouse over the spectrogram to magnify. ",
@@ -180,6 +183,7 @@
 
   $( "#tour" ).click(function() {
       tour.start(true);
+      //$("#markGRTEMOPO").trigger('click');
 });
 
 

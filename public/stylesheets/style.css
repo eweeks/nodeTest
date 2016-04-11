@@ -164,3 +164,7 @@ div#carousel-example-generic {
 .tt-suggestion p {
 	margin: 0;
 }
+
+div#magdiv {
+    display: inline-block;
+}

@@ -16,9 +16,13 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
         })
 				.addTo(grteMap);
+        marker._icon.id="mark"+d.Site_Code
   });
 
+  //marker._leaflet_id['41'].fire('click');
+  //marker.fire('click');
 });
+
 
 function upDateSite(data){
    $("#photos-holder").empty();
