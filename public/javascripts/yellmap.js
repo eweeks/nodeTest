@@ -16,6 +16,7 @@
 
          })
  				.addTo(yellMap);
+        marker._icon.id="mark"+d.Site_Code
    });
 
  });

@@ -25,9 +25,10 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 
 function upDateSite(data){
+  console.log(data);
    $("#photos-holder").empty();
    $(".carousel-indicators").empty();
-   if (data.length > 1) {
+   if (data.length > -1) {
         $(".sitename").text(data[0].Site_Name)
         $(".sitecode").text(data[0].Site_Code)
         $("div#carousel-example-generic").css('display', 'block');
@@ -79,7 +80,7 @@ function upDateSpectro(data){
     var count=1;
     $.each(data, function( key, value ) {
       var info = value
-      console.log(info);
+      //console.log(info);
       var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
        class:"soundButton", autocomplete:"off"})
       $("#buttonGroup").append($('<label />', { text: value.Sound_Name, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
@@ -116,9 +117,9 @@ function updateMarkers(m){
   var d = audio.duration;
   var ratio = width/d;
   var bookmark = m*60;
-  console.log(d);
-  console.log(audio);
-  console.log("Ratio is"+ratio);
+  //console.log(d);
+  //console.log(audio);
+  //console.log("Ratio is"+ratio);
   var moveto = bookmark*ratio;
   //duration is in seconds, so if do markers in minutes, need to multiply
   $("#timeline").append('<div id="marker"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></div>');

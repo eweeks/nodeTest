@@ -55,6 +55,7 @@
 
 	//Now the mousemove function
 	$(".magnify").mousemove(function(e){
+    //console.log("mousemove");
 		//When the user hovers on the image, the script will first calculate
 		//the native dimensions if they don't exist. Only after the native dimensions
 		//are available, the script will show the zoomed version.
@@ -84,8 +85,10 @@
       //e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
 			var mx = e.pageX - magnify_offset.left+$('#vis').scrollLeft();
 			var my = e.pageY - magnify_offset.top+$('#vis').scrollTop();
-      console.log("this width "+$(this).width());
-      console.log("this height "+$(this).height());
+      console.log("x is "+mx);
+      console.log("y is "+my);
+      //console.log("this width "+$(this).width());
+      //console.log("this height "+$(this).height());
 			//Finally the code to fade out the glass if the mouse is outside the container
 			if(mx < $(".small").width() && my < $(this).height() && mx > 0 && my > 0)
 			{
@@ -135,6 +138,7 @@
       backdrop: true,
       placement: "right",
       onNext: function(tour){
+          //eventully this will need to be different for Yell page..
           $("#markGRTEMOPO").trigger('click');
       }
     },
@@ -153,7 +157,7 @@
       content: "The magnifier button allows you to look closer at the spectrogram. Turn it on or off with this \
       button, then move your mouse over the spectrogram to magnify. ",
       placement: "top",
-      backdrop: true
+      backdrop: true,
     },
     {
       element: "#audioplayer",

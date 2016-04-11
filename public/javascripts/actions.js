@@ -32,7 +32,7 @@ var activeFilters = [];
       var t = false;
       var item = item.values().tags
       item = item.toLowerCase()
-      console.log(item);
+      //console.log(item);
       //pass t and item..
       return updateFilters(t, item);
 

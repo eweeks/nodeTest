@@ -56,7 +56,7 @@ app.post('/getSite', function (req, res) {
      var getSite = function(callback){
        db.query(q, function(err, rows, fields) {
          console.log(rows);
-         console.log(q);
+         //console.log(q);
          var site = rows;
 
          if(err) throw err;
