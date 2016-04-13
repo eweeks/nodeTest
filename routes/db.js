@@ -19,23 +19,12 @@ var settings = {
  };
 
 function connectDatabase() {
-  /*  if (!db) {
-        db = mysql.createConnection(settings);
 
-
-        db.connect(function(err){
-            if(!err) {
-                console.log('Database is connected!');
-            } else {
-                console.log('Error connecting database!');
-            }
-        });
-    }*/
     db= mysql.createPool(settings2);
     db.getConnection(function(err, connection) {
         // connected! (unless `err` is set)
         if(!err) {
-            connection.release(); 
+            connection.release();
             console.log('Database is connected!');
         } else {
             console.log('Error connecting database!');

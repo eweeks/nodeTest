@@ -24,7 +24,7 @@
  function upDateSite(data){
     $("#photos-holder").empty();
     $(".carousel-indicators").empty();
-    if (data.length > 1) {
+    if (data.length > -1) {
          $(".sitename").text(data[0].Site_Name)
          $(".sitecode").text(data[0].Site_Code)
          $("div#carousel-example-generic").css('display', 'block');
