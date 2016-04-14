@@ -19,7 +19,6 @@ var settings = {
  };
 
 function connectDatabase() {
-
     db= mysql.createPool(settings2);
     db.getConnection(function(err, connection) {
         // connected! (unless `err` is set)

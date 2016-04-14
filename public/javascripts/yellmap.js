@@ -6,7 +6,7 @@
      marker = new L.marker([d.lat, d.lng])
  				.bindPopup(d.Site_Name)
          .on("click",function(){
-           console.log("Clicked! " + d.Site_Code);
+           //console.log("Clicked! " + d.Site_Code);
            $.post('/getSite', {site: d.Site_Code}, function(data){
                  upDateSite(data);
                  $.post('/getSounds', {site: d.Site_Code}, function(data){
@@ -59,7 +59,7 @@
    $("#buttonGroup").empty();
    var playhead = document.getElementById('playhead');
    playhead.style.marginLeft = "0px";
-   $('#vis').scrollLeft(2);
+   $('#vis').scrollLeft(0);
 
    //get audio
    var source = $('#audio').attr("src");
@@ -70,6 +70,7 @@
      $('#audio').attr("src", "/sounds/"+data[0].Sound_File);
      $("#imageColor").attr("src","images/"+data[0].Spectro_File);
      $("#imageGrey").attr("src","images/"+data[0].Grey_File);
+     $('.large').css('backgroundImage','url(images/'+data[0].Spectro_File+')');
      var count=1;
      $.each(data, function( key, value ) {
        var info = value
@@ -81,6 +82,11 @@
          $('#audio').attr("src", "/sounds/"+info.Sound_File);
          $("#imageColor").attr("src","images/"+info.Spectro_File);
          $("#imageGrey").attr("src","images/"+info.Grey_File);
+         $('.large').css('backgroundImage','url(images/'+info.Spectro_File+')');
+         var playhead = document.getElementById('playhead');
+         playhead.style.marginLeft = "0px";
+         $('#vis').scrollLeft(0);
+         updateMarkers(info.Marker);
 
        }).append(b));
        if(count ==1){

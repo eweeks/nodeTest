@@ -8,17 +8,8 @@ var sites = require('./site');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  /*  db.query('SELECT * from sites', function(err, rows, fields) {
-      if (!err)
-        console.log('The solution is: ', rows);
-      else
-        console.log('Error while performing Query.');
-    });*/
-
   res.render('index', {
     title: 'Visualizing Soundscapes',
-    age: '33',
-    pet: "dog"
    });
 });
 
@@ -35,8 +26,6 @@ router.get('/grte', function(req, res) {
 });
 
 router.get('/site', function(req, res) {
-    //res.send(d.Site_Name.getSite());
-    //res.send(list.getList());
     console.log("Site info");
 });
 
@@ -49,7 +38,7 @@ router.get('/list/:park', function(req, res) {
   db.query('SELECT * FROM sounds JOIN sites ON sites.Site_Code = sounds.Site_Code', function(err, rows, fields) {
     if(err) throw err;
       res.render('list', { title: 'List', entries:rows, park: req.params.park });
-      console.log('The solution is: ', rows);
+      //console.log('The solution is: ', rows);
   });
 
 });

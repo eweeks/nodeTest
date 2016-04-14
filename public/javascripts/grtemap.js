@@ -6,7 +6,7 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
     marker = new L.marker([d.lat, d.lng])
 				.bindPopup(d.Site_Name)
         .on("click",function(){
-          console.log("Clicked! " + d.Site_Code);
+          //console.log("Clicked! " + d.Site_Code);
           $.post('/getSite', {site: d.Site_Code}, function(data){
                 upDateSite(data);
                 $.post('/getSounds', {site: d.Site_Code}, function(data){
@@ -25,7 +25,7 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 
 function upDateSite(data){
-  console.log(data);
+  //console.log(data);
    $("#photos-holder").empty();
    $(".carousel-indicators").empty();
    if (data.length > -1) {

@@ -210,7 +210,7 @@ function moveplayhead(e) {
   var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
 	var newMargLeft = offset;
-  console.log($("#timeline").offset().left);
+  //console.log($("#timeline").offset().left);
 	if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
     //console.log("moved");
 		playhead.style.marginLeft = newMargLeft + "px";
@@ -237,11 +237,11 @@ function moveplayhead(e) {
 }
 
 var imageClick = $('#vis').click(function(e){
-    console.log("clicked vis");
-    console.log(e);
+    //console.log("clicked vis");
+    //console.log(e);
     moveImage(e);
     var audio = document.getElementById("audio");
-    console.log(clickPercentImage(e));
+    //console.log(clickPercentImage(e));
     audio.currentTime = audio.duration * clickPercentImage(e);
 
 });
@@ -249,11 +249,11 @@ var imageClick = $('#vis').click(function(e){
 function moveImage(e){
   //var progress = $('#progressWrapper');
   var offset = e.pageX - $("#vis").offset().left+$('#vis').scrollLeft();
-  console.log($("#vis").offset().left);
-  console.log(e.pageX);
+  //console.log($("#vis").offset().left);
+  //console.log(e.pageX);
 
   var newMargLeft = offset;
-  console.log(newMargLeft);
+  //console.log(newMargLeft);
 
     $("#progressWrapper").css({'width':newMargLeft+"px"});
 
@@ -270,7 +270,7 @@ function clickPercentImage(e){
   var p =  $("#progressWrapper").width();
   var width = $("#imageColor").width();
   var percent = progress/width;
-  console.log("progress"+p);
+  //console.log("progress"+p);
   return p / width;
 }
 
