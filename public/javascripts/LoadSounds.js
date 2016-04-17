@@ -19,7 +19,7 @@ function loadStats(obj, callback) {
 			//	}
 			//}
 		//});
-		console.log("LoadStats");
+		//console.log("LoadStats");
     //console.log(completeDataSet);
     //return completeDataSet;
     //call function here to set up visual?
@@ -34,7 +34,7 @@ function loadStats(obj, callback) {
 }
 
 function doSomething(dataSet, obj){
-  console.log("Something");
+  //console.log("Something");
 //  console.log(dataSet);
   dataSet.forEach(function(d) {
     //for(var i = 0; i < dataSet.length - 1; i++) {

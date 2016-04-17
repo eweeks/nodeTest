@@ -1,11 +1,58 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*  padding-top: 20px;*/
+  font: 14px;
+   padding-bottom: 50px;
+/*  background-image: url("../images/avalancefalls-40.jpg");*/
+/*  background-size: 100%;
+  background-repeat: no-repeat;*/
+
 }
 
-a {
-  color: #00B7FF;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Lato', sans-serif!important;
 }
+
+.navbar-default {
+    background-color: #50535C;
+    border-color: #3F4154;
+    margin: 0;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #E0DDDD;
+}
+.navbar-default .navbar-nav>.active>a {
+    color: #E0DDDD;
+    background-color: #2C2F38;
+}
+
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #555;
+    background-color: #DBDBD0;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+      color: #E0DDDD;
+      background-color: #2C2F38;
+}
+
+.navbar-default .navbar-nav>.dropdown>a .caret {
+    border-top-color: #E0DDDD;
+    border-bottom-color: #E0DDDD;
+}
+
 
 #mapGrte { height: 30em; }
 
@@ -124,7 +171,6 @@ div#carousel-example-generic {
 .typeahead, .tt-query, .tt-hint {
 	border: 2px solid #CCCCCC;
 	border-radius: 8px;
-	font-size: 24px;
 	height: 30px;
 	line-height: 30px;
 	outline: medium none;
@@ -143,7 +189,7 @@ div#carousel-example-generic {
 .tt-hint {
 	color: #999999;
 }
-.tt-dropdown-menu {
+.tt-menu {
 	background-color: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 8px;
@@ -153,7 +199,7 @@ div#carousel-example-generic {
 	width: 422px;
 }
 .tt-suggestion {
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 24px;
 	padding: 3px 20px;
 }
@@ -167,4 +213,74 @@ div#carousel-example-generic {
 
 div#magdiv {
     display: inline-block;
+}
+div#soundsList {
+    margin: 2%;
+}
+
+div#container{
+
+  width: 100%;
+  margin: 0;
+  height: 500px;
+}
+
+.title{
+  color: white;
+}
+
+.introBox{
+  border: 3px solid #BCBCC3;
+  background: rgba(224,221,221,0.7);
+  width: 32%;
+  margin: 2px;
+  padding: 18px;
+  border-radius: 3px;
+
+}
+
+.coverH{
+  text-align: center;
+}
+
+.coverMap{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.background{
+  background-image: url("../images/avalancefalls.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+}
+
+#pickmap{
+  background: rgba(224,221,221,0.7);
+  padding-bottom: 2em;
+  border-radius: 3px;
+
+}
+.mapHolder{
+  background: rgba(116, 125, 122, 0.7);
+  position: absolute;
+  padding: 1em;
+  top: 0;
+  left: 25%;
+  padding-top: 0;
+  border-radius: 3px;
+
+}
+
+#maps{
+  height: 360px;
+}
+
+h3.coverH {
+  color: #DBDBD0;
+}
+
+h2.coverH {
+    margin-bottom: 1em;
 }

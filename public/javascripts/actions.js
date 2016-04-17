@@ -46,8 +46,8 @@ var activeFilters = [];
       activeFilters.forEach(function(i) {
           //console.log("array has "+i);
             if (item.indexOf(i) != -1){
-             console.log("array has "+i);
-            console.log("has! "+item.indexOf(i));
+            // console.log("array has "+i);
+            //console.log("has! "+item.indexOf(i));
               t = true;
               //console.log("t is "+t)
               //return true;
@@ -57,10 +57,10 @@ var activeFilters = [];
 
         });
         if(t == true){
-          console.log("true");
+          //console.log("true");
           return true;
         }else{
-            console.log("false");
+          //  console.log("false");
             return false;
 
         }

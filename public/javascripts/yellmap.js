@@ -74,7 +74,7 @@
      var count=1;
      $.each(data, function( key, value ) {
        var info = value
-       console.log(info);
+       //console.log(info);
        var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
         class:"soundButton", autocomplete:"off"})
        $("#buttonGroup").append($('<label />', { text: value.Sound_Name, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
