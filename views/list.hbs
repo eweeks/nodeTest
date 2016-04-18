@@ -4,22 +4,38 @@
     <h1>Grand Teton Sounds</h1>
     <div class="col-md-2"><!--sort options-->
       <div class="form-group">
-        <button class="sort" data-sort="soundName">Sort by sound name</button>
-        <button class="sort" data-sort="siteName">Sort by site</button>
-        <button class="sort" data-sort="tags">Sort by tags</button>
-        <button class="filter" id="filter-none">Show all</button>
         <input class="search" placeholder="Search" />
+        <button class="filter" id="filter-none">Show all</button>
       </div>
       <div class="form-group">
         <h5>Type of sound</h5>
         <div class="checkbox">
-              <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="bird">Birds</label>
+              <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="birds">Birds</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-insects" data-value="insects">Insects</label>
         </div>
         <div class="checkbox">
               <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
         </div>
         <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-storm" data-value="storm">Storm</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-water" data-value="water">Water</label>
+        </div>
+        <h5>Season</h5>
+        <div class="checkbox">
               <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-season" data-value="fall">Fall</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-season" data-value="winter">Winter</label>
+        </div>
+        <div class="checkbox">
+              <label><input class="filter tags" type="checkbox" id="filter-season" data-value="spring">Spring</label>
         </div>
       </div>
       <div class="form-group">
@@ -30,6 +46,11 @@
       </div>
   </div><!--end sorting-->
   <div class="col-md-10"><!--search results-->
+      <h3>Sort by</h3>
+      <button class="sort" data-sort="soundName">Name<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+      <button class="sort" data-sort="siteName">Site</button>
+      <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+      <button class="sort" data-sort="tags">Sound Type</button>
       <div class="accordion" id="accordion2">
       <ul class="list">
         {{#each entries}}
@@ -99,10 +120,29 @@
                 <label><input class="filter tags" type="checkbox" id="filter-bird" data-value="birds">Birds</label>
           </div>
           <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-insects" data-value="insects">Insects</label>
+          </div>
+          <div class="checkbox">
                 <label><input class="filter tags" type="checkbox" id="filter-wildlife" data-value="wildlife">Wildlife</label>
           </div>
           <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-storm" data-value="storm">Storm</label>
+          </div>
+          <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-water" data-value="water">Water</label>
+          </div>
+          <h5>Season</h5>
+          <div class="checkbox">
                 <label><input class="filter tags" type="checkbox" id="filter-season" data-value="summer">Summer</label>
+          </div>
+          <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-season" data-value="fall">Fall</label>
+          </div>
+          <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-season" data-value="winter">Winter</label>
+          </div>
+          <div class="checkbox">
+                <label><input class="filter tags" type="checkbox" id="filter-season" data-value="spring">Spring</label>
           </div>
         </div>
         <div class="form-group">
@@ -144,7 +184,7 @@
 </div>
 {{#extend "scripts"}}
 <script>
-/
+
 </script>
 {{/extend}}
 

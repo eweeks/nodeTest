@@ -316,3 +316,8 @@ div#containergrte{
   border-radius: 3px;
   z-index: 1000;
 }
+
+/* -- List view --- */
+div#soundsList {
+    padding: 2%;
+}
