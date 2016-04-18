@@ -1,5 +1,5 @@
 {{#if_eq park ':grte'}}
-
+  <div class="parkBack">
   <div id="soundsList" class="row">
     <h1>Grand Teton Sounds</h1>
     <div class="col-md-2"><!--sort options-->
@@ -58,6 +58,7 @@
     </div><!--end accordion-->
   </div><!--end search results-->
   </div>
+</div>
 
   {{#extend "scripts"}}
   <script>
@@ -81,6 +82,7 @@
   {{/extend}}
 
 {{else}}
+  <div class="parkBack2">
     <div id="soundsList" class="row">
       <h1>Yellowstone Sounds</h1>
       <div class="col-md-2"><!--sort options-->
@@ -139,7 +141,7 @@
 </div><!--end accordion-->
 </div><!--end search results-->
 </div>
-
+</div>
 {{#extend "scripts"}}
 <script>
 /

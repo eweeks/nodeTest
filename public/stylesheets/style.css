@@ -2,6 +2,7 @@ body {
 /*  padding-top: 20px;*/
   font: 14px;
    padding-bottom: 50px;
+   background-color: #3C3F46;
 /*  background-image: url("../images/avalancefalls-40.jpg");*/
 /*  background-size: 100%;
   background-repeat: no-repeat;*/
@@ -215,7 +216,8 @@ div#magdiv {
     display: inline-block;
 }
 div#soundsList {
-    margin: 2%;
+    /*margin: 2%;*/
+    margin: 0.3%;
 }
 
 div#container{
@@ -283,4 +285,34 @@ h3.coverH {
 
 h2.coverH {
     margin-bottom: 1em;
+}
+
+.parkBack {
+  background-image: url("../images/mountains-green.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #506144;
+
+}
+
+.parkBack2 {
+  background-image: url("../images/yell-blue.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #506144;
+
+}
+
+div#containergrte{
+  margin: 0.3%;
+
+}
+
+.parkTitle{
+  color: #DBDBD0;
+}
+
+.mapholder{
+  border-radius: 3px;
+  z-index: 1000;
 }
