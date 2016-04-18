@@ -192,7 +192,11 @@
 </div>
 {{#extend "scripts"}}
 <script>
-
+$('.sort').on('click', function(e) {
+  console.log("sort");
+ $('.glyphicon', this).toggleClass('glyphicon-menu-down glyphicon-menu-up'); //you can list several class names
+ //e.preventDefault();
+});
 </script>
 {{/extend}}
 

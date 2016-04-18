@@ -1,10 +1,11 @@
   <div id="soundsList" class="row">
 <div class="col-md-2">
-  <button class="sort" data-sort="siteName">Sort by site</button>
-  <button class="sort" data-sort="unitCode">Sort by park</button>
 </div>
 
-<div class="col-md-10"><!--search results-->
+<div class="col-md-10 listSounds"><!--search results-->
+  <h3 class="sort-title">Sort by</h3>
+  <button class="sort btn btn-default" data-sort="siteName">Sort by site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+  <button class="sort btn btn-default" data-sort="unitCode">Sort by park <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
     <div class="accordion" id="accordion2">
     <ul class="list">
       {{#each entries}}
@@ -33,3 +34,13 @@
   </div><!--end accordion-->
 </div><!--end search results-->
 </div><!--end sounds list -->
+
+{{#extend "scripts"}}
+<script>
+$('.sort').on('click', function(e) {
+  console.log("sort");
+ $('.glyphicon', this).toggleClass('glyphicon-menu-down glyphicon-menu-up'); //you can list several class names
+ //e.preventDefault();
+});
+</script>
+{{/extend}}
