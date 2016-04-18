@@ -176,7 +176,6 @@ div#carousel-example-generic {
 	line-height: 30px;
 	outline: medium none;
 	padding: 8px 12px;
-	width: 396px;
 }
 .typeahead {
 	background-color: #FFFFFF;
@@ -320,4 +319,26 @@ div#containergrte{
 /* -- List view --- */
 div#soundsList {
     padding: 2%;
+}
+
+.list-sort{
+  border-right: #DBDBD0 solid 1px;
+  /*margin-top: 2%;*/
+  background: rgba(116, 125, 122, 0.7);
+  padding-top: 2%;
+  color: #DBDBD0;
+}
+
+.listSounds{
+  background: rgba(224,221,221,0.7);
+}
+
+input.search.typeahead {
+    margin-top: 6%;
+    margin-bottom: 10%;
+}
+
+.sort-title{
+  display: inline-block;
+  padding-right: .5em;
 }
