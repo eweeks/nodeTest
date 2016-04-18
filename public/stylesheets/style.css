@@ -55,7 +55,11 @@ h6,
 }
 
 
-#mapGrte { height: 30em; }
+#mapGrte {
+  height: 30em;
+  border-radius: 4px;
+  z-index: 1000;
+}
 
 #mapYell { height: 30em; }
 #map{height: 30em;}
@@ -263,8 +267,8 @@ div#container{
   border-radius: 3px;
 
 }
-.mapHolder{
-  background: rgba(116, 125, 122, 0.7);
+/*.mapHolder{
+  background: rgba(116, 125, 122, 0.6);
   position: absolute;
   padding: 1em;
   top: 0;
@@ -272,14 +276,14 @@ div#container{
   padding-top: 0;
   border-radius: 3px;
 
-}
+}*/
 
 #maps{
   height: 360px;
 }
 
 h3.coverH {
-  color: #DBDBD0;
+  color: #337ab7;
 }
 
 h2.coverH {
@@ -312,8 +316,10 @@ div#containergrte{
 }
 
 .mapholder{
-  border-radius: 3px;
+  border-radius: 5px;
   z-index: 1000;
+  background: rgba(116, 125, 122, 0.6);
+  padding: .7em;
 }
 
 /* -- List view --- */
@@ -341,4 +347,17 @@ input.search.typeahead {
 .sort-title{
   display: inline-block;
   padding-right: .5em;
+}
+
+a .soundName{
+    color: #5F7BA8;
+}
+
+#siteinfo{
+  background: rgba(224,221,221,0.5);
+}
+
+.col-sm-5.col-md-7.framework {
+    background: rgba(116, 125, 122, 0.6);
+    padding: .5em;
 }

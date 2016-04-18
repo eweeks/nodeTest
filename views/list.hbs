@@ -112,13 +112,11 @@
   <div class="parkBack2">
     <div id="soundsList" class="row">
       <h1>Yellowstone Sounds</h1>
-      <div class="col-md-2"><!--sort options-->
+      <div class="col-md-2 list-sort"><!--sort options-->
+        <h3></h3>
         <div class="form-group">
-          <button class="sort" data-sort="soundName">Sort by sound name</button>
-          <button class="sort" data-sort="siteName">Sort by site</button>
-          <button class="sort" data-sort="tags">Sort by tags</button>
-          <button class="filter" id="filter-none">Show all</button>
-          <input class="search" placeholder="Search" />
+          <input class="search typeahead" placeholder="Search" />
+          <button class="filter btn btn-default" id="filter-none">Show all</button>
         </div>
         <div class="form-group">
           <h5>Type of sound</h5>
@@ -158,7 +156,11 @@
           </div>
         </div>
     </div><!--end sorting-->
-    <div class="col-md-10"><!--search results-->
+    <div class="col-md-9 listSounds"><!--search results-->
+        <h3 class="sort-title">Sort by</h3>
+        <button class="sort btn btn-default" data-sort="soundName">Name <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+        <button class="sort btn btn-default" data-sort="siteName">Site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+        <button class="sort btn btn-default" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
         <div class="accordion" id="accordion2">
         <ul class="list">
         {{#each entries}}
