@@ -76,6 +76,7 @@ width: 500px;
   height: 60px;
   padding: .2em;
   float:left;
+  display: none;
 
 }
 
@@ -91,7 +92,7 @@ svg{
       position: inherit;
       top: 0;
       left: 0;
-      
+
 
 }
 

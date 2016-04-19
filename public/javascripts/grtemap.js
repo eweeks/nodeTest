@@ -32,6 +32,8 @@ function upDateSite(data){
         $(".sitename").text(data[0].Site_Name)
         $(".sitecode").text(data[0].Site_Code)
         $("div#carousel-example-generic").css('display', 'block');
+        $("div#siteinfo").css('display', 'block');
+        $(".col-sm-5.col-md-7.framework").css('display', 'block');
         //empty photo slider
 
         $(".site-descript").text(data[0].Site_Description);
@@ -63,6 +65,9 @@ function upDateSpectro(data){
   $("#progressWrapper").css({'width':0});
   $('div#progressWrapper').css('border-right', 'solid 1px red');
   $("#buttonGroup").empty();
+  $("div#spectrobuttons").css('display', 'block');
+  $("#audioplayer").css('display', 'block');
+  $("#setVolume").css('display', 'inline-block');
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
   $('#vis').scrollLeft(0);

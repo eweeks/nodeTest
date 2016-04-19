@@ -87,6 +87,11 @@ button#playpause {
 
 }
 
+div#spectrobuttons {
+  display: none;
+
+}
+
 ul
 {
     list-style-type: none;
@@ -100,7 +105,7 @@ ul
 }
 
 #setVolume{
-  display: inline-block;
+  display: none;
   margin: 0;
   border: none;
 
@@ -227,7 +232,7 @@ div#container{
 
   width: 100%;
   margin: 0;
-  height: 500px;
+  height: 600px;
 }
 
 .title{
@@ -291,7 +296,7 @@ h2.coverH {
 }
 
 .parkBack {
-  background-image: url("../images/mountains-green.jpg");
+  background-image: url("../images/mountains-sat.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #506144;
@@ -299,7 +304,7 @@ h2.coverH {
 }
 
 .parkBack2 {
-  background-image: url("../images/yell-blue.jpg");
+  background-image: url("../images/yell-sat.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #506144;
@@ -355,9 +360,32 @@ a .soundName{
 
 #siteinfo{
   background: rgba(224,221,221,0.5);
+  display: none;
 }
 
 .col-sm-5.col-md-7.framework {
     background: rgba(116, 125, 122, 0.6);
     padding: .5em;
+    display: none;
+}
+
+#aboutPage{
+  color: #DBDBD0;
+}
+
+#studiesPage{
+  color: #DBDBD0;
+  margin: 2em;
+}
+
+.more{
+  color:white;
+  font-size: 30px;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width: 3%;
+  margin-top: 20%;
 }
