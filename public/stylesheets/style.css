@@ -3,6 +3,7 @@ body {
   font: 14px;
    padding-bottom: 50px;
    background-color: #3C3F46;
+   padding-top: 60px;
 /*  background-image: url("../images/avalancefalls-40.jpg");*/
 /*  background-size: 100%;
   background-repeat: no-repeat;*/
@@ -225,7 +226,7 @@ div#magdiv {
 }
 div#soundsList {
     /*margin: 2%;*/
-    margin: 0.3%;
+    margin-left: 0.3%;
 }
 
 div#container{
@@ -237,6 +238,7 @@ div#container{
 
 .title{
   color: white;
+  text-align: center;
 }
 
 .introBox{
@@ -246,6 +248,8 @@ div#container{
   margin: 2px;
   padding: 18px;
   border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
@@ -312,7 +316,7 @@ h2.coverH {
 }
 
 div#containergrte{
-  margin: 0.3%;
+  /*margin: 0.3%;*/
 
 }
 
