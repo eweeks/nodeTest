@@ -75,10 +75,14 @@ button#playpause {
     display: inline-block;
     margin: 0;
     border: none;
+    background-color: #DBDBD0;
 }
 
 #playbutton{
   font-size: 1.6em;
+  color: #33363C;
+  line-height: .8;
+  top: 0px;
 
 }
 
@@ -109,12 +113,16 @@ ul
   display: none;
   margin: 0;
   border: none;
+  background-color: #DBDBD0;
 
 }
 
 #volumebutton{
   font-size: 1.4em;
   margin-top: 6px;
+  color: #33363C;
+  line-height: .7;
+  top: 0px;
 
 
 }
@@ -206,7 +214,7 @@ div#carousel-example-generic {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	margin-top: 12px;
 	padding: 8px 0;
-	width: 422px;
+	width: 170px;
 }
 .tt-suggestion {
 	font-size: 20px;
@@ -342,10 +350,12 @@ div#soundsList {
   background: rgba(116, 125, 122, 0.7);
   padding-top: 2%;
   color: #DBDBD0;
+  border-radius: 6px 0px 6px 6px;
 }
 
 .listSounds{
   background: rgba(224,221,221,0.7);
+  border-radius: 0px 5px 5px 5px;
 }
 
 input.search.typeahead {
@@ -363,14 +373,17 @@ a .soundName{
 }
 
 #siteinfo{
-  background: rgba(224,221,221,0.5);
+  background: rgba(255, 254, 254, 0.5);
   display: none;
+  border-radius: 5px;
 }
 
 .col-sm-5.col-md-7.framework {
     background: rgba(116, 125, 122, 0.6);
-    padding: .5em;
+    padding: 1em;
     display: none;
+    border-radius: 5px;
+    float: right;
 }
 
 #aboutPage{
@@ -392,4 +405,23 @@ a .soundName{
   margin-right: auto;
   width: 3%;
   margin-top: 20%;
+}
+
+.holderSpect{
+      background: rgba(116, 125, 122, 0.6);
+      width: 815px;
+      position: inherit;
+      padding: .5em;
+      border-radius: 5px;
+
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 13px 13px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
 }

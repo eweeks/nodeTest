@@ -1,4 +1,5 @@
 <div id="spectroHolder" class="col-sm-5 col-md-8">
+<div class="holderSpect">
  <div id="vis" class="spectrogram magnify" width="800" height="300">
    <div id="intro"><h3>Sounds in the park are recorded at numerous locations.</h3><h3> Select one
    of the location markers on the map to get started.</h3>
@@ -24,20 +25,21 @@
 </div>
   </div>
   <div id="audioplayer">
-    <button id="playpause" title="play" class="btn btn-default btn-lg"onclick="togglePlayPause()">
+    <button id="playpause" title="play" class="btn btn-default btn-lg btn-circle"onclick="togglePlayPause()">
       <span id="playbutton"class="glyphicon glyphicon-play" aria-hidden="true"></span>
     </button>
     <div id="timeline">
         <div id="playhead"></div>
     </div>
   </div>
-  <button id="setVolume" title="play" class="btn btn-default btn-lg" onclick="showVolume()">
+  <button id="setVolume" title="play" class="btn btn-default btn-lg btn-circle" onclick="showVolume()">
     <span id="volumebutton" class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
   </button>
   <input id="volume" type="range" min="0" max="100" value="75" step="1"  onchange="setVolume()" orient="vertical">
   <div style="clear: both;"></div>
     <div id="player"></div>
-</div>
+  </div>
+</div><!--end spect holder-->
 
 {{#extend "scripts"}}
 <script src="/javascripts/audio.js"></script>

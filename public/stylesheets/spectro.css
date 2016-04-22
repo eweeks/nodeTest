@@ -55,20 +55,22 @@ width: 500px;
 }
 
 #timeline{
-	width: 500px;
-	height: 20px;
-	background: rgba(0,0,0,.3);
+	/*width: 500px;*/
+  width: 90%;
+	height: 16px;
+	background: rgba(0,0,0,.4);
 	margin-top: 20px;
 	float: right;
 	border-radius: 15px;
 }
 
 #playhead{
-	width: 18px;
-	height: 18px;
+	width: 15px;
+	height: 15px;
 	border-radius: 50%;
-	margin-top: 1px;
+	/*margin-top: 1px;*/
 	background: rgba(0, 0, 0,1);
+  background-color: #C3C3B9;
 }
 
 #audioplayer{
