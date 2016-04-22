@@ -103,10 +103,14 @@ ul
 }
 
 #volume{
+  -webkit-appearance: slider-horizontal;
   position: absolute;
-  top: 19em;
-  display: none;
-  right: 10em;
+  /* top: 19em; */
+  /*display: none;*/
+  /* right: 10em; */
+  width: 133px;
+  height: 0px;
+  border-radius: 0px;
 }
 
 #setVolume{
@@ -115,6 +119,33 @@ ul
   border: none;
   background-color: #DBDBD0;
 
+}
+
+#volumeBack {
+    padding: 1em;
+    background-color: #3C3F46;
+    width: 151px;
+    border-radius: 13px;
+    /* margin-left: 1em; */
+    float: right;
+    padding-left: 8px;
+    /* margin: 0; */
+    height: 30px;
+    margin-top: .5em;
+}
+
+
+.hidden{
+  display:none;
+}
+
+.inline{
+  display:inline-block;
+}
+
+input[type=range] {
+    display: inline-block;
+    width: 100%;
 }
 
 #volumebutton{
@@ -128,7 +159,11 @@ ul
 }
 
 #infoButton{
-  display: inline;
+  /*display: inline;*/
+  float: right;
+    /* vertical-align: middle; */
+    margin-top: 1em;
+    margin-left: 1em;
 }
 
 .soundButton{

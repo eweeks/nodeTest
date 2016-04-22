@@ -82,7 +82,7 @@
        //console.log(info);
        var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
         class:"soundButton", autocomplete:"off"})
-       $("#buttonGroup").append($('<label />', { text: value.Sound_Name, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
+       $("#buttonGroup").append($('<label />', { text: value.Season, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
          $("#progressWrapper").css({'width':0});
          $('#audio').attr("src", "/sounds/"+info.Sound_File);
          $("#imageColor").attr("src","images/"+info.Spectro_File);

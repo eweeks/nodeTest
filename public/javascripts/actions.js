@@ -6,7 +6,7 @@ $(function () {
 
 //list sort
 var options = {
-    valueNames: [ 'soundName', 'siteCode', 'tags', 'unitCode', 'siteName' ]
+    valueNames: [ 'soundName', 'siteCode', 'tags', 'unitCode', 'siteName', 'season' ]
 };
 
 var soundsList = new List('soundsList', options);

@@ -148,7 +148,9 @@ function togglePlayPause() {
 
 function showVolume(){
     //$("#volume").css("display","inline");
-    $("#volume").toggle();
+    //$("#volume").toggle();
+    $("#volume").toggleClass("inline hidden");
+    $("#volumeBack").toggleClass("inline hidden");
 }
 
 //sets volume.. not hooked up yet
