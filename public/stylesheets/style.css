@@ -525,6 +525,25 @@ a .soundName{
 
 .coverImage{
   width: 1270px;
-  height: 163%;
+  height: 1000px;
   position: absolute;
+}
+
+div#about {
+    background-color: grey;
+    position: relative;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: 500px;
+    margin-top: 10em;
+}
+
+.center2{
+      margin-left: auto;
+      margin-right: auto;
+      width: 3%;
+      margin-top: 7%;
+
 }
