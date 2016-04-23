@@ -88,7 +88,7 @@ function upDateSpectro(data){
       //console.log(info);
       var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
        class:"soundButton", autocomplete:"off"})
-      $("#buttonGroup").append($('<label />', { text: value.Season, id: "sound"+count, class: "btn btn-primary" }).on("click",function(){
+      $("#buttonGroup").append($('<label />', { text: value.Season, id: "sound"+count, class: "btn btn-spectro" }).on("click",function(){
         $("#progressWrapper").css({'width':0});
         $('#audio').attr("src", "/sounds/"+info.Sound_File);
         $("#imageColor").attr("src","images/"+info.Spectro_File);
@@ -144,3 +144,28 @@ L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
   maxZoom: 20,
   subdomains:['mt0','mt1','mt2','mt3']
     }).addTo(grteMap);
+
+
+var customControl = L.Control.extend({
+      options: {
+        position: 'topleft'
+      },
+
+      onAdd:  function (map) {
+    var container = L.DomUtil.create('div', ' glyphicon glyphicon-home leaflet-bar leaflet-control leaflet-control-custom');
+
+    container.style.backgroundColor = 'white';
+    container.style.width = '25px';
+    container.style.height = '25px';
+    //L.DomUtil.create('span', 'glyphicon glyphicon-question-sign', container);
+    //container.innerHTML("<span class='glyphicon glyphicon-question-sign'></span>");
+
+    container.onclick = function(){
+      grteMap.setView([43.79, -110.68], 10);
+    }
+    return container;
+  }
+
+    });
+
+  grteMap.addControl(new customControl());

@@ -460,3 +460,59 @@ a .soundName{
   line-height: 1.33;
   border-radius: 25px;
 }
+
+.btn-spectro{
+  background-color: #5F7BA8;
+  border-color: #496086;
+  color: #fff;
+}
+
+.btn-spectro.active{
+  background-color: #35496B;
+  border-color: #2C3F5F;
+  color: #fff;
+}
+
+
+
+.btn-spectro:hover, .btn-spectro:focus {
+  background-color: #35496B;
+  border-color: #2C3F5F;
+  color: #fff;
+}
+
+.btn-more{
+  background-color: #82A860;
+  border-color: #6B8C4E;
+  color: #fff;
+}
+
+.btn-more:hover, .btn-more:focus{
+      background-color: #628642;
+      border-color: #5B7D3C;
+      color: #fff;
+}
+
+.btn-more:active{
+  background-color: #82A860;
+  border-color: #6B8C4E;
+  color: #fff;
+}
+
+.btn-more.active:hover{
+  background-color: #628642;
+  border-color: #5B7D3C;
+  color: #fff;
+}
+
+.glyphicon.glyphicon-home{
+    top: 0px;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    padding-top: 6px;
+
+}
