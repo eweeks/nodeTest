@@ -112,3 +112,28 @@
    maxZoom: 20,
    subdomains:['mt0','mt1','mt2','mt3']
  }).addTo(yellMap);
+
+
+ var customControl = L.Control.extend({
+       options: {
+         position: 'topleft'
+       },
+
+       onAdd:  function (map) {
+     var container = L.DomUtil.create('div', ' glyphicon glyphicon-home leaflet-bar leaflet-control leaflet-control-custom');
+
+     container.style.backgroundColor = 'white';
+     container.style.width = '25px';
+     container.style.height = '25px';
+     //L.DomUtil.create('span', 'glyphicon glyphicon-question-sign', container);
+     //container.innerHTML("<span class='glyphicon glyphicon-question-sign'></span>");
+
+     container.onclick = function(){
+       yellMap.setView([43.79, -110.68], 10);
+     }
+     return container;
+   }
+
+     });
+
+   yellMap.addControl(new customControl());

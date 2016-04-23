@@ -3,6 +3,31 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+//background scroll
+//var windowHeight = $window.height();
+
+$(window).scroll(function() {
+  var $window = $(window);
+    var windowHeight = $window.height();
+  var pos = $window.scrollTop();
+  $(".coverImage").css({"transform":"translateY(" +  (pos/2)  + "px)",
+    "transition": "transform .15s ease-out"
+  });
+  //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});
+});
+
+  //var windowHeight = $window.height();
+
+
+function newPos(x, windowHeight, pos, adjuster, inertia){
+return x + "% " + (-((windowHeight + pos) - adjuster) * inertia)  + "px";
+}
+
+function moveScroll(){
+  var pos = $window.scrollTop();
+}
+
+
 
 //list sort
 var options = {
