@@ -10,8 +10,8 @@ $(window).scroll(function() {
   var $window = $(window);
     var windowHeight = $window.height();
   var pos = $window.scrollTop();
-  $(".coverImage").css({"transform":"translateY(" +  (pos/2)  + "px)",
-    "transition": "transform .15s ease-out"
+  $(".coverImage").css({"transform":"translateY(" +  (pos/3)  + "px)",
+    "transition": "transform .1s ease-out"
   });
   //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});
 });

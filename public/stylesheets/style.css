@@ -301,6 +301,8 @@ div#container{
 
 .coverH{
   text-align: center;
+  position: relative;
+    color: white;
 }
 
 .coverMap{
@@ -317,9 +319,10 @@ div#container{
 }
 
 #pickmap{
-  background: rgba(224,221,221,0.7);
+  background: rgba(204, 202, 202, 0.8);
   padding-bottom: 2em;
   border-radius: 3px;
+  position: relative;
 
 }
 /*.mapHolder{
@@ -521,7 +524,7 @@ a .soundName{
 }
 
 .coverImage{
-  width: 100%;
+  width: 1270px;
   height: 163%;
   position: absolute;
 }
