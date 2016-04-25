@@ -4,6 +4,7 @@
 
 <div class="col-md-10 listSounds"><!--search results-->
   <h3 class="sort-title">Sort by</h3>
+  <button class="sort btn btn-default" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
   <button class="sort btn btn-default" data-sort="siteName">Sort by site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
   <button class="sort btn btn-default" data-sort="unitCode">Sort by park <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
     <div class="accordion" id="accordion2">
@@ -13,13 +14,15 @@
                   <div class="accordion-group">
                     <div class="accordion-heading">
                       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
-                        <h2 class="soundName">{{Sound_Name}}</h2>
+
+                        <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
                       </a>
                         <p class="tags">{{Tags}}</p>
                      </div>
                      <div id="{{Sound_Id}}" class="accordion-body collapse">
                        <div class="accordion-inner">
                             <p class="siteName">{{Site_Name}}</p>
+                            <p class="season">{{Season}}</p>
                             <p class="unitCode">{{Unit_Code}}</p>
                             <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
                             <audio preload="auto" src="/sounds/{{Sound_File}}" controls></audio>

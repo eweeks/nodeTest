@@ -1,4 +1,9 @@
 var markers;
+$("body").tooltip({
+    selector: '[data-toggle="tooltip"]'
+});
+
+
 //load csv files for maps, csv includes both parks
 d3.csv("/data/Soundscapes.csv", function(loadedRows) {
   markers = loadedRows;
@@ -87,7 +92,7 @@ function upDateSpectro(data){
     var count=1;
     $.each(data, function( key, value ) {
       var info = value
-      //console.log(info);
+      console.log(info);
       var b = $('<input />', { type: "radio", name:"options", id:"option1", text:"Sound 1",
        class:"soundButton", autocomplete:"off"})
       $("#buttonGroup").append($('<label />', { text: value.Season, id: "sound"+count, class: "btn btn-spectro" }).on("click",function(){
@@ -99,12 +104,12 @@ function upDateSpectro(data){
         var playhead = document.getElementById('playhead');
         playhead.style.marginLeft = "0px";
         $('#vis').scrollLeft(0);
-        updateMarkers(info.Marker);
+        updateMarkers(info.Marker, info.Marker_info);
 
       }).append(b));
       if(count ==1){
         $("#sound1").addClass("active");
-        updateMarkers(info.Marker);
+        updateMarkers(info.Marker,  info.Marker_info);
         count++;
       }
     });
@@ -114,7 +119,7 @@ function upDateSpectro(data){
 };//end upDateSpectro
 
 //marker function
-function updateMarkers(m){
+function updateMarkers(m, info){
   //width/time = px per sec
   var width =  $("#timeline").width();
   var audio = document.getElementById("audio");
@@ -129,10 +134,13 @@ function updateMarkers(m){
   //console.log("Ratio is"+ratio);
   var moveto = bookmark*ratio;
   //duration is in seconds, so if do markers in minutes, need to multiply
-  $("#timeline").append('<div id="marker"><span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span></div>');
+  $("#timeline").append('<div id="marker"><span class="glyphicon glyphicon-asterisk" aria-hidden="true" data-placement="left" data-toggle="tooltip" title="'+info+'"></span></div>');
   var marker= document.getElementById('marker');
   marker.style.marginLeft = moveto+"px";
 }
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 }
 

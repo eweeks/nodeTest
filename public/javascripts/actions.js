@@ -3,6 +3,10 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 //background scroll
 //var windowHeight = $window.height();
 

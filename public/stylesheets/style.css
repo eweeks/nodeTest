@@ -575,3 +575,20 @@ div#studies {
     margin-top: 2em;
     padding: 2em;
 }
+
+#soundsList{
+  background-image: url("../images/mountains-sat.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #506144;
+
+}
+
+.popover-title{
+  font-size: 16px;
+
+}
+
+span.glyphicon.glyphicon-asterisk {
+    color: #E8C961;
+}
