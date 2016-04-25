@@ -449,7 +449,7 @@ a .soundName{
 }
 
 .holderSpect{
-      background: rgba(116, 125, 122, 0.6);
+      /*background: rgba(116, 125, 122, 0.6);*/
       width: 815px;
       position: inherit;
       padding: .5em;
@@ -520,7 +520,13 @@ a .soundName{
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     padding-top: 6px;
+    cursor: pointer;
+    background-color: white;
 
+}
+
+.glyphicon-home:hover{
+    background-color: #f4f4f4;
 }
 
 .coverImage{

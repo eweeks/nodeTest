@@ -26,6 +26,7 @@ d3.csv("/data/Soundscapes.csv", function(loadedRows) {
 
 function upDateSite(data){
   //console.log(data);
+   $("#imageGrey").css('display', 'block');
    $("#photos-holder").empty();
    $(".carousel-indicators").empty();
    if (data.length > -1) {
@@ -68,6 +69,7 @@ function upDateSpectro(data){
   $("div#spectrobuttons").css('display', 'block');
   $("#audioplayer").css('display', 'block');
   $("#setVolume").css('display', 'inline-block');
+  $(".holderSpect").css('background', 'rgba(116, 125, 122, 0.6)');
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
   $('#vis').scrollLeft(0);
@@ -154,7 +156,7 @@ var customControl = L.Control.extend({
       onAdd:  function (map) {
     var container = L.DomUtil.create('div', ' glyphicon glyphicon-home leaflet-bar leaflet-control leaflet-control-custom');
 
-    container.style.backgroundColor = 'white';
+    //container.style.backgroundColor = 'white';
     container.style.width = '25px';
     container.style.height = '25px';
     //L.DomUtil.create('span', 'glyphicon glyphicon-question-sign', container);

@@ -14,7 +14,13 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/about', function(req, res) {
-  res.render('about', { title: 'About' });
+  //var about = document.getElementById(about);
+    //about.css('background', 'blue');
+  res.render('index/', { title: 'Visualizing Soundscapes' });
+  //console.log("about render");
+
+   //$(window).scrollTop(ele.offset().top).scrollLeft(ele.offset().left);
+  // $(window).scrollTop($('#about').offset().top);
 });
 
 router.get('/studies', function(req, res) {
