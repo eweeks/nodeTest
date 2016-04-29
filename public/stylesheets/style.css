@@ -42,7 +42,7 @@ h6,
 
 .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     color: #555;
-    background-color: #DBDBD0;
+    background-color:rgba(204, 202, 202, 0.8); /*#DBDBD0;*/
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
@@ -94,6 +94,7 @@ button#playpause {
 
 div#spectrobuttons {
   display: none;
+  margin-right: 1em;
 
 }
 
@@ -311,18 +312,15 @@ div#container{
   margin-right: auto;
 }
 
-.background{
-  background-image: url("../images/avalancefalls.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
 
-}
 
 #pickmap{
   background: rgba(204, 202, 202, 0.8);
   padding-bottom: 2em;
   border-radius: 3px;
   position: relative;
+  padding-left: 0;
+padding-right: 0;
 
 }
 /*.mapHolder{
@@ -342,23 +340,30 @@ div#container{
 
 h3.coverH {
   color: #337ab7;
+  margin-bottom: 1em;
 }
 
 h2.coverH {
     margin-bottom: 1em;
+      background-color: rgba(128,128,128,.7);
+      padding-top: .5em;
+      padding-bottom: .5em;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
 }
 
 .parkBack {
   background-image: url("../images/mountains-sat.jpg");
-  background-size: 100%;
+  background-size: 115%;
   background-repeat: no-repeat;
   background-color: #506144;
 
 }
 
 .parkBack2 {
-  background-image: url("../images/yell-sat.jpg");
-  background-size: 100%;
+  background-image: url("../images/yell-sat-web.jpg");
+  background-size: 109%;
   background-repeat: no-repeat;
   background-color: #506144;
 
@@ -439,6 +444,9 @@ a .soundName{
 .more{
   color:white;
   font-size: 30px;
+    background-color: rgba(128,128,128,.7);
+    border-radius: 16.7px;
+    padding: 4px;
 }
 
 .center{
@@ -584,9 +592,10 @@ div#studies {
 
 }
 
-.popover-title{
-  font-size: 16px;
-
+.popover-title {
+    font-size: 16px;
+    background-color: #DBDBD0;
+    color: #50535C;
 }
 
 span.glyphicon.glyphicon-asterisk {
