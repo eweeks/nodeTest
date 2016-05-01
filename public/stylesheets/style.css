@@ -1,7 +1,7 @@
 body {
 /*  padding-top: 20px;*/
   font: 14px;
-   padding-bottom: 50px;
+   padding-bottom: 2%;
    background-color: #3C3F46;
    padding-top: 60px;
 /*  background-image: url("../images/avalancefalls-40.jpg");*/
@@ -359,14 +359,16 @@ h2.coverH {
   background-size: 115%;
   background-repeat: no-repeat;
   background-color: #506144;
+      height: 1080px;
 
 }
 
 .parkBack2 {
   background-image: url("../images/yell-sat-web.jpg");
-  background-size: 109%;
+  background-size: 115%;
   background-repeat: no-repeat;
   background-color: #506144;
+  height: 1080px;
 
 }
 
@@ -611,7 +613,7 @@ span.glyphicon.glyphicon-asterisk {
 }
 
 div#intro {
-    background-color: rgba(116, 125, 122, 0.6);
+    background-color: rgba(116, 125, 122, 0.7);
     padding: 1em;
     border-radius: 5px;
     width: 82%;
