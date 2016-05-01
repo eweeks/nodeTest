@@ -290,13 +290,14 @@ div#container{
 .introBox{
   border: 3px solid #BCBCC3;
   background: rgba(224,221,221,0.7);
-  width: 32%;
+  width: 35%;
   margin: 2px;
   padding: 18px;
   border-radius: 3px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  font-size: 16px;
 
 }
 
@@ -601,3 +602,17 @@ div#studies {
 span.glyphicon.glyphicon-asterisk {
     color: #E8C961;
 }
+
+#intro h3{
+  color: #DBDBD0;
+  text-align: center;
+  margin-top: .5em;
+  font-size: 23px;
+}
+
+div#intro {
+    background-color: rgba(116, 125, 122, 0.6);
+    padding: 1em;
+    border-radius: 5px;
+    width: 82%;
+  }
