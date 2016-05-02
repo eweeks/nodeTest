@@ -45,7 +45,7 @@
 
 {{#extend "scripts"}}
 <script src="/javascripts/audio.js"></script>
-<script>  var sample = new Spectrogram('/sounds/LowerBerry_5min.mp3', "#vis");</script>
+<script>  var sample = new Spectrogram('/sounds/GRTEMOPO_Elk1.mp3', "#vis");</script>
 <script>
   var native_width = 0;
 	var native_height = 0;
@@ -143,7 +143,13 @@
       placement: "right",
       onNext: function(tour){
           //eventully this will need to be different for Yell page..
-          $("#markGRTEMOPO").trigger('click');
+          if ($("#containeryell").length) {
+             console.log("yell!");
+            $("#markYELLFOPP").trigger('click');
+          }else{
+            $("#markGRTEMOPO").trigger('click');
+          }
+
       }
     },
     {
