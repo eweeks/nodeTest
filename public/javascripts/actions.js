@@ -140,6 +140,26 @@ $('#filter-none').change(function() {
     }
 });
 
+//accordion collapse
+$('.soundItem').click(function() {
+  console.log('active');
+  $(this).toggleClass('active');
+  $(this).toggleClass('closed');
+  $('li.active').not(this).each(function(){
+      //$(this).css({"color":"green"});
+      //$(this).children("div > .accordion-body").collapse({"toggle": true, 'parent': '#accordion2'});
+      var look = $(this).find(".accordion-body");
+      look.collapse('toggle');
+      look.css({"color":"green"});
+      $(this).toggleClass('active');
+      //.attr("aria-expanded","false");
+  });
+});
+
+function toggleAccord(){
+
+};
+
 
 var tsearch = new Bloodhound({
     datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.Tag); },
