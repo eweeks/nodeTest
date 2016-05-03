@@ -618,3 +618,28 @@ div#intro {
     border-radius: 5px;
     width: 82%;
   }
+
+  .filter-none label {
+      min-height: 20px;
+      padding-left: 20px;
+      margin-bottom: 0;
+      font-weight: 400;
+      cursor: pointer;
+  }
+
+  .filter-none{
+      position: relative;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+  }
+
+  .filter-none input[type=checkbox]{
+      position: absolute;
+      margin-left: -20px;
+  }
+
+  input.search.typeahead {
+    color: black;
+  }

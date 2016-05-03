@@ -6,7 +6,12 @@
       <h3></h3>
       <div class="form-group">
         <input class="search typeahead" placeholder="Search" />
-        <button class="filter btn btn-default" id="filter-none">Show all</button>
+        <!--<button type="button" class="filter btn btn-default" data-toggle="button" aria-pressed="false" autocomplete="off" id="filter-none">Show all</button>-->
+        <div class="form-group">
+          <div class="filter-none">
+                <label><input class="filter" type="checkbox" id="filter-none" data-value="none">Show All</label>
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <h5>Type of sound</h5>
@@ -39,12 +44,7 @@
               <label><input class="filter tags" type="checkbox" id="filter-season" data-value="spring">Spring</label>
         </div>
       </div>
-      <div class="form-group">
-        <h5>Park</h5>
-        <div class="checkbox">
-              <label><input class="filter tags" type="checkbox" id="filter-park" data-value="grand teton">Grand Teton</label>
-        </div>
-      </div>
+
   </div><!--end sorting-->
   <div class="col-md-9 listSounds"><!--search results-->
       <h3 class="sort-title">Sort by</h3>
@@ -85,22 +85,26 @@
 
   {{#extend "scripts"}}
   <script>
-    $('#filter-park').prop('checked', true);
+    $('#filter-none').prop('checked', true);
+    $(document).ready(function() {
+      $('#filter-none').trigger("change");
+
+    });
 
     var value = $('#filter-park').data("value");
     activeFilters.push(value);
 
     soundsList.filter(function (item) {
-    console.log(item);
+    //console.log(item);
       var t = false;
       var item = item.values().tags
       item = item.toLowerCase()
-      console.log(item);
+    //  console.log(item);
       //pass t and item..
       return updateFilters(t, item);
 
     });//end sounds filter
-
+    //$('#filter-none').trigger('click');
     $('.sort').on('click', function(e) {
       console.log("sort");
      $('.glyphicon', this).toggleClass('glyphicon-menu-down glyphicon-menu-up'); //you can list several class names

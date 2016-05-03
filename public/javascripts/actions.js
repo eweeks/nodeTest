@@ -4,8 +4,7 @@ $(function () {
 })
 
 
-//background scroll
-//var windowHeight = $window.height();
+//background scroll on cover page
 
 $(window).scroll(function() {
   var $window = $(window);
@@ -32,7 +31,7 @@ function moveScroll(){
 
 //list sort
 var options = {
-    valueNames: [ 'soundName', 'siteCode', 'tags', 'unitCode', 'siteName', 'season' ]
+    valueNames: [ 'soundName', 'siteCode', 'tags', 'siteName', 'season' ]
 };
 
 var soundsList = new List('soundsList', options);
@@ -42,7 +41,8 @@ var activeFilters = [];
     $('.tags').change(function() {
         var isChecked = this.checked;
         var value = $(this).data("value");
-
+        //$('input.example').not(this).prop('checked', false);
+        $('#filter-none').prop('checked', false);
 		if(isChecked){
 			//  add to list of active filters
 			activeFilters.push(value);
@@ -54,7 +54,8 @@ var activeFilters = [];
 		}
 
 		soundsList.filter(function (item) {
-    //  console.log(activeFilters);
+      //console.log("active filters");
+      //console.log(item);
       var t = false;
       var item = item.values().tags
       item = item.toLowerCase()
@@ -66,7 +67,9 @@ var activeFilters = [];
 });//end tags change
 
   function updateFilters(t, item){
-    console.log("UpdateFilters");
+    //console.log("UpdateFilters");
+    //console.log("active filters");
+    //console.log(item);
     if(activeFilters.length > 0){
       var f;
       activeFilters.forEach(function(i) {
@@ -98,76 +101,45 @@ var activeFilters = [];
 };//end updateFilters
 
 
-$('#filter-none').click(function() {
+/*filter-none').click(function() {
   soundsList.filter();
   $('.checkbox').find('input[type=checkbox]:checked').removeAttr('checked');
   activeFilters = [];
   return false;
-});
-
-
-//testing typeahead feature..
-/*$('input.typeahead').typeahead({
-name: 'typeahead',
-remote: 'http://localhost:3000/tsearch?key=%QUERY',
-limit: 10
 });*/
 
-/*var tsearch = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote: {
-   url: 'http://localhost:3000/tsearch?key=%QUERY',
-   wildcard: '%QUERY'
- }
+$('#filter-none').change(function() {
+  console.log("changed");
+  var isChecked = this.checked;
+  //var value = $(this).data("value");
+    if(isChecked){
+      soundsList.filter();
+      $('.checkbox').find('input[type=checkbox]:checked').removeAttr('checked');
+      activeFilters = [];
+      return false;
+    }else{
+      //soundsList.filter();
+      console.log('not checked');
+      var value = $(this).data("value");
+      activeFilters.push(value);
+      soundsList.filter(function (item) {
+      console.log("Filtering");
+        var t = false;
+        var item = item.values().tags
+        item = item.toLowerCase()
+        console.log(item);
+        //pass t and item..
+        return updateFilters(t, item);
 
+      });
+      //soundsList.filter();
+      //updateFilters(false, item)
+      //$('.tags').trigger("change");
+      //return true;
+      //return updateFilters(true, 'none');
+    }
 });
-*/
-/*
-var substringMatcher = function(strs) {
-  return function findMatches(q, cb) {
-    var matches, substringRegex;
 
-    // an array that will be populated with substring matches
-    matches = [];
-
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i');
-
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
-      if (substrRegex.test(str)) {
-        matches.push(str);
-      }
-    });
-
-    cb(matches);
-  };
-};
-
-
-var tags = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
-
-$('#type').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},{
-  name: 'tags',
-  display: 'value',
-  source: substringMatcher(tags)
-});
-*/
 
 var tsearch = new Bloodhound({
     datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.Tag); },
@@ -234,7 +206,7 @@ local: [
      Tag:"storm"
   },
   {
-     Tag:"elks"
+     Tag:"elk"
   },
   {
      Tag:"thunder"
@@ -270,7 +242,7 @@ local: [
      Tag:"water"
   },
   {
-     Tag:"Geyser"
+     Tag:"geyser"
   },
   {
      Tag:"wind"
@@ -293,73 +265,3 @@ $('#type').typeahead({
 displayKey: 'Tag',
 source: tsearch.ttAdapter()
 });
-
-
-/*$('#search').typeahead({
-    name: 'typeahead',
-    remote: '/searchlist?key=%QUERY',
-    limit: 10
-});*/
-
-/*
-$(document).ready(function(){
-$('#type').typeahead([
-{
-name: 'planets',
-local: [ "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" ]
-}
-
-]);
-});*/
-/*var substringMatcher = function(strs) {
-  return function findMatches(q, cb) {
-    var matches, substringRegex;
-
-    // an array that will be populated with substring matches
-    matches = [];
-
-    // regex used to determine if a string contains the substring `q`
-    substrRegex = new RegExp(q, 'i');
-
-    // iterate through the pool of strings and for any string that
-    // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
-      if (substrRegex.test(str)) {
-        matches.push(str);
-      }
-    });
-
-    cb(matches);
-  };
-};
-
-var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-  'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-];
-
-$('#type').typeahead({
-  hint: true,
-  highlight: true,
-  minLength: 1
-},
-{
-  name: 'states',
-  source: substringMatcher(states)
-}).on('typeahead:select', submitSuggestion)
-.on('typeahead:autocomplete', submitSuggestion)
-.on('keydown', function (event) {
-  if (event.which === 13) {
-    $('#getSearch').submit();
-  }
-})
-
-function submitSuggestion(ev, suggestion) {
-      $('#getSearch').submit();    // submit the form
-    }*/
