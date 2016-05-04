@@ -30,6 +30,12 @@ $("body").tooltip({
     $("#imageGrey").css('display', 'block');
     $("#photos-holder").empty();
     $(".carousel-indicators").empty();
+    var audio = document.getElementById("audio");
+    if (audio.paused == false) {
+      playpause.title = "play";
+      $("#playbutton").attr('class', 'glyphicon glyphicon-play');
+      audio.pause();
+    }
     if (data.length > -1) {
          $(".sitename").text(data[0].Site_Name)
          $(".sitecode").text(data[0].Site_Code)
