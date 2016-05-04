@@ -34,6 +34,7 @@ function upDateSite(data){
    $("#imageGrey").css('display', 'block');
    $("#photos-holder").empty();
    $(".carousel-indicators").empty();
+   togglePlayPause();
    if (data.length > -1) {
         $(".sitename").text(data[0].Site_Name)
         $(".sitecode").text(data[0].Site_Code)
