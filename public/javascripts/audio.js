@@ -146,6 +146,15 @@ function togglePlayPause() {
      }
 }
 
+//space to play
+$(window).keypress(function (e) {
+  if (e.keyCode === 0 || e.keyCode === 32) {
+    e.preventDefault();
+    console.log('Space pressed');
+    togglePlayPause();
+  }
+});
+
 function showVolume(){
     //$("#volume").css("display","inline");
     //$("#volume").toggle();
