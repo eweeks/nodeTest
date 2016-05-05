@@ -643,3 +643,10 @@ div#intro {
   input.search.typeahead {
     color: black;
   }
+  .modal-dialog {
+      width: 70%;
+  }
+
+  .pop{
+    cursor: pointer;
+  }
