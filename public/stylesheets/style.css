@@ -650,3 +650,7 @@ div#intro {
   .pop{
     cursor: pointer;
   }
+
+  .list-holder{
+    overflow: scroll;
+  }
