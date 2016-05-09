@@ -355,20 +355,20 @@ h2.coverH {
 }
 
 .parkBack {
-  background-image: url("../images/mountains-sat.jpg");
+  /*background-image: url("../images/mountains-sat.jpg");
   background-size: 115%;
   background-repeat: no-repeat;
   background-color: #506144;
-      height: 1080px;
+      height: 1080px;*/
 
 }
 
 .parkBack2 {
-  background-image: url("../images/yell-sat-web.jpg");
+/*  background-image: url("../images/yell-sat-web.jpg");
   background-size: 115%;
   background-repeat: no-repeat;
   background-color: #506144;
-  height: 1080px;
+  height: 1080px;*/
 
 }
 
@@ -379,6 +379,10 @@ div#containergrte{
 
 .parkTitle{
   color: #DBDBD0;
+}
+
+.parkTitle2{
+  color: #EAEAE5;
 }
 
 .mapholder{

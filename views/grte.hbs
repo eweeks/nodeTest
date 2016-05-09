@@ -1,19 +1,20 @@
 <div class="parkBack">
-<div id="containergrte" class="container">
-  <div class="row">
-    <div id="map-1" class="col-sm-5 col-md-4">
-    {{#if_eq title 'grte'}}
-        <h1 class="parkTitle">Grand Teton</h1>
-    {{else}}
-        <h1 class="parkTitle">Yellowstone</h1>
-    {{/if_eq}}
-<div class="mapholder">
-    {{> map this}}</div></div>
-    {{> spectro }}
-    {{> site }}
+  <img class="coverImage img-responsive" src="images/GRTE-SatWeb2.jpg">
+  <div id="containergrte" class="container">
+    <div class="row">
+      <div id="map-1" class="col-sm-5 col-md-4">
+      {{#if_eq title 'grte'}}
+          <h1 class="parkTitle">Grand Teton</h1>
+      {{else}}
+          <h1 class="parkTitle2">Yellowstone</h1>
+      {{/if_eq}}
+  <div class="mapholder">
+      {{> map this}}</div></div>
+      {{> spectro }}
+      {{> site }}
 
-    </br>
+      </br>
+    </div>
   </div>
-</div>
-</br>
+  </br>
 </div>
