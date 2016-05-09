@@ -11,7 +11,7 @@ $(function () {
 $('.pop').on('click', function() {
   $('.imagepreview').attr('src', $(this).find('img').attr('src'));
   $('#imagemodal').modal('show');
-});	
+});
 
 
 //background scroll on cover page
@@ -21,6 +21,16 @@ $(window).scroll(function() {
     var windowHeight = $window.height();
   var pos = $window.scrollTop();
   $(".coverImage").css({"transform":"translateY(" +  (pos/3)  + "px)",
+    "transition": "transform .1s ease-out"
+  });
+  //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});
+});
+
+$(window).scroll(function() {
+  var $window = $(window);
+    var windowHeight = $window.height();
+  var pos = $window.scrollTop();
+  $(".list-holder").css({"transform":"translateY(" +  (pos/2)  + "px)",
     "transition": "transform .1s ease-out"
   });
   //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});

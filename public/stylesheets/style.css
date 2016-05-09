@@ -656,7 +656,8 @@ div#intro {
   }
 
   .list-holder{
-    overflow: scroll;
+    /*overflow: scroll;*/
+    position: absolute;
   }
 
   .carousel-inner img {
