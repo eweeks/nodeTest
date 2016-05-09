@@ -21,17 +21,27 @@ var height;
 var width;
 var y =0;
 
-function Spectrogram(filename, selector){
+function Spectrogram(filename, selector, options){
+  if (!options) {
+  options = {};
+}
+this.options = options;
 
   //Global variables
   var fftSize = 2048;
   var sampleSize = 1024;
 
-
-  this.width = 3900;
-  this.height = 260;
+//half = 130 1950
+//  this.width = 3900;
+//  this.height = 260;
+//pass {width:1950, height:130} for options
+  this.width = options.width || 3900;
+  this.height = options.height || 260;
+//  this.width = 1950;
+//  this.height = 130;
   height = this.height;
   width = this.width;
+  $("#progressWrapper").css({'height':height});
   this.margin = {top: 20, right: 20, bottom: 30, left: 50};
 
   //binds selector and filename to the new object
