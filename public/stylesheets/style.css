@@ -654,3 +654,7 @@ div#intro {
   .list-holder{
     overflow: scroll;
   }
+
+  .carousel-inner img {
+    margin: auto;
+  }

@@ -74,6 +74,7 @@ function upDateSite(data){
 function upDateSpectro(data){
   //console.log("Data passed is "+data);
   //console.log(data);
+
   $( "#intro" ).css('border-right', 'solid 1px red');
   $( "#intro" ).remove();
   $("#progressWrapper").css({'width':0});
@@ -83,6 +84,7 @@ function upDateSpectro(data){
   $("#audioplayer").css('display', 'block');
   $("#setVolume").css('display', 'inline-block');
   $(".holderSpect").css('background', 'rgba(116, 125, 122, 0.6)');
+
   var playhead = document.getElementById('playhead');
   playhead.style.marginLeft = "0px";
   $('#vis').scrollLeft(0);
@@ -105,6 +107,7 @@ function upDateSpectro(data){
        class:"soundButton", autocomplete:"off"})
       $("#buttonGroup").append($('<label />', { text: value.Season, title: info.Site_Name+' in '+value.Season, id: "sound"+count, class: "btn btn-spectro" }).attr('data-toggle', 'tooltip').attr('data-placement', 'bottom').on("click",function(){
         $("#progressWrapper").css({'width':0});
+        $("#playbutton").attr('class', 'glyphicon glyphicon-play');
         $('#audio').attr("src", "/sounds/"+info.Sound_File);
         $("#imageColor").attr("src","images/"+info.Spectro_File);
         $("#imageGrey").attr("src","images/"+info.Grey_File);
