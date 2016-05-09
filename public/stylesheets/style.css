@@ -541,8 +541,8 @@ a .soundName{
 }
 
 .coverImage{
-  width: 1270px;
-  height: 1000px;
+  /*width: 1270px;
+  height: 1000px;*/
   position: absolute;
 }
 

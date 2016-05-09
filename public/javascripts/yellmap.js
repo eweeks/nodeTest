@@ -97,6 +97,7 @@ $("body").tooltip({
         class:"soundButton", autocomplete:"off"})
         $("#buttonGroup").append($('<label />', { text: value.Season, title: info.Site_Name+' in '+value.Season, id: "sound"+count, class: "btn btn-spectro" }).attr('data-toggle', 'tooltip').attr('data-placement', 'bottom').on("click",function(){
          $("#progressWrapper").css({'width':0});
+         $("#playbutton").attr('class', 'glyphicon glyphicon-play');
          $('#audio').attr("src", "/sounds/"+info.Sound_File);
          $("#imageColor").attr("src","images/"+info.Spectro_File);
          $("#imageGrey").attr("src","images/"+info.Grey_File);
