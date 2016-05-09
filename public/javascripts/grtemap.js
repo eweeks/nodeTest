@@ -34,7 +34,7 @@ function upDateSite(data){
    $("#imageGrey").css('display', 'block');
    $("#photos-holder").empty();
    $(".carousel-indicators").empty();
-   $("#vis").css('overflow', 'scroll');
+   
    var audio = document.getElementById("audio");
    if (audio.paused == false) {
      playpause.title = "play";

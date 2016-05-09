@@ -99,6 +99,10 @@ svg{
 
 }
 
+#vis:hover{
+  overflow: scroll;
+}
+
 img#imageGrey{
     position: relative;
     top: 0;
