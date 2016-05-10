@@ -13,6 +13,11 @@ $('.pop').on('click', function() {
   $('#imagemodal').modal('show');
 });
 
+//accordion
+$('.accordion').on('show', function (e) {
+     $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
+});
+
 
 //background scroll on cover page
 
@@ -30,7 +35,7 @@ $(window).scroll(function() {
   var $window = $(window);
     var windowHeight = $window.height();
   var pos = $window.scrollTop();
-  $(".list-holder").css({"transform":"translateY(" +  (pos/2)  + "px)",
+  $(".list-holder").css({"transform":"translateY(" +  (pos/1.6)  + "px)",
     "transition": "transform .1s ease-out"
   });
   //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});
@@ -161,6 +166,15 @@ $('#filter-none').change(function() {
 });
 
 //accordion collapse
+$('.accordion-toggle').click(function() {
+  console.log('active');
+  $(this).toggleClass('active');
+  var parent = $(this).parents('li').first();
+  parent.toggleClass('open');
+
+});
+
+//accordion collapse
 $('.soundItem').click(function() {
   console.log('active');
   $(this).toggleClass('active');
@@ -169,6 +183,8 @@ $('.soundItem').click(function() {
       var look = $(this).find(".accordion-body");
       look.collapse('toggle');
       $(this).toggleClass('active');
+      $(this).toggleClass('open');
+
   });
 });
 

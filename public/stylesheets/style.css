@@ -268,10 +268,6 @@ div#carousel-example-generic {
 div#magdiv {
     display: inline-block;
 }
-div#soundsList {
-    /*margin: 2%;*/
-    margin-left: 0.3%;
-}
 
 div#container{
 
@@ -321,7 +317,7 @@ div#container{
   border-radius: 3px;
   position: relative;
   padding-left: 0;
-padding-right: 0;
+  padding-right: 0;
 
 }
 /*.mapHolder{
@@ -340,8 +336,15 @@ padding-right: 0;
 }
 
 h3.coverH {
-  color: #337ab7;
+  /*color: #337ab7;*/
+  color: #375382;
   margin-bottom: 1em;
+  font-weight: 500;
+}
+
+h3.coverH:hover {
+  color: #4266A0;
+
 }
 
 h2.coverH {
@@ -395,6 +398,8 @@ div#containergrte{
 /* -- List view --- */
 div#soundsList {
     padding: 2%;
+    margin-left: 0.3%;
+    position: relative;
 }
 
 .list-sort{
@@ -663,3 +668,48 @@ div#intro {
   .carousel-inner img {
     margin: auto;
   }
+
+  .soundTitle{
+    color: #628642;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .soundSpan{
+    color: #333;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  .open{
+    /*background-color: rgba(167, 165, 165, 0.8);*/
+    background-color: rgba(224, 221, 221, 0.75);
+    border-color: rgb(189, 184, 184);
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  li.soundItem {
+    padding: 1em;
+    border-radius: 5px;
+}
+
+ul.list {
+    padding: 0;
+}
+li.open.soundTitle{
+  color: #5C803C;
+}
+
+a.accordion-toggle {
+    color: #35496B;
+}
+
+a:hover, a:focus{
+  text-decoration: none;
+}
+
+a .soundName:hover, a .soundName:focus{
+  color: #55637B;
+  text-decoration: none;
+}

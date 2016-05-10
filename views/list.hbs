@@ -63,13 +63,12 @@
                           <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
 
                         </a>
-                          <p class="tags">{{Tags}}</p>
+                          <p class="soundTitle">Sounds: <span class="tags soundSpan">{{Tags}}</span></p>
                        </div>
                        <div id="{{Sound_Id}}" class="accordion-body collapse">
                          <div class="accordion-inner">
-                              <p class="unitCode">{{Unit_Code}}</p>
-                              <p class="season">{{Season}}</p>
-                              <p class="siteName">{{Site_Name}}</p>
+                              <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
+                              <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
                               <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
                               <audio preload="metadata" src="/sounds/{{Sound_File}}" controls></audio>
                         </div>
@@ -179,13 +178,12 @@
                     <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
 
                   </a>
-                    <p class="tags">{{Tags}}</p>
+                    <p class="soundTitle">Sounds: <span class="tags soundSpan">{{Tags}}</span></p>
                  </div>
                  <div id="{{Sound_Id}}" class="accordion-body collapse">
                    <div class="accordion-inner">
-                        <p class="unitCode">{{Unit_Code}}</p>
-                        <p class="season">{{Season}}</p>
-                        <p class="siteName">{{Site_Name}}</p>
+                       <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
+                       <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
                         <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
                         <audio preload="metadata" src="/sounds/{{Sound_File}}" controls></audio>
                   </div>
