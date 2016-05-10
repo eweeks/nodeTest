@@ -49,9 +49,9 @@
   </div><!--end sorting-->
   <div class="col-md-9 listSounds"><!--search results-->
       <h3 class="sort-title">Sort by</h3>
-      <button class="sort btn btn-default" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
-      <button class="sort btn btn-default" data-sort="siteName">Site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
-      <button class="sort btn btn-default" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+      <button class="sort btn btn-default btn-sm" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+      <button class="sort btn btn-default btn-sm" data-sort="siteName">Site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+      <button class="sort btn btn-default btn-sm" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
       <div class="accordion" id="accordion2">
       <ul class="list">
         {{#each entries}}
@@ -85,6 +85,9 @@
 
   {{#extend "scripts"}}
   <script>
+    //menu bar
+    $('#grtemenu').addClass("active");
+
     $('#filter-none').prop('checked', true);
     $(document).ready(function() {
       $('#filter-none').trigger("change");
@@ -118,7 +121,7 @@
   <div class="parkBack2">
     <img class="img-responsive list-holder" src="../images/yell-sat-largeWeb.jpg">
     <div id="soundsList" class="row">
-      <h1 class="parkTitle">Yellowstone Sounds</h1>
+      <h1 class="parkTitle2">Yellowstone Sounds</h1>
       <div class="col-md-2 list-sort"><!--sort options-->
         <h3></h3>
         <div class="form-group">
@@ -164,9 +167,9 @@
     </div><!--end sorting-->
     <div class="col-md-9 listSounds"><!--search results-->
         <h3 class="sort-title">Sort by</h3>
-        <button class="sort btn btn-default" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
-        <button class="sort btn btn-default" data-sort="siteName">Site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
-        <button class="sort btn btn-default" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+        <button class="sort btn btn-default btn-sm" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+        <button class="sort btn btn-default btn-sm" data-sort="siteName">Site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+        <button class="sort btn btn-default btn-sm" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
         <div class="accordion" id="accordion2">
         <ul class="list">
         {{#each entries}}
@@ -199,6 +202,8 @@
 </div>
 {{#extend "scripts"}}
 <script>
+//menu bar
+$('#yellmenu').addClass("active");
 $('#filter-none').prop('checked', true);
 $(document).ready(function() {
   $('#filter-none').trigger("change");

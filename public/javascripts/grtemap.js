@@ -3,6 +3,8 @@ $("body").tooltip({
     selector: '[data-toggle="tooltip"]'
 });
 
+//menu bar
+$('#grtemenu').addClass("active");
 
 //load csv files for maps, csv includes both parks
 d3.csv("/data/Soundscapes.csv", function(loadedRows) {

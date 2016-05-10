@@ -422,9 +422,13 @@ input.search.typeahead {
     margin-bottom: 10%;
 }
 
-.sort-title{
-  display: inline-block;
-  padding-right: .5em;
+.sort-title {
+    display: inline-block;
+    padding-right: .5em;
+    font-size: 23px;
+    color: #50535C;
+    padding-top: 2px;
+    padding-left: .5em;
 }
 
 a .soundName{
@@ -718,4 +722,10 @@ a .soundName:hover, a .soundName:focus{
 .listItem{
   padding: 1em;
   border-radius: 5px;
+}
+
+ul.list {
+    padding: 0;
+    border-top: aliceblue solid 1px;
+    margin-top: 1em;
 }

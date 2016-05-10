@@ -18,6 +18,12 @@ $('.accordion').on('show', function (e) {
      $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
 });
 
+//nav bar
+/*$(".nav a").on("click", function(){
+   $(".nav").find(".active").removeClass("active");
+   $(this).parents('li').addClass("active");
+});*/
+
 
 //background scroll on cover page
 
