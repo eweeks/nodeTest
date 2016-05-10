@@ -56,10 +56,10 @@
       <ul class="list">
         {{#each entries}}
                 {{#if_eq Unit_Code 'GRTE'}}
-                  <li class="soundItem closed" id="sound{{Sound_Id}}">
+                  <li class="listItem" id="sound{{Sound_Id}}">
                     <div class="accordion-group">
                       <div class="accordion-heading">
-                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
+                        <a class="accordion-toggle soundItem closed" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
                           <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
 
                         </a>
@@ -171,10 +171,10 @@
         <ul class="list">
         {{#each entries}}
             {{#if_eq Unit_Code 'YELL'}}
-            <li class="soundItem closed" id="sound{{Sound_Id}}">
+            <li class="listItem" id="sound{{Sound_Id}}">
               <div class="accordion-group">
                 <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
+                  <a class="accordion-toggle soundItem closed" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
                     <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
 
                   </a>

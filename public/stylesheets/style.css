@@ -690,8 +690,8 @@ div#intro {
   }
 
   li.soundItem {
-    padding: 1em;
-    border-radius: 5px;
+  /*  padding: 1em;
+    border-radius: 5px;*/
 }
 
 ul.list {
@@ -712,4 +712,9 @@ a:hover, a:focus{
 a .soundName:hover, a .soundName:focus{
   color: #55637B;
   text-decoration: none;
+}
+
+.listItem{
+  padding: 1em;
+  border-radius: 5px;
 }

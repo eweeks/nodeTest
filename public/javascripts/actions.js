@@ -73,8 +73,11 @@ var activeFilters = [];
             $('#filter-none').prop('checked', false);
         }
 
-        $('li.active').find(".accordion-body").collapse('toggle');
-        $('li.active').removeClass('open').removeClass('active');
+        //$('li.active').find(".accordion-body").collapse('toggle');
+        //$('li.active').removeClass('open').removeClass('active');
+        $('a.active').parents().next(".accordion-body").collapse('toggle');
+        $('a.active').parents('li').removeClass('open');
+        $('a.active').removeClass('active');
         //$('#filter-none').prop('checked', false, $('.tags:checked').length == 0);
 
 
@@ -146,8 +149,9 @@ var activeFilters = [];
 $('#filter-none').change(function() {
   console.log("changed");
   var isChecked = this.checked;
-  $('li.active').find(".accordion-body").collapse('toggle');
-  $('li.active').removeClass('open').removeClass('active');
+  $('a.active').parents().next(".accordion-body").collapse('toggle');
+  $('a.active').parents('li').removeClass('open');
+  $('a.active').removeClass('active');
   //var value = $(this).data("value");
     if(isChecked){
       soundsList.filter();
@@ -178,31 +182,43 @@ $('#filter-none').change(function() {
 });
 
 //accordion collapse
-$('.accordion-toggle').click(function() {
+/*$('.accordion-toggle').click(function() {
   console.log('active');
   $(this).toggleClass('active');
   var parent = $(this).parents('li').first();
   parent.toggleClass('open');
-  $('li.active').not(this).each(function(){
+  $('a.active').not(this).each(function(){
       //$(this).removeClass('active');
       $(this).removeClass('open');
 
   });
 
-});
+});*/
 
 //accordion collapse
 $('.soundItem').click(function() {
   console.log('active');
   $(this).toggleClass('active');
   $(this).toggleClass('closed');
-  $('li.active').not(this).each(function(){
-      var look = $(this).find(".accordion-body");
+  var parent = $(this).parents('li').first();
+  parent.toggleClass('open');
+  $('a.active').not(this).each(function(){
+      //$(this).removeClass('active');
+      var parent = $(this).parents('li').first();
+      parent.removeClass('open');
+
+      var look = $(this).parent().next(".accordion-body");
+      look.collapse('toggle');
+      $(this).removeClass('active');
+
+  });
+  /*$('a.active').not(this).each(function(){
+      var look = $(this).next(".accordion-body");
       look.collapse('toggle');
       $(this).removeClass('active');
       //$(this).removeClass('open');
 
-  });
+  });*/
 });
 
 
