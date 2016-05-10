@@ -35,7 +35,7 @@ $(window).scroll(function() {
   var $window = $(window);
     var windowHeight = $window.height();
   var pos = $window.scrollTop();
-  $(".list-holder").css({"transform":"translateY(" +  (pos/1.6)  + "px)",
+  $(".list-holder").css({"transform":"translateY(" +  (pos/1.3)  + "px)",
     "transition": "transform .1s ease-out"
   });
   //$(".background").css({'backgroundPosition':newPos(0, windowHeight, pos, 400, 0.5)});
@@ -67,7 +67,17 @@ var activeFilters = [];
         var isChecked = this.checked;
         var value = $(this).data("value");
         //$('input.example').not(this).prop('checked', false);
-        $('#filter-none').prop('checked', false);
+        if($('.tags:checked').length < 1){
+            $('#filter-none').prop('checked', true);
+        }else{
+            $('#filter-none').prop('checked', false);
+        }
+
+        $('li.active').find(".accordion-body").collapse('toggle');
+        $('li.active').removeClass('open').removeClass('active');
+        //$('#filter-none').prop('checked', false, $('.tags:checked').length == 0);
+
+
 		if(isChecked){
 			//  add to list of active filters
 			activeFilters.push(value);
@@ -136,6 +146,8 @@ var activeFilters = [];
 $('#filter-none').change(function() {
   console.log("changed");
   var isChecked = this.checked;
+  $('li.active').find(".accordion-body").collapse('toggle');
+  $('li.active').removeClass('open').removeClass('active');
   //var value = $(this).data("value");
     if(isChecked){
       soundsList.filter();
@@ -171,6 +183,11 @@ $('.accordion-toggle').click(function() {
   $(this).toggleClass('active');
   var parent = $(this).parents('li').first();
   parent.toggleClass('open');
+  $('li.active').not(this).each(function(){
+      //$(this).removeClass('active');
+      $(this).removeClass('open');
+
+  });
 
 });
 
@@ -182,15 +199,12 @@ $('.soundItem').click(function() {
   $('li.active').not(this).each(function(){
       var look = $(this).find(".accordion-body");
       look.collapse('toggle');
-      $(this).toggleClass('active');
-      $(this).toggleClass('open');
+      $(this).removeClass('active');
+      //$(this).removeClass('open');
 
   });
 });
 
-function toggleAccord(){
-
-};
 
 
 var tsearch = new Bloodhound({
