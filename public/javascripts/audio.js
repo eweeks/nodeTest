@@ -258,8 +258,8 @@ function moveplayhead(e) {
 }
 
 var imageClick = $('#vis').click(function(e){
-    //console.log("clicked vis");
-    //console.log(e);
+    console.log("clicked vis");
+    console.log(e);
     moveImage(e);
     var audio = document.getElementById("audio");
     //console.log(clickPercentImage(e));

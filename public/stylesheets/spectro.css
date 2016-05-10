@@ -125,3 +125,51 @@ div#progressWrapper {
     left: 0px;
 
 }
+
+img.imageGrey{
+    position: relative;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+}
+
+div.progressWrapper {
+    overflow: hidden;
+    width: 0px;
+    height: 130px;
+    position: absolute;
+    top:  0px;
+    left: 0px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: red;
+
+}
+
+.listSpectro{
+  position: relative;
+  padding: .5em;
+  border-radius: 5px;
+
+}
+
+img.imageColor{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.visList{
+      /*overflow: scroll;*/
+      overflow: hidden;
+      width:800px;
+      position: relative;
+      top: 0;
+      left: 0;
+
+
+}
+
+.visList:hover{
+  overflow: scroll;
+}

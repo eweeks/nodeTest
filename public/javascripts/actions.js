@@ -21,7 +21,16 @@ $('.accordion').on('show', function (e) {
 
 
 $('.accordion').on('hidden.bs.collapse', function (e) {
-    console.log("hidden");
+
+    $(".progressWrapper").css({'width':0});
+    var audio = document.getElementsByClassName('audio');
+
+    $('audio').each(function(i, obj) {
+        obj.currentTime = 0;
+        obj.pause();
+    });
+
+    $(".visList").scrollLeft(0);
     //$(e.target).find('.accordion-inner').find('.listSpectro').empty();
     // $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
 });

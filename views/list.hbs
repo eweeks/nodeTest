@@ -69,16 +69,16 @@
                          <div class="accordion-inner">
                               <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
                               <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
-                              <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
+                              <!--div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>-->
                               <div class="listSpectro">
-                                <div id="vis" class="spectrogram" width="800" height="300">
-                                  <img id="imageGrey imageGrey{{Sound_Id}}" class="small" src="/images/{{Grey_File}}" height="130" />
-                                  <div id="progressWrapper progressWrapper{{Sound_Id}}"><img  id="imageColor" src="/images/{{Spectro_File}}" height="130" /></div>
+                                <div id="visList{{Sound_Id}}" onclick="progressClick(event, {{Sound_Id}})" class="spectrogram visList" width="800" height="300">
+                                  <img id="imageGrey{{Sound_Id}}" class="small imageGrey" src="/images/{{Grey_File}}" height="130" />
+                                  <div id="progressWrapper{{Sound_Id}}" class="progressWrapper"><img id="imageColor{{Sound_Id}}" class="imageColor" src="/images/{{Spectro_File}}" height="130" /></div>
 
                                 </div>
 
                               </div>
-                              <audio id="audio{{Sound_Id}}" class="audio" preload="metadata" src="/sounds/{{Sound_File}}" controls></audio>
+                              <audio id="audio{{Sound_Id}}" class="audio" preload="metadata" ontimeupdate="timeUpdate(event, {{Sound_Id}})" src="/sounds/{{Sound_File}}" controls></audio>
                         </div>
                       </div>
                       </div>
@@ -94,15 +94,6 @@
   {{#extend "scripts"}}
   <script src="/javascripts/listaudio.js"></script>
   <script>
-    //accordion
-    $('.accordion').on('shown.bs.collapse', function (e) {
-        console.log("show");
-        //console.log(e);
-      //  var name = "{{{Site_Name}}}";
-      //  $(e.target).find('.accordion-inner').find('.listSpectro').append('<div>new '+name+'</div>');
-        // $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
-    });
-
 
     //menu bar
     $('#grtemenu').addClass("active");
@@ -204,10 +195,18 @@
                  </div>
                  <div id="{{Sound_Id}}" class="accordion-body collapse">
                    <div class="accordion-inner">
-                       <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
-                       <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
-                        <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
-                        <audio preload="metadata" src="/sounds/{{Sound_File}}" controls></audio>
+                        <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
+                        <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
+                        <!--div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>-->
+                        <div class="listSpectro">
+                          <div id="visList{{Sound_Id}}" onclick="progressClick(event, {{Sound_Id}})" class="spectrogram visList" width="800" height="300">
+                            <img id="imageGrey{{Sound_Id}}" class="small imageGrey" src="/images/{{Grey_File}}" height="130" />
+                            <div id="progressWrapper{{Sound_Id}}" class="progressWrapper"><img id="imageColor{{Sound_Id}}" class="imageColor" src="/images/{{Spectro_File}}" height="130" /></div>
+
+                          </div>
+
+                        </div>
+                        <audio id="audio{{Sound_Id}}" class="audio" preload="metadata" ontimeupdate="timeUpdate(event, {{Sound_Id}})" src="/sounds/{{Sound_File}}" controls></audio>
                   </div>
                 </div>
                 </div>
@@ -220,6 +219,7 @@
 </div>
 </div>
 {{#extend "scripts"}}
+<script src="/javascripts/listaudio.js"></script>
 <script>
 //menu bar
 $('#yellmenu').addClass("active");
