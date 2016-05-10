@@ -162,7 +162,7 @@ img.imageColor{
 .visList{
       /*overflow: scroll;*/
       overflow: hidden;
-      width:800px;
+      width: 750px;
       position: relative;
       top: 0;
       left: 0;
