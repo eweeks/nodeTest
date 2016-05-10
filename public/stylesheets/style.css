@@ -736,3 +736,8 @@ ul.list {
 float: none;
 margin: 0 auto;
 }
+
+.listSounds2 {
+      background: rgba(224,221,221,0.7);
+      border-radius: 6px;
+}

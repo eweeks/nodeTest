@@ -15,14 +15,17 @@ $('.pop').on('click', function() {
 
 //accordion
 $('.accordion').on('show', function (e) {
+      console.log("show");
      $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
 });
 
-//nav bar
-/*$(".nav a").on("click", function(){
-   $(".nav").find(".active").removeClass("active");
-   $(this).parents('li').addClass("active");
-});*/
+
+$('.accordion').on('hidden.bs.collapse', function (e) {
+    console.log("hidden");
+    //$(e.target).find('.accordion-inner').find('.listSpectro').empty();
+    // $(e.target).prev('.accordion-heading').find('.accordion-toggle').addClass('adding');
+});
+
 
 
 //background scroll on cover page
