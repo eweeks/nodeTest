@@ -1,8 +1,9 @@
-  <div id="soundsList" class="row">
-<div class="col-md-2">
-</div>
+<div class="parkBack">
+  <img class="img-responsive list-holder" src="../images/yell-sat-largeWeb.jpg">
+<div id="soundsList" class="row">
 
-<div class="col-md-10 listSounds"><!--search results-->
+
+<div class="col-md-11 col-centered listSounds"><!--search results-->
   <h3 class="sort-title">Sort by</h3>
   <button class="sort btn btn-default" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
   <button class="sort btn btn-default" data-sort="siteName">Sort by site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
@@ -10,26 +11,25 @@
     <div class="accordion" id="accordion2">
     <ul class="list">
       {{#each entries}}
-                <li>
-                  <div class="accordion-group">
-                    <div class="accordion-heading">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
+            <li class="listItem" id="sound{{Sound_Id}}">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle soundItem closed" data-toggle="collapse" data-parent="#accordion2" href="#{{Sound_Id}}">
+                    <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
 
-                        <h2 class="soundName">{{Site_Name}}: {{Season}}</h2>
-                      </a>
-                        <p class="tags">{{Tags}}</p>
-                     </div>
-                     <div id="{{Sound_Id}}" class="accordion-body collapse">
-                       <div class="accordion-inner">
-                            <p class="siteName">{{Site_Name}}</p>
-                            <p class="season">{{Season}}</p>
-                            <p class="unitCode">{{Unit_Code}}</p>
-                            <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
-                            <audio preload="auto" src="/sounds/{{Sound_File}}" controls></audio>
-                      </div>
-                    </div>
-                    </div>
-               </li>
+                  </a>
+                    <p class="soundTitle">Sounds: <span class="tags soundSpan">{{Tags}}</span></p>
+                 </div>
+                 <div id="{{Sound_Id}}" class="accordion-body collapse">
+                   <div class="accordion-inner">
+                        <p class="soundTitle">Site Location: <span class="siteName soundSpan">{{Site_Name}}</span></p>
+                        <p class="soundTitle">Season: <span class="season soundSpan">{{Season}}</span></p>
+                        <div class="listScroll"><img src="/images/{{Spectro_File}}" height="100" /></div>
+                        <audio preload="metadata" src="/sounds/{{Sound_File}}" controls></audio>
+                  </div>
+                </div>
+                </div>
+              </li>
                {{else}}
                    <h1>Sorry, no results found.</h2>
                {{/each}}
@@ -37,7 +37,7 @@
   </div><!--end accordion-->
 </div><!--end search results-->
 </div><!--end sounds list -->
-
+</div>
 {{#extend "scripts"}}
 <script>
 $('.sort').on('click', function(e) {

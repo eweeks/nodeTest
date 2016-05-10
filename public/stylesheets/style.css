@@ -708,6 +708,7 @@ li.open.soundTitle{
 
 a.accordion-toggle {
     color: #35496B;
+    cursor: pointer;
 }
 
 a:hover, a:focus{
@@ -719,6 +720,7 @@ a .soundName:hover, a .soundName:focus{
   text-decoration: none;
 }
 
+
 .listItem{
   padding: 1em;
   border-radius: 5px;
@@ -728,4 +730,9 @@ ul.list {
     padding: 0;
     border-top: aliceblue solid 1px;
     margin-top: 1em;
+}
+
+.col-centered{
+float: none;
+margin: 0 auto;
 }
