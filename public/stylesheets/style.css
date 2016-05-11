@@ -465,7 +465,6 @@ a .soundName{
 
 #studiesPage{
   color: #3C3F46;
-  margin: 2em;
 }
 
 .more{
@@ -571,7 +570,7 @@ a .soundName{
 }
 
 div#about {
-    background-color: grey;
+    background: url(../images/chokecherry.jpg) 50% 0 no-repeat fixed;
     position: relative;
     display: block;
     margin-left: 0;
@@ -580,7 +579,20 @@ div#about {
   /*  height: 500px;*/
     margin-top: 10em;
     padding: 2em;
+    background-size: cover;
+    border-top: solid #3C3F46 8px;
+    border-bottom: solid #3C3F46 8px;
 }
+
+div#aboutHolder {
+    background-color: rgba(128, 128, 128, 0.94);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    border-radius: 10px;
+    width: 70%;
+}
+
 
 .center2{
       margin-left: auto;
@@ -594,22 +606,38 @@ div#about {
       margin-left: auto;
       margin-right: auto;
       width: 3%;
-      padding-top: 1em;
-
 
 }
 
 div#studies {
-    background-color: #DBDBD0;
+    background: url(../images/grassyLake.jpg) 50% 0 no-repeat fixed;
+    background-size: cover;
+    border-top: solid #3C3F46 8px;
+    border-bottom: solid #3C3F46 8px;
     position: relative;
     display: block;
     margin-left: 0;
     margin-right: 0;
     width: 100%;
   /*  height: 500px;*/
+    margin-top: 1em;
+    padding: 2em;
+
+}
+
+div#studiesHolder {
+    background-color: rgba(219, 219, 208, 0.9);
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  /*  height: 500px;*/
     margin-top: 2em;
     padding: 2em;
+    border-radius: 10px;
 }
+
 
 #soundsList{
   /*background-image: url("../images/mountains-sat.jpg");
@@ -673,6 +701,12 @@ div#intro {
 
   .pop{
     cursor: pointer;
+    /*float: right;
+    width: 50%;*/
+    display: block;
+    padding: 1em;
+    padding-top: 0;
+}
   }
 
   .list-holder{
@@ -765,4 +799,39 @@ margin: 0 auto;
 
 .btn-cover:hover, .btn-cover:focus {
   color: white;
+}
+
+.coverText{
+    font-size: 16px;
+}
+
+.textImages{
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: rgba(204, 202, 202, 0.87);
+}
+
+.floatRight{
+  float: right;
+  display: block;
+  width: 50%;
+  max-width: 550px;
+}
+
+.floatLeft{
+  float: left;
+  display: block;
+  width: 50%;
+  max-width: 550px;
+}
+
+.captionText{
+  font-size: 15px;
+  padding: 2em;
+  padding-top: .5em;
+  padding-bottom: 0;
+  font-weight: 300;
 }
