@@ -751,3 +751,18 @@ margin: 0 auto;
       background: rgba(224,221,221,0.7);
       border-radius: 6px;
 }
+
+.btn-cover{
+  float: right;
+  color: rgba(224,221,221,0.7);
+  background: none;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  top: 3em;
+  left: 95%;
+}
+
+.btn-cover:hover, .btn-cover:focus {
+  color: white;
+}
