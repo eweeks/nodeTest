@@ -99,6 +99,11 @@ svg{
 
 }
 
+div#vis::-webkit-scrollbar{
+  display: none;
+  /*width: 12px;*/
+}
+
 #vis:hover{
   overflow: scroll;
 }
