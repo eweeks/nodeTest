@@ -80,6 +80,7 @@ function upDateSpectro(data){
 
   $( "#intro" ).css('border-right', 'solid 1px red');
   $( "#intro" ).remove();
+  $("#progressWrapper").css({'display': 'block'});
   $("#progressWrapper").css({'width':0});
   $('div#progressWrapper').css('border-right', 'solid 1px red');
   $("#buttonGroup").empty();

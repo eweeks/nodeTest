@@ -123,6 +123,7 @@ div#progressWrapper {
     position: absolute;
     top: 0px;
     left: 0px;
+    display: none;
 
 }
 
@@ -145,6 +146,8 @@ div.progressWrapper {
     border-right-color: red;
 
 }
+
+
 
 .listSpectro{
   position: relative;
