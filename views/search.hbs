@@ -7,7 +7,7 @@
   <h3 class="sort-title">Sort by</h3>
   <button class="sort btn btn-default" data-sort="season">Season <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
   <button class="sort btn btn-default" data-sort="siteName">Sort by site <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
-  <button class="sort btn btn-default" data-sort="unitCode">Sort by park <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
+  <button class="sort btn btn-default btn-sm" data-sort="tags">Sound Type <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
     <div class="accordion" id="accordion2">
     <ul class="list">
       {{#each entries}}
@@ -39,7 +39,7 @@
               </div>
             </li>
                {{else}}
-                   <h1>Sorry, no results found.</h2>
+                   <h1 class="sorry">Sorry, no results found.</h2>
                {{/each}}
     </ul>
   </div><!--end accordion-->
