@@ -714,6 +714,10 @@ div#intro {
     position: absolute;
   }
 
+  img.img-responsive.list-holder {
+    position: absolute;
+}
+
   .carousel-inner img {
     margin: auto;
   }

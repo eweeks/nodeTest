@@ -129,6 +129,7 @@
 	})
 
 // Tour scripts
+
   // Instance the tour
   var tour = new Tour({
     name: "tour",
@@ -192,14 +193,44 @@
   // Initialize the tour
   tour.init(true);
 
-  // Start the tour
-  //tour.start(true);
 
   $( "#tour" ).click(function() {
       tour.start(true);
       //$("#markGRTEMOPO").trigger('click');
 });
 
+var tour2 = new Tour({
+  name: "tour2",
+  storage : false,
+  orphan: true,
+  steps: [
+  {
+    element: "#infoButton",
+    title: "What is a Spectrogram?",
+    content: "Spectrograms are visual representations of sounds. Color on a \
+    spectrogram reflects the volume while the vertical position shows the frequency or pitch. ",
+    placement: "bottom",
+  },
+  {
+    element: "#infoButton",
+    title: "Take a closer look",
+    content: "The magnifier button allows you to look closer at the spectrogram. Turn it on or off with this \
+    button, then move your mouse over the spectrogram to magnify. ",
+    placement: "bottom",
+  }
+
+
+]
+
+});
+
+// Initialize the tour
+tour2.init(true);
+
+/*$( "#infoButton" ).click(function() {
+    tour2.start(true);
+    //$("#markGRTEMOPO").trigger('click');
+});*/
 
 </script>
 {{/extend}}
