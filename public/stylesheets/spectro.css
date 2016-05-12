@@ -100,7 +100,7 @@ svg{
 }
 
 
-#vis:hover{
+#vis.overflow:hover{
   overflow: scroll;
 }
 
