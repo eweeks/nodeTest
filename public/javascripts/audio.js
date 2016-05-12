@@ -158,10 +158,12 @@ function togglePlayPause() {
 
 //space to play
 $(window).keypress(function (e) {
-  if (e.keyCode === 0 || e.keyCode === 32) {
-    e.preventDefault();
-    console.log('Space pressed');
-    togglePlayPause();
+  if (!($("#type").is(":focus"))) {
+      if (e.keyCode === 0 || e.keyCode === 32) {
+        e.preventDefault();
+        console.log('Space pressed');
+        togglePlayPause();
+      }
   }
 });
 

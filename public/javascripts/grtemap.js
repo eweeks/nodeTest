@@ -80,6 +80,10 @@ function upDateSpectro(data){
 
   $( "#intro" ).css('border-right', 'solid 1px red');
   $( "#intro" ).remove();
+  if ($("#mag").hasClass("zoom")) {
+      $( '#mag').toggleClass( "zoom" );
+      $(".large").fadeOut(100);
+  }
   $("#vis").addClass('overflow');
   $("#progressWrapper").css({'display': 'block'});
   $("#progressWrapper").css({'width':0});
