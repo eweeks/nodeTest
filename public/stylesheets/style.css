@@ -843,3 +843,41 @@ margin: 0 auto;
 .sorry{
   padding-bottom: 2em;
 }
+.popover{
+    width:430px;
+    height:auto;
+    left: 90px;
+    max-width: 430px;
+}
+
+#SeeEx{
+  color: #5F7BA8;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.gallery{
+  width:100%;
+}
+.gallery figure {
+  display: inline-block;
+  width: 100px;
+  min-height: 100px;
+  margin-right: 10px;
+}
+
+.gallery figure img {
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+p#back {
+    font-style: italic;
+    color: #5F7BA8;
+    cursor: pointer;
+    margin-top: 1.5em;
+}

@@ -3,11 +3,34 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
+//Popover
+var elem = '<div id="popText"><p>Spectrograms are visual representations of sounds.</p><p> Time is represented on the x-scale, going left to right, \
+and frequency or pitch is shown on the y-scale from low to high pitch. Color on a spectrogram reflects the volume with blue \
+being the softest and white being the loudest.</p> \<p onclick="SeeEx();" id="SeeEx">What can you learn from a spectrogram?</p> </div>';
+
+$('#SpectroWhat').popover({animation:true, content:elem, html:true});
+
+function SeeEx() {
+  //console.log("click Ex");
+  $("#popText").empty();
+    $("#popText").append($('<p>Sounds have a unique signature in a spectrogram. \
+    Most animals use certain frequencies and patterns in their calls, and even mechanical noises have a specific pattern. Spectrograms are important in soundscape research, because of how easy it is to identify the source. \
+    <div class="gallery"><figure><img id=""src="images/FrogsSpet.png" /><figcaption>Frogs</figcaption></figure>  \
+    <figure><img id=""  src="images/BirdsSpect.png" /><figcaption>Birds</figcaption></figure>\
+    <figure><img src="images/SpectVehicle.png"> <figcaption>Vehicle</figcaption></figure>\
+    </br><p onclick="back();" id="back">Back</p>\
+</div>    '));
+};
+
+function back(){
+  $("#popText").empty();
+    $("#popText").append($('<div id="popText"><p>Spectrograms are visual representations of sounds.</p><p> Time is represented on the x-scale, going left to right, \
+    and frequency or pitch is shown on the y-scale from low to high pitch. Color on a spectrogram reflects the volume with blue \
+    being the softest and white being the loudest.</p> \<p onclick="SeeEx();" id="SeeEx">What can you learn from a spectrogram?</p> </div>'));
+}
+
 //Index page image modual
-/*$("#popYellMap").on("click", function() {
-   $('#imagepreview').attr('src', $('#imageYellMap').attr('src')); // here asign the image to the modal when the user click the enlarge link
-   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
-});*/
+
 $('.pop').on('click', function() {
   $('.imagepreview').attr('src', $(this).find('img').attr('src'));
   $('#imagemodal').modal('show');
