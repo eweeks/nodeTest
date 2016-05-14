@@ -324,7 +324,7 @@ div#container{
 #pickmap{
   background: rgba(204, 202, 202, 0.8);
   padding-bottom: 2em;
-  border-radius: 3px;
+  border-radius: 10px;
   position: relative;
   padding-left: 0;
   padding-right: 0;
@@ -366,6 +366,7 @@ h2.coverH {
       margin-top: 0;
       margin-left: 0;
       margin-right: 0;
+      border-radius: 10px;
 }
 
 .parkBack {
