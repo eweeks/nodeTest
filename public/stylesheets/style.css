@@ -366,7 +366,8 @@ h2.coverH {
       margin-top: 0;
       margin-left: 0;
       margin-right: 0;
-      border-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
 }
 
 .parkBack {
