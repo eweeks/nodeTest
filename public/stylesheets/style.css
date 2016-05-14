@@ -881,3 +881,7 @@ p#back {
     cursor: pointer;
     margin-top: 1.5em;
 }
+
+.btn:focus {
+  outline: none;
+}
