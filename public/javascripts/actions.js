@@ -64,13 +64,13 @@ $('#audioControl').on('click', function() {
   var yourAudio = document.getElementById('coverAudio'),
       ctrl = document.getElementById('coverSound');
 
-if(ctrl.className == "glyphicon glyphicon-volume-up") {
+if(ctrl.className == "glyphicon glyphicon-play") {
         ctrl.className="glyphicon glyphicon-pause";
        yourAudio["play"]();
 }
 else if (ctrl.className == "glyphicon glyphicon-pause"){
 
-     ctrl.className="glyphicon glyphicon-volume-up";
+     ctrl.className="glyphicon glyphicon-play";
     yourAudio["pause"]();
 
 }
